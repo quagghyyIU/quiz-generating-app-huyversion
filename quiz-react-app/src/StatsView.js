@@ -69,7 +69,7 @@ function StatsView() {
       <div className="stats-view-container">
         <div className="stats-header">
           <button onClick={handleBack} className="back-button">
-            ← Back to Stats List
+            ← BACK TO STATS LIST
           </button>
           <h2>Stats for: {selectedQuiz.replace(".json", "")}</h2>
         </div>
@@ -122,7 +122,7 @@ function StatsView() {
                 onClick={() => handleQuizSelect(file)}
                 className="view-stats-button"
               >
-                {hasHistory ? "View Stats" : "View Details"}
+                {hasHistory ? "VIEW STATS" : "VIEW DETAILS"}
               </button>
             </div>
           );
@@ -139,7 +139,7 @@ function StatsView() {
             className="start-quiz-button"
             style={{ marginTop: "20px" }}
           >
-            Go to Quiz List
+            GO TO QUIZ LIST
           </button>
         </div>
       )}

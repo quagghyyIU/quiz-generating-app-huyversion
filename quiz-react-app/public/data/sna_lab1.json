@@ -1,0 +1,512 @@
+[
+  {
+    "question": "What is the main purpose of the Secure Shell (SSH) protocol?",
+    "answers": [
+      "To securely send commands and manage systems over an unsecured network",
+      "To accelerate CPU performance",
+      "To compress files for faster transfer",
+      "To automatically update Linux packages"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which of the following does SSH use to secure communication?",
+    "answers": [
+      "Cryptography for authentication and encryption",
+      "Plain text transmission",
+      "MAC address filtering",
+      "Open UDP broadcast"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command installs the SSH server on Ubuntu?",
+    "answers": [
+      "sudo apt install openssh-server",
+      "sudo install sshd",
+      "sudo apt-get openssh-client",
+      "sudo start ssh-server"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "After installation, which command checks the running status of the SSH service?",
+    "answers": [
+      "sudo systemctl status ssh",
+      "service ssh restart",
+      "ps aux | grep ssh",
+      "ssh --status"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What port does the SSH server listen on by default?",
+    "answers": [
+      "22",
+      "21",
+      "25",
+      "443"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What command enables SSH to start automatically after boot?",
+    "answers": [
+      "sudo systemctl enable ssh",
+      "sudo ssh enable",
+      "systemctl restart sshd",
+      "ssh --start"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command opens the SSH port on Ubuntu’s firewall?",
+    "answers": [
+      "sudo ufw allow ssh",
+      "sudo firewall enable ssh",
+      "sudo ufw open port22",
+      "sudo allow sshport"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "When connecting via SSH, which command format is correct?",
+    "answers": [
+      "ssh -p <port> <username>@<ip_address>",
+      "ssh connect <ip> <user>",
+      "ssh -t <ip> <port>",
+      "connect ssh <port> <username>"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "In the SSH connection example, what does '-p 2222' specify?",
+    "answers": [
+      "The port number used for SSH connection",
+      "The IP address of the remote host",
+      "The username of the remote user",
+      "The protocol version"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Windows application can be used to connect via SSH?",
+    "answers": [
+      "PuTTY",
+      "WinRAR",
+      "VSCode",
+      "Postman"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which symbol in Linux represents the user’s home directory?",
+    "answers": [
+      "~",
+      "#",
+      "/",
+      "$"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does the command 'mkdir -p ~/sna2023_lab/lab1/section1' do?",
+    "answers": [
+      "Creates a nested directory structure for the lab",
+      "Deletes all folders named section1",
+      "Moves to the home directory",
+      "Displays file permissions"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does the 'touch' command do in Linux?",
+    "answers": [
+      "Creates empty files or updates file timestamps",
+      "Opens a file for editing",
+      "Displays file content",
+      "Deletes temporary files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Given the files abc.txt, abc1.txt, abb.txt, bbb.dat, which files match 'ls *.txt'?",
+    "answers": [
+      "abc.txt, abc1.txt, abb.txt",
+      "bbb.dat, bbb",
+      "abc1.txt only",
+      "bbb.txt only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does the wildcard '?' represent in Linux file patterns?",
+    "answers": [
+      "Exactly one character",
+      "Any number of characters",
+      "No characters",
+      "A directory"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which files match the command 'ls ab?.txt' given files abb.txt, abc.txt, ab.txt?",
+    "answers": [
+      "abb.txt and abc.txt",
+      "ab.txt only",
+      "abb.txt only",
+      "All files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which files are listed by 'ls bbb*'?",
+    "answers": [
+      "All files starting with 'bbb'",
+      "All files ending with 'bbb'",
+      "Only files named exactly 'bbb'",
+      "Files that contain 'bbb' anywhere"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does the command 'ls [a-c]??.???' list?",
+    "answers": [
+      "Files starting with a, b, or c followed by any two characters, dot, and any three characters",
+      "Only files with exactly three letters",
+      "All hidden files",
+      "Directories only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "The pattern 'ls [!c]*' will list:",
+    "answers": [
+      "Files not starting with 'c'",
+      "Files ending with 'c'",
+      "Only files starting with 'c'",
+      "Hidden files only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does 'rmdir a' do if directory 'a' is not empty?",
+    "answers": [
+      "Fails with an error since rmdir only removes empty directories",
+      "Removes all contents inside 'a'",
+      "Deletes all files recursively",
+      "Renames directory 'a'"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What happens when 'rmdir b' is executed if directory b has subdirectories?",
+    "answers": [
+      "Command fails because 'b' is not empty",
+      "All subdirectories are removed automatically",
+      "Directory is renamed",
+      "Files are moved to /tmp"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does 'rm -ir b*' do?",
+    "answers": [
+      "Removes interactively all files and directories beginning with 'b'",
+      "Lists recursively all files starting with 'b'",
+      "Renames all files starting with 'b'",
+      "Creates read-only versions of 'b' files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "How does 'rm -fr b*' differ from 'rm -ir b*'?",
+    "answers": [
+      "'-fr' removes all without confirmation; '-ir' asks before deleting each file",
+      "'-fr' lists files only; '-ir' moves files",
+      "'-fr' deletes hidden files only",
+      "'-ir' skips directories"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is Vim in Linux?",
+    "answers": [
+      "A text editor with advanced features derived from Vi",
+      "A file compression tool",
+      "A network packet analyzer",
+      "A filesystem debugger"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Who created Vim?",
+    "answers": [
+      "Bram Moolenaar",
+      "Linus Torvalds",
+      "Dennis Ritchie",
+      "Richard Stallman"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which of the following statements is TRUE about Vim?",
+    "answers": [
+      "It is both command-line and GUI compatible",
+      "It is only available on Windows",
+      "It cannot edit system files",
+      "It requires an internet connection to run"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command combination installs and starts the SSH server?",
+    "answers": [
+      "sudo apt install openssh-server && sudo systemctl enable ssh",
+      "sudo apt install ssh-client",
+      "sudo ssh start-server",
+      "sudo open-ssh-service"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is the purpose of using wildcards in Linux?",
+    "answers": [
+      "To match multiple file names using patterns",
+      "To remove viruses",
+      "To format drives",
+      "To encrypt files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command lists all files in the current directory including hidden ones?",
+    "answers": [
+      "ls -a",
+      "ls -l",
+      "ls -r",
+      "ls *"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does 'ls a*.*' display?",
+    "answers": [
+      "Files starting with 'a' that contain a dot in their names",
+      "All files containing letter 'a'",
+      "Files ending with 'a'",
+      "Only hidden files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does 'ls [ab][ab][ab].*' select?",
+    "answers": [
+      "Files whose first three letters are either a or b in any order, followed by any extension",
+      "Files ending with 'ab'",
+      "Directories only",
+      "Hidden files starting with a or b"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command removes a directory and its contents recursively without asking?",
+    "answers": [
+      "rm -rf <directory>",
+      "rmdir -r <directory>",
+      "delete -all <directory>",
+      "rmdir -f <directory>"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Linux wildcard expands to match any number of characters?",
+    "answers": [
+      "*",
+      "?",
+      "[]",
+      "{}"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "When you connect using 'ssh -p 2222 user@127.0.0.1', what does '127.0.0.1' mean?",
+    "answers": [
+      "It refers to the localhost (your own machine)",
+      "It refers to the public network address",
+      "It refers to the virtual switch",
+      "It represents the DNS name of server"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What command creates multiple empty files named abc.txt, abc1.txt, abb.txt at once?",
+    "answers": [
+      "touch abc.txt abc1.txt abb.txt",
+      "ls abc*.txt",
+      "mkdir abc.txt abc1.txt abb.txt",
+      "echo abc > files.txt"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command displays the current working directory?",
+    "answers": [
+      "pwd",
+      "cd",
+      "ls",
+      "whoami"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does the command 'cd ..' do?",
+    "answers": [
+      "Moves up one directory level",
+      "Deletes the current directory",
+      "Lists hidden files",
+      "Creates a new directory"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "When you run 'sudo ufw allow ssh', what happens?",
+    "answers": [
+      "The firewall allows incoming SSH connections",
+      "SSH service restarts automatically",
+      "All ports are opened",
+      "The SSH key is generated"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command lists detailed file information including permissions and owners?",
+    "answers": [
+      "ls -l",
+      "ls -a",
+      "pwd -v",
+      "cat /etc/passwd"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is the result of the command 'rm -ir b*' if confirmed for deletion?",
+    "answers": [
+      "All files and directories starting with 'b' will be deleted interactively",
+      "All files are listed only",
+      "Hidden files remain untouched",
+      "Only files with .txt extension deleted"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command pattern lists files that start with 'c', have exactly 3 letters before '.txt'?",
+    "answers": [
+      "ls c??.txt",
+      "ls c*.txt",
+      "ls *c.txt",
+      "ls ?c?.txt"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which of the following is TRUE about SSH encryption?",
+    "answers": [
+      "It ensures confidentiality and integrity of data transmission",
+      "It only provides authentication but no encryption",
+      "It hides IP addresses",
+      "It compresses data by default"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What happens if you try to 'rmdir' a non-empty directory?",
+    "answers": [
+      "The command fails with an error message",
+      "It deletes all files inside silently",
+      "It renames the folder",
+      "It compresses the directory"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Linux utility is commonly used to edit configuration files directly in terminal?",
+    "answers": [
+      "Vim",
+      "cp",
+      "ls",
+      "pwd"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command in Vim saves the current file and exits?",
+    "answers": [
+      ":wq",
+      ":exit",
+      ":close",
+      ":writequit!"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Vim mode allows inserting text into the file?",
+    "answers": [
+      "Insert mode",
+      "Command mode",
+      "Visual mode",
+      "Replace mode"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which key is used in Vim to switch from insert mode to command mode?",
+    "answers": [
+      "Esc",
+      "Ctrl+C",
+      "Tab",
+      "Enter"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What happens when you run 'ls *.dat' in a directory containing bbb.dat, ccc.txt, abc.dat?",
+    "answers": [
+      "bbb.dat and abc.dat are listed",
+      "All files are listed",
+      "Only ccc.txt is listed",
+      "No files are listed"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which of the following commands removes files forcefully without confirmation?",
+    "answers": [
+      "rm -f",
+      "rm -i",
+      "delete -f",
+      "rmdir"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which wildcard pattern matches exactly three-character filenames?",
+    "answers": [
+      "???",
+      "*",
+      "?",
+      "[abc]"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is the best way to securely connect from Windows to an Ubuntu SSH server?",
+    "answers": [
+      "Using PuTTY with IP 127.0.0.1 and port 2222",
+      "Using FTP connection",
+      "Using telnet command",
+      "Using remote desktop protocol"
+    ],
+    "correct_answer": 0
+  }
+]

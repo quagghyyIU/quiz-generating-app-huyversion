@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./css/Quiz.css"; // We'll create this file for styling
 import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 import PerformanceStats from "./components/PerformanceStats";
@@ -38,6 +38,11 @@ function Quiz() {
   const [userAnswers, setUserAnswers] = useState({}); // Store user answers { questionIndex: selectedAnswerIndex }
   const [showReview, setShowReview] = useState(false); // State to toggle review section
 
+  // Practice Mode States
+  const [isPracticeMode, setIsPracticeMode] = useState(false);
+  const [wrongQuestions, setWrongQuestions] = useState([]); // Array of wrong question objects with original index
+  const [practiceScore, setPracticeScore] = useState(0);
+
   // Fetch quiz data - only if selectedQuiz is available
   useEffect(() => {
     if (!selectedQuiz) {
@@ -63,37 +68,148 @@ function Quiz() {
       });
   }, [selectedQuiz]); // Dependency remains selectedQuiz
 
-  const handleAnswerOptionClick = (isCorrect, index) => {
-    setSelectedAnswer(index);
-    setIsAnswered(true);
-    setUserAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [currentQuestionIndex]: index, // Store the selected index for the current question
-    }));
+  const handleAnswerOptionClick = useCallback(
+    (isCorrect, index) => {
+      setSelectedAnswer(index);
+      setIsAnswered(true);
 
-    if (isCorrect) {
-      setScore(score + 1);
+      if (isPracticeMode) {
+        // Practice mode - update score only
+        const newPracticeScore = isCorrect ? practiceScore + 1 : practiceScore;
+        setPracticeScore(newPracticeScore);
+
+        // Handle navigation in practice mode
+        setTimeout(() => {
+          const nextQuestion = currentQuestionIndex + 1;
+          if (nextQuestion < wrongQuestions.length) {
+            setCurrentQuestionIndex(nextQuestion);
+            setSelectedAnswer(null);
+            setIsAnswered(false);
+          } else {
+            // Practice complete - show results
+            setShowScore(true);
+          }
+        }, 1000);
+      } else {
+        // Normal quiz mode
+        const updatedAnswers = {
+          ...userAnswers,
+          [currentQuestionIndex]: index, // Include the current answer
+        };
+
+        setUserAnswers(updatedAnswers);
+
+        // Update score
+        const newScore = isCorrect ? score + 1 : score;
+        setScore(newScore);
+
+        // Handle navigation to next question or completion
+        setTimeout(() => {
+          const nextQuestion = currentQuestionIndex + 1;
+          if (nextQuestion < questions.length) {
+            setCurrentQuestionIndex(nextQuestion);
+            setSelectedAnswer(null); // Reset selected answer for the next question
+            setIsAnswered(false); // Reset answered state
+          } else {
+            // Collect wrong questions - use updatedAnswers to include the last answer
+            const wrong = questions
+              .map((q, idx) => ({ question: q, originalIndex: idx }))
+              .filter((item) => {
+                const userAnswer = updatedAnswers[item.originalIndex];
+                return userAnswer !== item.question.correct_answer;
+              });
+            setWrongQuestions(wrong);
+
+            setShowScore(true); // Show results if it was the last question
+            // Save quiz attempt to history (ONLY in normal mode)
+            if (selectedQuiz) {
+              saveQuizAttempt(selectedQuiz, newScore, questions.length);
+            }
+          }
+        }, 1000); // Delay of 1.0 seconds
+      }
+    },
+    [
+      currentQuestionIndex,
+      questions,
+      selectedQuiz,
+      score,
+      isPracticeMode,
+      wrongQuestions,
+      practiceScore,
+      userAnswers,
+    ]
+  );
+
+  // Function to start practice mode with wrong answers
+  const startPracticeMode = () => {
+    if (wrongQuestions.length === 0) {
+      alert("Great job! You got all questions correct!");
+      return;
     }
 
-    setTimeout(() => {
-      const nextQuestion = currentQuestionIndex + 1;
-      if (nextQuestion < questions.length) {
-        setCurrentQuestionIndex(nextQuestion);
-        setSelectedAnswer(null); // Reset selected answer for the next question
-        setIsAnswered(false); // Reset answered state
-      } else {
-        setShowScore(true); // Show results if it was the last question
-        // Save quiz attempt to history
-        if (selectedQuiz) {
-          saveQuizAttempt(
-            selectedQuiz,
-            score + (isCorrect ? 1 : 0),
-            questions.length
-          );
+    setIsPracticeMode(true);
+    setShowScore(false);
+    setShowReview(false);
+    setCurrentQuestionIndex(0);
+    setPracticeScore(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+  };
+
+  // Function to exit practice mode
+  const exitPracticeMode = () => {
+    setIsPracticeMode(false);
+    setShowScore(true);
+    setCurrentQuestionIndex(0);
+  };
+
+  // Keyboard shortcuts for answer selection (1, 2, 3, 4)
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      // Only handle keyboard shortcuts when quiz is active (not in score/review screen)
+      if (showScore || showReview || isLoading || error || isAnswered) {
+        return;
+      }
+
+      // Check if valid number key (1-4)
+      const keyNum = parseInt(event.key);
+      if (keyNum >= 1 && keyNum <= 4) {
+        const answerIndex = keyNum - 1; // Convert to 0-based index
+
+        // Get current question based on mode
+        const currentQuestion = isPracticeMode
+          ? wrongQuestions[currentQuestionIndex]?.question
+          : questions[currentQuestionIndex];
+
+        // Only proceed if the answer index is valid for current question
+        if (
+          currentQuestion &&
+          currentQuestion.answers &&
+          answerIndex < currentQuestion.answers.length
+        ) {
+          const isCorrect = answerIndex === currentQuestion.correct_answer;
+          handleAnswerOptionClick(isCorrect, answerIndex);
         }
       }
-    }, 1000); // Delay of 1.0 seconds
-  };
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [
+    currentQuestionIndex,
+    questions,
+    showScore,
+    showReview,
+    isLoading,
+    error,
+    isAnswered,
+    handleAnswerOptionClick,
+    isPracticeMode,
+    wrongQuestions,
+  ]);
 
   // Updated getButtonClass for review state
   const getButtonClass = (qIndex, ansIndex, reviewMode = false) => {
@@ -133,6 +249,11 @@ function Quiz() {
     setIsAnswered(false);
     setUserAnswers({}); // Reset user answers
     setShowReview(false); // Hide review section
+
+    // Reset practice mode states
+    setIsPracticeMode(false);
+    setWrongQuestions([]);
+    setPracticeScore(0);
   };
 
   // Handle navigating back to the list
@@ -164,7 +285,38 @@ function Quiz() {
       {/* Display selected quiz name */}
       {showScore ? (
         <div className="score-section">
-          {!showReview ? (
+          {isPracticeMode ? (
+            <>
+              <h2>🎯 Practice Complete!</h2>
+              <div className="practice-results">
+                <div className="practice-score-card">
+                  <p className="practice-score-label">Practice Score</p>
+                  <p className="practice-score-value">
+                    {practiceScore} / {wrongQuestions.length}
+                  </p>
+                  <p className="practice-score-percentage">
+                    {Math.round((practiceScore / wrongQuestions.length) * 100)}%
+                  </p>
+                  <p className="practice-note">
+                    💡 This score is for practice only and doesn't affect your
+                    stats
+                  </p>
+                </div>
+              </div>
+
+              <div className="score-actions">
+                <button onClick={exitPracticeMode} className="back-button">
+                  BACK TO RESULTS
+                </button>
+                <button onClick={startPracticeMode} className="restart-button">
+                  PRACTICE AGAIN
+                </button>
+                <button onClick={restartQuiz} className="restart-button">
+                  RESTART FULL QUIZ
+                </button>
+              </div>
+            </>
+          ) : !showReview ? (
             <>
               <h2>Quiz Complete!</h2>
 
@@ -176,17 +328,25 @@ function Quiz() {
               />
 
               <div className="score-actions">
+                {wrongQuestions.length > 0 && (
+                  <button
+                    onClick={startPracticeMode}
+                    className="practice-button"
+                  >
+                    🎯 PRACTICE WRONG ANSWERS ({wrongQuestions.length})
+                  </button>
+                )}
                 <button
                   onClick={() => setShowReview(true)}
                   className="review-button"
                 >
-                  Review Answers
+                  REVIEW ANSWERS
                 </button>
                 <button onClick={restartQuiz} className="restart-button">
-                  Restart This Quiz
+                  RESTART THIS QUIZ
                 </button>
                 <button onClick={backToList} className="back-button">
-                  Back to Quiz List
+                  BACK TO QUIZ LIST
                 </button>
               </div>
             </>
@@ -199,31 +359,35 @@ function Quiz() {
                     <strong>Q{qIndex + 1}:</strong> {question.question}
                   </p>
                   <div className="answer-section review">
-                    {question.answers.map((answer, ansIndex) => (
-                      <button
-                        key={ansIndex}
-                        className={getButtonClass(qIndex, ansIndex, true)} // Pass reviewMode = true
-                        disabled // Buttons are not interactive in review
-                      >
-                        {answer}
-                      </button>
-                    ))}
+                    {question.answers.map((answer, ansIndex) => {
+                      const answerNumber = ansIndex + 1; // 1, 2, 3, 4
+                      return (
+                        <button
+                          key={ansIndex}
+                          className={getButtonClass(qIndex, ansIndex, true)} // Pass reviewMode = true
+                          disabled // Buttons are not interactive in review
+                        >
+                          <span className="answer-number">{answerNumber}</span>
+                          {answer}
+                        </button>
+                      );
+                    })}
                   </div>
                   <hr />
                 </div>
               ))}
               <div className="score-actions">
                 <button onClick={restartQuiz} className="restart-button">
-                  Restart This Quiz
+                  RESTART THIS QUIZ
                 </button>
                 <button onClick={backToList} className="back-button">
-                  Back to Quiz List
+                  BACK TO QUIZ LIST
                 </button>
                 <button
                   onClick={() => setShowReview(false)}
                   className="back-button"
                 >
-                  Back to Score
+                  BACK TO SCORE
                 </button>
               </div>
             </div>
@@ -231,45 +395,78 @@ function Quiz() {
         </div>
       ) : (
         <>
+          {isPracticeMode && (
+            <div className="practice-mode-badge">
+              🎯 PRACTICE MODE - Wrong Answers Only
+            </div>
+          )}
           <div className="question-section">
             <div className="question-count">
               <span>Question {currentQuestionIndex + 1}</span>/
-              {questions.length}
+              {isPracticeMode ? wrongQuestions.length : questions.length}
             </div>
             <div className="question-text">
-              {questions[currentQuestionIndex].question}
+              {isPracticeMode
+                ? wrongQuestions[currentQuestionIndex]?.question?.question
+                : questions[currentQuestionIndex].question}
             </div>
           </div>
           <div className="answer-section">
-            {questions[currentQuestionIndex].answers.map(
-              (answerOption, index) => {
-                const isCorrect =
-                  index === questions[currentQuestionIndex].correct_answer;
-                return (
-                  <button
-                    key={index}
-                    onClick={() =>
-                      !isAnswered && handleAnswerOptionClick(isCorrect, index)
-                    }
-                    className={getButtonClass(currentQuestionIndex, index)} // Pass only question and answer index
-                    disabled={isAnswered}
-                  >
-                    {answerOption}
-                  </button>
-                );
-              }
-            )}
+            {(isPracticeMode
+              ? wrongQuestions[currentQuestionIndex]?.question?.answers
+              : questions[currentQuestionIndex].answers
+            )?.map((answerOption, index) => {
+              const currentQ = isPracticeMode
+                ? wrongQuestions[currentQuestionIndex]?.question
+                : questions[currentQuestionIndex];
+              const isCorrect = index === currentQ?.correct_answer;
+              const answerNumber = index + 1; // 1, 2, 3, 4
+              return (
+                <button
+                  key={index}
+                  onClick={() =>
+                    !isAnswered && handleAnswerOptionClick(isCorrect, index)
+                  }
+                  className={
+                    isPracticeMode
+                      ? isAnswered
+                        ? index === selectedAnswer
+                          ? isCorrect
+                            ? "answer-button correct"
+                            : "answer-button incorrect"
+                          : index === currentQ?.correct_answer
+                          ? "answer-button correct-unselected"
+                          : "answer-button disabled"
+                        : "answer-button"
+                      : getButtonClass(currentQuestionIndex, index)
+                  }
+                  disabled={isAnswered}
+                >
+                  <span className="answer-number">{answerNumber}</span>
+                  {answerOption}
+                </button>
+              );
+            })}
           </div>
           <div className="progress-bar-container">
             <div
               className="progress-bar"
               style={{
                 width: `${
-                  ((currentQuestionIndex + 1) / questions.length) * 100
+                  ((currentQuestionIndex + 1) /
+                    (isPracticeMode
+                      ? wrongQuestions.length
+                      : questions.length)) *
+                  100
                 }%`,
               }}
             ></div>
           </div>
+          {isPracticeMode && (
+            <button onClick={exitPracticeMode} className="exit-practice-button">
+              EXIT PRACTICE MODE
+            </button>
+          )}
         </>
       )}
     </div>

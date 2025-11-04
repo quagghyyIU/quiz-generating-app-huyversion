@@ -56,7 +56,7 @@ function QuizList() {
               onClick={() => handleQuizSelect(file)}
               className="start-quiz-button"
             >
-              Start Quiz
+              START QUIZ
             </button>
           </div>
         ))}
