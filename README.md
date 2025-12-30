@@ -1,94 +1,124 @@
-# Networking Quiz App
+# 📚 Quiz App (Huy's Version)
 
-A React-based application for testing your networking knowledge. This app fetches quiz questions from a `data.json` file and provides a user-friendly interface to answer the questions.
+A React-based quiz application with modern dark mode UI, folder organization, multiple quiz modes, and performance tracking. Forked and enhanced from the original networking quiz app.
 
-## Features
+## ✨ Features
 
-*   Modern and cute UI/UX
-*   Fetches quiz data from JSON files in the `public/data` directory.
-*   **Allows users to select a quiz from a list of available JSON files.**
-*   Displays questions and answer options.
-*   Tracks score and shows results at the end.
-*   Provides feedback on selected answers during the quiz.
-*   Includes a progress bar to indicate quiz progress.
-*   **Allows users to review their answers after completing a quiz, showing correct answers and user selections.**
-*   **Displays the name of the currently selected quiz on the quiz page.**
-*   **Presents the list of quizzes as visually appealing cards instead of a table.**
+### Quiz Organization
+- 📁 **Folder-based organization** - Quizzes are organized into folders for easy navigation
+- 🔀 **Shuffle All** - Combine all quizzes in a folder into one shuffled test
+- 📄 **Individual Quizzes** - Take quizzes one at a time
 
-## Technologies Used
+### Quiz Modes
 
-*   React
-*   CSS
+**For Shuffle All (folder mode):**
+| Mode | Questions | Icon |
+|------|-----------|------|
+| 🚀 Quick Refresh | 20 questions | Fast review |
+| 🔥 Lock-in Mode | 50 questions | Focused practice |
 
-## Getting Started
+**For Individual Quizzes:**
+| Mode | Questions | Icon |
+|------|-----------|------|
+| ⚡ Fast Pace | 20 questions max | Speed run |
+| 🎯 Quiz Oriented | 50 questions max | Balanced practice |
+| 📚 Full Quiz | All questions | Complete test |
+
+### Randomization
+- 🔀 **Fisher-Yates shuffle** - Proper randomization algorithm for both questions and answers
+- 🔄 **Fresh random on restart** - Every restart picks new random questions (for limited modes)
+- 🎲 **Answer shuffling** - Answer order is randomized for each question
+
+### Study Features
+- 🎯 **Practice Mode** - Practice wrong answers after completing a quiz
+- 📊 **Performance Stats** - Track your progress with attempt history
+- 📝 **Answer Review** - Review all answers after completing
+- ⌨️ **Keyboard Shortcuts** - Use 1, 2, 3, 4 keys to quickly select answers
+
+### UI/UX
+- 🌙 **Dark Mode** - Modern dark theme with smooth aesthetics
+- 📱 **Responsive Design** - Works on all screen sizes
+- ✨ **Progress Bar** - Visual progress indicator
+- 🎨 **Color-coded Feedback** - Instant correct/incorrect answer feedback
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-*   Node.js and npm installed on your machine.
+- Node.js and npm installed
 
 ### Installation
 
-1.  Clone the repository:
+```bash
+# Clone the repository
+git clone <your-repository-url>
 
-    ```bash
-    git clone <repository-url>
-    ```
+# Navigate to the app directory
+cd quiz-react-app
 
-2.  Navigate to the project directory:
-
-    ```bash
-    cd quiz-react-app
-    ```
-
-3.  Install the dependencies:
-
-    ```bash
-    npm install
-    ```
+# Install dependencies
+npm install
+```
 
 ### Running the App
 
-1.  Start the development server:
-
-    ```bash
-    npm start
-    ```
-
-2.  Open your browser and navigate to `http://localhost:3000` to view the app.
-
-## Data Source
-
-The quiz questions are stored in `public/data`. The app reads all `.json` files in this directory to populate the quiz list.  `npm start` will read all of it and automatically update the `index.json`
-
-To add or modify quizzes:
-
-1.  Create new `.json` files or modify existing ones in the `public/data` folder.
-2.  Ensure your JSON files follow the format below.
-3.  Restart the development server if it's already running to see the updated quiz list.
-
-![image](https://github.com/user-attachments/assets/85a12f1c-9a20-46bf-ba8b-4e4df0b1fbe8)
-in Google AI Studio, use Gemini 2.0 flash thinking (optional: temperature 0.7) to prompt like the img above, copy and paste data into `public/data/data.json` or just create a new file `.json` and put it in `public/data`
-
-json format:
-```json
-{
-    "question": "What version of the Internet Protocol is IPv4?",
-    "answers": [
-      "1st version",
-      "2nd version",
-      "3rd version",
-      "4th version"
-    ],
-    "correct_answer": 3
-  }
+```bash
+npm start
 ```
 
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Contributing
+**Quick Start Scripts (Windows):**
+- `start-quiz-app.bat` - Start the app normally
+- `start-quiz-app-quick.bat` - Quick start
+- `start-quiz-app-new-window.bat` - Start in new window
 
-Feel free to contribute to this project by submitting issues or pull requests.
+## 📂 Adding Quizzes
 
-## License
+### Folder Structure
+```
+public/data/
+├── index.json          # Auto-generated folder index
+├── Networking/
+│   ├── chapter1.json
+│   └── chapter2.json
+├── Programming/
+│   ├── python.json
+│   └── javascript.json
+└── uncategorized/
+    └── misc.json
+```
 
-[Choose a license and add it here] 
+### Quiz JSON Format
+```json
+[
+  {
+    "question": "What is the capital of France?",
+    "answers": [
+      "London",
+      "Berlin",
+      "Paris",
+      "Madrid"
+    ],
+    "correct_answer": 2
+  }
+]
+```
 
+> **Note:** `correct_answer` is 0-indexed (0 = first answer, 1 = second, etc.)
+
+### Generating Quiz Content
+Use Google AI Studio with Gemini 2.0 Flash to generate quiz questions in the JSON format above.
+
+## 🛠️ Technologies
+
+- **React** - Frontend framework
+- **React Router** - Navigation
+- **CSS3** - Modern styling with CSS variables
+
+## 📝 Original Credits
+
+Forked from the original quiz app and enhanced with additional features.
+
+## 📄 License
+
+MIT License
