@@ -27,7 +27,7 @@
 
 .question-text {
   font-size: 1.4rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 20px;
   line-height: 1.5;
@@ -35,8 +35,10 @@
 
 .answer-section {
   display: grid;
-  grid-template-columns: 1fr; /* Default to single column */
-  gap: 15px; /* Spacing between buttons */
+  grid-template-columns: 1fr;
+  /* Default to single column */
+  gap: 15px;
+  /* Spacing between buttons */
 }
 
 /* Make it 2 columns on wider screens */
@@ -72,7 +74,7 @@
   background-color: var(--accent-color);
   color: white;
   border-radius: 50%;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.9rem;
   flex-shrink: 0;
 }
@@ -83,7 +85,8 @@
 }
 
 .answer-button:active:not(:disabled) {
-  transform: translateY(0); /* Press down effect */
+  transform: translateY(0);
+  /* Press down effect */
 }
 
 .answer-button:disabled {
@@ -96,14 +99,14 @@
   background-color: var(--correct-bg);
   border-color: var(--success-color);
   color: var(--correct-text);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .answer-button.incorrect {
   background-color: var(--incorrect-bg);
   border-color: var(--error-color);
   color: var(--incorrect-text);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .answer-button.correct-unselected {
@@ -113,7 +116,8 @@
 }
 
 .answer-button.disabled:not(.correct):not(.incorrect):not(.correct-unselected) {
-  opacity: 0.5; /* Dim other buttons */
+  opacity: 0.5;
+  /* Dim other buttons */
 }
 
 .score-section {
@@ -218,8 +222,10 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  gap: 15px; /* Space between buttons */
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 15px;
+  /* Space between buttons */
+  flex-wrap: wrap;
+  /* Allow buttons to wrap on smaller screens */
 }
 
 /* General Button Styles (can refine if needed) */
@@ -250,7 +256,7 @@
 /* Stats Button Special Styling */
 .stats-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-weight: bold;
+  font-weight: 600;
   text-transform: none;
 }
 
@@ -275,6 +281,7 @@
   margin-bottom: 25px;
   padding-bottom: 15px;
 }
+
 .review-question-block hr {
   border: 0;
   height: 1px;
@@ -283,20 +290,26 @@
 }
 
 .review-question-block .question-text {
-  font-size: 1.1rem; /* Slightly smaller for review */
+  font-size: 1.1rem;
+  /* Slightly smaller for review */
   margin-bottom: 15px;
 }
 
 .answer-section.review {
-  grid-template-columns: 1fr; /* Force single column for clarity */
+  grid-template-columns: 1fr;
+  /* Force single column for clarity */
 }
 
 .answer-button.review {
-  cursor: default; /* Not clickable */
-  opacity: 1 !important; /* Override dimming */
+  cursor: default;
+  /* Not clickable */
+  opacity: 1 !important;
+  /* Override dimming */
 }
+
 .answer-button.disabled.review {
-  opacity: 0.6 !important; /* Dim unselected/incorrect slightly */
+  opacity: 0.6 !important;
+  /* Dim unselected/incorrect slightly */
 }
 
 /* Quiz List Styles - Updated for Cards */
@@ -319,7 +332,8 @@
 
 .quiz-cards {
   display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
+  grid-template-columns: 1fr;
+  /* Single column on mobile */
   gap: 25px;
   text-align: left;
   width: 100%;
@@ -328,13 +342,15 @@
 /* Responsive breakpoints for quiz cards */
 @media (min-width: 480px) {
   .quiz-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on small tablets */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on small tablets */
   }
 }
 
 @media (min-width: 768px) {
   .quiz-cards {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on tablets */
   }
 
   .quiz-list-container {
@@ -345,13 +361,15 @@
 
 @media (min-width: 1024px) {
   .quiz-cards {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns on desktop */
   }
 }
 
 @media (min-width: 1440px) {
   .quiz-cards {
-    grid-template-columns: repeat(5, 1fr); /* 5 columns on large desktop */
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns on large desktop */
   }
 
   .quiz-list-container {
@@ -379,8 +397,18 @@
   font-size: 1.2rem;
   color: var(--text-primary);
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   word-break: break-word;
+}
+
+.quiz-folder-badge {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: inline-block;
 }
 
 .quiz-card-description {
@@ -392,8 +420,10 @@
 
 .start-quiz-button {
   /* Ensure button is styled */
-  width: 100%; /* Make button full width of card */
-  margin-top: 15px; /* Space above button */
+  width: 100%;
+  /* Make button full width of card */
+  margin-top: 15px;
+  /* Space above button */
 }
 
 /* Stats View Styles */
@@ -454,7 +484,7 @@
 
 .stat-preview-value {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -480,7 +510,7 @@
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -500,11 +530,24 @@
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
   font-size: 1rem;
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Source quiz badge for shuffle mode */
+.source-quiz-badge {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3);
 }
 
 .practice-button {
@@ -518,7 +561,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: bold;
+  font-weight: 600;
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
@@ -574,7 +617,7 @@
 
 .practice-score-value {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #667eea;
   margin: 10px 0;
 }
@@ -582,7 +625,7 @@
 .practice-score-percentage {
   font-size: 1.8rem;
   color: #764ba2;
-  font-weight: bold;
+  font-weight: 600;
   margin: 10px 0;
 }
 
@@ -612,4 +655,22 @@
   .practice-score-percentage {
     font-size: 1.5rem;
   }
+}
+
+/* No History Message for Stats View */
+.no-history-message {
+  background: var(--card-bg);
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.no-history-message p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
 }

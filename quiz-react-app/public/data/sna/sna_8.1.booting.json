@@ -1,0 +1,713 @@
+[
+    {
+      "question": "Which of the following is one of the broadly defined tasks in the boot process?",
+      "answers": [
+        "Finding, loading, and running bootstrapping code",
+        "Compiling the Linux kernel from source",
+        "Creating user accounts and home directories",
+        "Installing application packages from repositories"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is part of the boot process after the kernel is loaded?",
+      "answers": [
+        "Running startup scripts and system daemons",
+        "Editing the GPT partition table manually",
+        "Flashing new firmware to ROM",
+        "Disabling the network card in hardware"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which boot process task focuses on keeping the system clean and controlling state transitions?",
+      "answers": [
+        "Maintaining process hygiene and managing system state transitions",
+        "Encrypting all disks automatically",
+        "Converting all filesystems to Btrfs",
+        "Recompiling the boot loader"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "When a machine is powered on, the CPU is hardwired to execute boot code stored in:",
+      "answers": [
+        "ROM (system firmware)",
+        "RAM (temporary memory)",
+        "Swap space",
+        "/tmp directory"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the term used for the boot code stored in ROM that runs first at power-on?",
+      "answers": [
+        "System firmware",
+        "User shell",
+        "Package manager",
+        "Window system"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "During normal bootstrapping, system firmware typically performs which action first?",
+      "answers": [
+        "Probes for hardware and disks",
+        "Starts the graphical login manager",
+        "Launches user applications",
+        "Runs database migrations"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is a typical firmware task during bootstrapping?",
+      "answers": [
+        "Runs a simple set of health checks",
+        "Mounts user home directories",
+        "Starts web servers in containers",
+        "Generates SSH key pairs for users"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does the firmware UI let you do?",
+      "answers": [
+        "Designate a boot device",
+        "Write systemd unit files",
+        "Configure DNS zone records",
+        "Install kernel modules"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the BIOS vs UEFI comparison, legacy BIOS typically boots using:",
+      "answers": [
+        "Master Boot Record (MBR) on the boot device",
+        "GPT partition table and EFI System Partition",
+        "A container image entrypoint",
+        "A systemd target file"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In legacy BIOS booting, the MBR points to which concept in the slides?",
+      "answers": [
+        "An \"active\" disk partition",
+        "The systemd default target",
+        "The kernel log buffer",
+        "The local DNS resolver"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "UEFI systems typically use which partition table according to the slides?",
+      "answers": [
+        "GPT partition table",
+        "MBR partition table only",
+        "EXT4 partition table",
+        "LVM metadata table"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "UEFI booting involves which special partition mentioned in the slides?",
+      "answers": [
+        "EFI System Partition (ESP)",
+        "Swap Partition (SWP)",
+        "Home Partition (/home)",
+        "Temporary Partition (/tmp)"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does ESP stand for in UEFI booting context?",
+      "answers": [
+        "EFI System Partition",
+        "External Storage Process",
+        "Encrypted System Package",
+        "Extended Startup Program"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary role of a boot loader?",
+      "answers": [
+        "Identify and load an appropriate operating system kernel",
+        "Provide IP address leasing to clients",
+        "Encrypt network packets end-to-end",
+        "Create user accounts at first boot"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Besides loading the kernel, a boot loader also typically:",
+      "answers": [
+        "Sets configuration arguments for the kernel",
+        "Starts all user-space daemons directly",
+        "Runs fsck on every filesystem continuously",
+        "Manages kernel log entries permanently"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which boot loader is explicitly mentioned in the slides?",
+      "answers": [
+        "GRUB",
+        "LILO",
+        "PXELINUX",
+        "Syslinux"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "GRUB stands for:",
+      "answers": [
+        "The GRand Unified Boot loader",
+        "The Graphical Runtime Utility Broker",
+        "The Global Routing User Backend",
+        "The Generic Resource Update Builder"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Once the kernel is loaded and initialized, it creates processes in user space described as:",
+      "answers": [
+        "Spontaneous processes",
+        "Zombie processes",
+        "Kernel threads only",
+        "Orphan-only processes"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "According to the slides, spontaneous processes are:",
+      "answers": [
+        "Part of the kernel implementation",
+        "Only started by user login shells",
+        "Always containerized by default",
+        "Always scheduled as real-time tasks"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the process ID (PID) of the system management daemon (init)?",
+      "answers": [
+        "1",
+        "0",
+        "100",
+        "1024"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best describes init in the slides?",
+      "answers": [
+        "A system management daemon with PID 1 (a user-level program)",
+        "A kernel-only process that cannot be replaced",
+        "A boot loader that loads the kernel from ROM",
+        "A filesystem that stores startup scripts"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary job of init?",
+      "answers": [
+        "Make sure the system runs the right complement of services and daemons",
+        "Decide which boot device the firmware uses",
+        "Rewrite the GPT partition table at each boot",
+        "Convert MBR systems to UEFI automatically"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which system mode is described as a minimal environment with a root shell?",
+      "answers": [
+        "Single-user mode",
+        "Multiuser mode",
+        "Server mode",
+        "Maintenance GUI mode"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Multiuser mode typically includes which behavior according to the slides?",
+      "answers": [
+        "Customary filesystems mounted and configured network services",
+        "Only kernel processes without user space",
+        "No filesystems mounted at all",
+        "Only a root shell with no services"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In multiuser mode, what may be running on the console as mentioned in the slides?",
+      "answers": [
+        "Window system and graphical login manager",
+        "Only BIOS setup menu",
+        "Only boot loader prompt",
+        "Only kernel panic handler"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Server mode is described as similar to multiuser mode but with:",
+      "answers": [
+        "No GUI running on the console",
+        "Only one user allowed to log in",
+        "No network services configured",
+        "No filesystems mounted"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is an init startup chore listed in the slides?",
+      "answers": [
+        "Setting the name of the computer",
+        "Building container images",
+        "Installing GPU drivers from source",
+        "Rotating SSL certificates automatically"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init startup chore relates to time configuration?",
+      "answers": [
+        "Setting the time zone",
+        "Setting the MTU",
+        "Setting the DHCP lease time",
+        "Setting the TCP window size"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore checks disks for consistency?",
+      "answers": [
+        "Checking disks with fsck",
+        "Updating kernel modules with modprobe",
+        "Encrypting disks with gpg",
+        "Formatting disks with mkfs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore makes filesystems available for use?",
+      "answers": [
+        "Mounting filesystems",
+        "Unloading the kernel",
+        "Compiling system firmware",
+        "Creating a new partition table"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore cleans up temporary space according to the slides?",
+      "answers": [
+        "Removing old files from /tmp",
+        "Deleting /etc permanently",
+        "Clearing kernel modules",
+        "Erasing user home directories"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore is directly about networking setup?",
+      "answers": [
+        "Configuring network interfaces",
+        "Rebuilding the boot loader",
+        "Rewriting the partition table",
+        "Replacing system firmware"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore relates to firewalling/traffic control?",
+      "answers": [
+        "Configuring packet filters",
+        "Recompiling the kernel",
+        "Defragmenting the filesystem",
+        "Disabling all network devices"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which init chore starts background services for system functionality?",
+      "answers": [
+        "Starting up other daemons and network services",
+        "Probing motherboard devices",
+        "Selecting boot device priority",
+        "Loading bootstrapping code from ROM"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Run levels are described as:",
+      "answers": [
+        "System modes",
+        "Partition tables",
+        "Kernel boot arguments",
+        "Network interface names"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is shown as an example for changing run level?",
+      "answers": [
+        "init 3",
+        "boot 3",
+        "level 3",
+        "runlevel 3"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In systemd, what concept is used similarly to run levels?",
+      "answers": [
+        "Targets",
+        "Volumes",
+        "Sockets only",
+        "Cronjobs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which system component is mentioned as being managed by systemd besides init-like tasks?",
+      "answers": [
+        "Network connections (networkd)",
+        "DNS zone signing keys",
+        "BIOS flash updates",
+        "TCP congestion control algorithms"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which systemd component is mentioned for managing kernel log entries?",
+      "answers": [
+        "journald",
+        "syslogd",
+        "rsyncd",
+        "named"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which systemd component is mentioned for managing logins?",
+      "answers": [
+        "logind",
+        "loginctl",
+        "passwd",
+        "getty"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is associated with managing systemd services/targets?",
+      "answers": [
+        "systemctl",
+        "bootctl",
+        "firmctl",
+        "kernctl"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches the relationship between systemd and init in the slides?",
+      "answers": [
+        "systemd is similar to init but provides additional management features",
+        "systemd is a boot loader that replaces GRUB",
+        "systemd is the system firmware stored in ROM",
+        "systemd is a disk checking tool like fsck"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which stage of boot is responsible for identifying and loading the OS kernel?",
+      "answers": [
+        "Boot loader",
+        "System firmware only",
+        "Graphical login manager",
+        "User shell"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which stage is responsible for finding and running bootstrapping code at the start of boot?",
+      "answers": [
+        "System firmware",
+        "Application daemon",
+        "Web server",
+        "User-level editor"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which stage comes immediately after firmware finds the next bootstrapping stage?",
+      "answers": [
+        "Boot loader runs",
+        "Graphical desktop starts",
+        "Users log in",
+        "Database services automatically restore"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is NOT described as a firmware responsibility in the slides?",
+      "answers": [
+        "Starting up other daemons and network services",
+        "Probing for hardware and disks",
+        "Running simple health checks",
+        "Looking for the next stage of bootstrapping code"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following best describes why init is important after kernel initialization?",
+      "answers": [
+        "It transitions the system into the correct operational mode by starting services",
+        "It replaces the partition table with GPT",
+        "It runs from ROM before the kernel",
+        "It compiles the kernel into memory"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operational mode is most likely intended for troubleshooting with minimal services?",
+      "answers": [
+        "Single-user mode",
+        "Multiuser mode",
+        "Server mode with GUI",
+        "Firmware setup mode"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operational mode is most appropriate for a system meant to run services without a desktop UI?",
+      "answers": [
+        "Server mode",
+        "Single-user mode",
+        "Firmware boot menu mode",
+        "Boot loader recovery mode"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which booting method (BIOS vs UEFI) is associated with GPT and ESP?",
+      "answers": [
+        "UEFI",
+        "Legacy BIOS",
+        "Both always use MBR only",
+        "Neither uses partitions"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which booting method (BIOS vs UEFI) is associated with MBR and an active partition?",
+      "answers": [
+        "Legacy BIOS",
+        "UEFI",
+        "Both always use GPT only",
+        "Neither uses a boot loader"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following best matches the slide’s definition of a boot loader function?",
+      "answers": [
+        "Set kernel configuration arguments and load the kernel",
+        "Probe motherboard devices and run health checks",
+        "Manage kernel log entries and user logins",
+        "Configure DNS records and route IP packets"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the slide’s boot process sequence, which item logically happens before running startup scripts and daemons?",
+      "answers": [
+        "Finding, loading, and running the OS kernel",
+        "Maintaining process hygiene",
+        "Removing old files from /tmp",
+        "Configuring packet filters"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is a correct example of a system management daemon concept mentioned in the slides?",
+      "answers": [
+        "init (PID 1)",
+        "GRUB (PID 1)",
+        "UEFI (PID 1)",
+        "fsck (PID 1)"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches what the slides say about init?",
+      "answers": [
+        "init is a user-level program that is still critically important",
+        "init is stored in ROM and runs before firmware",
+        "init is only used on UEFI systems",
+        "init is a network protocol"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is an example of a reboot/shutdown-related command mentioned in the slides?",
+      "answers": [
+        "reboot",
+        "mkfs",
+        "chmod",
+        "dig"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command listed in the slides is used to stop the system?",
+      "answers": [
+        "halt",
+        "mount",
+        "grep",
+        "echo"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command listed in the slides is used to restart the system?",
+      "answers": [
+        "reboot",
+        "fsck",
+        "init",
+        "systemd"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command listed in the slides is used for shutdown operations?",
+      "answers": [
+        "shutdown",
+        "systemctl",
+        "grub",
+        "gpt"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is the best description of what system firmware does before handing off booting?",
+      "answers": [
+        "Runs checks and selects the next bootstrapping stage based on boot device settings",
+        "Runs user login sessions for all users",
+        "Starts application services and databases",
+        "Manages all kernel logs using journald"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which concept is explicitly said to be similar to run levels in systemd?",
+      "answers": [
+        "Targets",
+        "Partitions",
+        "Volumes",
+        "Sockets only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which systemd component name is associated with networking in the slides?",
+      "answers": [
+        "networkd",
+        "named",
+        "netstatd",
+        "routeind"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which systemd component name is associated with kernel logs in the slides?",
+      "answers": [
+        "journald",
+        "kernlogd",
+        "dmesgd",
+        "logrotate"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which systemd component name is associated with logins in the slides?",
+      "answers": [
+        "logind",
+        "sshd",
+        "sudod",
+        "mountd"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is most directly used to manage systemd units/targets?",
+      "answers": [
+        "systemctl",
+        "initctl",
+        "bootctl",
+        "kernctl"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following tasks is explicitly listed as a boot process task (broadly defined)?",
+      "answers": [
+        "Finding, loading, and running bootstrapping code",
+        "Configuring user browser cookies",
+        "Building Docker images",
+        "Registering a DNS domain name"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following tasks is explicitly listed as a boot process task (broadly defined)?",
+      "answers": [
+        "Finding, loading, and running the OS kernel",
+        "Running DHCP lease negotiation",
+        "Starting a web browser session",
+        "Installing new packages from apt"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following tasks is explicitly listed as a boot process task (broadly defined)?",
+      "answers": [
+        "Running startup scripts and system daemons",
+        "Registering DNS NS records",
+        "Building container union filesystems",
+        "Creating users and groups"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which term best matches the slide description of 'system management daemon'?",
+      "answers": [
+        "init",
+        "ESP",
+        "GPT",
+        "MBR"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches the slide description of system firmware knowledge?",
+      "answers": [
+        "Firmware typically knows about all devices that live on the motherboard",
+        "Firmware is unaware of disks until users log in",
+        "Firmware only handles network services",
+        "Firmware is the same thing as the boot loader"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is the best example of something init may do during transition to multiuser mode?",
+      "answers": [
+        "Configure network interfaces",
+        "Rewrite ROM firmware",
+        "Change MBR into GPT automatically",
+        "Disable all daemons permanently"
+      ],
+      "correct_answer": 0
+    }
+  ]
+  

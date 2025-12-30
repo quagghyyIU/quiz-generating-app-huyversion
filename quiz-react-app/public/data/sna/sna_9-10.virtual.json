@@ -1,0 +1,483 @@
+[
+    {
+      "question": "What is the primary purpose of virtualization?",
+      "answers": [
+        "Allow multiple operating systems to run on a single physical machine",
+        "Replace the host operating system",
+        "Eliminate the need for hardware",
+        "Disable kernel isolation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which component is responsible for creating and managing virtual machines?",
+      "answers": [
+        "Hypervisor",
+        "Kernel module only",
+        "Boot loader",
+        "System firmware"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which type of hypervisor runs directly on physical hardware?",
+      "answers": [
+        "Type 1 (bare-metal)",
+        "Type 2 (hosted)",
+        "Application-level",
+        "Container runtime"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which type of hypervisor runs on top of a host operating system?",
+      "answers": [
+        "Type 2 (hosted)",
+        "Type 1 (bare-metal)",
+        "Firmware hypervisor",
+        "Kernel-only hypervisor"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is an example of a Type 1 hypervisor?",
+      "answers": [
+        "VMware ESXi",
+        "VirtualBox",
+        "VMware Workstation",
+        "Docker"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is an example of a Type 2 hypervisor?",
+      "answers": [
+        "VirtualBox",
+        "VMware ESXi",
+        "Xen",
+        "Hyper-V Server"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best distinguishes Type 1 and Type 2 hypervisors?",
+      "answers": [
+        "Type 1 runs on hardware; Type 2 runs on a host OS",
+        "Type 1 is slower than Type 2",
+        "Type 2 requires no host OS",
+        "Type 2 provides stronger isolation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is a virtual machine (VM)?",
+      "answers": [
+        "A software emulation of a physical computer",
+        "A container image",
+        "A kernel process only",
+        "A system firmware snapshot"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which component inside a VM provides hardware abstraction to the guest OS?",
+      "answers": [
+        "Virtual hardware",
+        "Host kernel",
+        "System firmware",
+        "Container runtime"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operating system runs inside a virtual machine?",
+      "answers": [
+        "Guest OS",
+        "Host OS",
+        "Firmware OS",
+        "Hypervisor OS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operating system controls the physical hardware?",
+      "answers": [
+        "Host OS",
+        "Guest OS",
+        "Application OS",
+        "Virtual OS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which CPU feature enables efficient virtualization?",
+      "answers": [
+        "Hardware virtualization extensions (Intel VT-x / AMD-V)",
+        "Hyper-threading",
+        "CPU cache",
+        "NUMA topology"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What problem did early virtualization techniques face without hardware support?",
+      "answers": [
+        "High performance overhead",
+        "Lack of networking",
+        "No disk storage",
+        "No user interface"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which technique translates guest instructions into host instructions dynamically?",
+      "answers": [
+        "Binary translation",
+        "Container isolation",
+        "Direct execution",
+        "Static compilation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization technique allows guest OS to be aware it is virtualized?",
+      "answers": [
+        "Paravirtualization",
+        "Full virtualization",
+        "Containerization",
+        "Hardware-only virtualization"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization technique requires no modification to the guest OS?",
+      "answers": [
+        "Full virtualization",
+        "Paravirtualization",
+        "OS-level virtualization",
+        "Process virtualization"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization technique typically offers better performance but requires guest OS modification?",
+      "answers": [
+        "Paravirtualization",
+        "Full virtualization",
+        "Emulation",
+        "Containerization"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization approach is used by containers?",
+      "answers": [
+        "OS-level virtualization",
+        "Hardware virtualization",
+        "Full system emulation",
+        "Firmware virtualization"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which resource is virtualized by the hypervisor?",
+      "answers": [
+        "CPU",
+        "Kernel source code",
+        "User passwords",
+        "DNS zones"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which resource is virtualized by the hypervisor?",
+      "answers": [
+        "Memory",
+        "Filesystem permissions",
+        "Network protocols",
+        "Shell environment variables"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which resource is virtualized by the hypervisor?",
+      "answers": [
+        "Disk storage",
+        "User authentication",
+        "Kernel logging",
+        "Process signals"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is a virtual disk?",
+      "answers": [
+        "A file representing a disk image used by a VM",
+        "A physical SSD",
+        "A network share only",
+        "A kernel buffer"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtual disk format is commonly used by VMware?",
+      "answers": [
+        "VMDK",
+        "QCOW2",
+        "RAW",
+        "ISO"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtual disk format is commonly used by QEMU/KVM?",
+      "answers": [
+        "QCOW2",
+        "VMDK",
+        "VDI",
+        "IMGX"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtual disk feature supports snapshots and copy-on-write?",
+      "answers": [
+        "QCOW2",
+        "RAW",
+        "ISO",
+        "FAT32"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is a snapshot in virtualization?",
+      "answers": [
+        "A saved state of a virtual machine at a point in time",
+        "A backup of host firmware",
+        "A copy of kernel source",
+        "A network traffic capture"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operation allows reverting a VM to a previous state?",
+      "answers": [
+        "Snapshot restore",
+        "Live migration",
+        "Cloning",
+        "Bridging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is VM cloning?",
+      "answers": [
+        "Creating a new VM from an existing VM or template",
+        "Migrating a VM to another host",
+        "Backing up the host OS",
+        "Copying kernel modules"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization feature allows moving a running VM between hosts?",
+      "answers": [
+        "Live migration",
+        "Snapshotting",
+        "Cloning",
+        "Checkpointing"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary benefit of live migration?",
+      "answers": [
+        "Minimal downtime during maintenance",
+        "Faster boot times",
+        "Stronger isolation",
+        "Reduced disk usage"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network mode connects VMs directly to the physical network?",
+      "answers": [
+        "Bridged networking",
+        "NAT networking",
+        "Host-only networking",
+        "Loopback networking"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network mode allows VMs to access external networks using the host’s IP?",
+      "answers": [
+        "NAT",
+        "Bridged",
+        "Host-only",
+        "Isolated"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network mode isolates VMs from external networks?",
+      "answers": [
+        "Host-only networking",
+        "Bridged networking",
+        "NAT networking",
+        "Routed networking"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization benefit improves hardware utilization?",
+      "answers": [
+        "Server consolidation",
+        "Firmware abstraction",
+        "Network encryption",
+        "Kernel recompilation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization benefit improves disaster recovery?",
+      "answers": [
+        "Snapshots and VM backups",
+        "Kernel patching",
+        "DNS caching",
+        "ARP tables"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization benefit simplifies testing and development?",
+      "answers": [
+        "Rapid provisioning of VMs",
+        "Hardware replacement",
+        "Manual configuration",
+        "Static IP assignment"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization drawback relates to performance?",
+      "answers": [
+        "Overhead compared to bare metal",
+        "No isolation",
+        "No scalability",
+        "No automation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization drawback relates to complexity?",
+      "answers": [
+        "Increased management overhead",
+        "No hardware abstraction",
+        "Lack of snapshots",
+        "No security controls"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which security risk exists if a hypervisor is compromised?",
+      "answers": [
+        "All hosted VMs may be affected",
+        "Only one process is affected",
+        "Only network traffic is lost",
+        "Only logs are corrupted"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which practice improves virtualization security?",
+      "answers": [
+        "Keeping hypervisors patched",
+        "Running all VMs as root",
+        "Disabling isolation",
+        "Sharing disk images freely"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which practice improves virtualization security?",
+      "answers": [
+        "Minimizing attack surface of the host",
+        "Disabling authentication",
+        "Allowing unrestricted access",
+        "Ignoring VM isolation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization feature allows running different OS types on the same host?",
+      "answers": [
+        "Hardware virtualization",
+        "Containerization",
+        "OS-level virtualization",
+        "User namespaces"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which technology is often used as the foundation of cloud computing?",
+      "answers": [
+        "Virtualization",
+        "Firmware booting",
+        "Static linking",
+        "Manual provisioning"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which cloud service model relies heavily on virtualization?",
+      "answers": [
+        "Infrastructure as a Service (IaaS)",
+        "Software as a Service (SaaS)",
+        "Email as a Service",
+        "DNS as a Service"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization concept allows preconfigured VM creation?",
+      "answers": [
+        "Templates",
+        "Snapshots",
+        "Bridges",
+        "Namespaces"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization component schedules CPU time for VMs?",
+      "answers": [
+        "Hypervisor scheduler",
+        "Guest OS scheduler only",
+        "Firmware scheduler",
+        "Container runtime"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which virtualization feature enables isolation between VMs?",
+      "answers": [
+        "Hardware and hypervisor-enforced isolation",
+        "Shared user accounts",
+        "Shared kernel space",
+        "Shared memory without controls"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best summarizes virtualization?",
+      "answers": [
+        "Virtualization abstracts physical hardware to run multiple isolated systems",
+        "Virtualization removes the need for operating systems",
+        "Virtualization disables networking",
+        "Virtualization replaces containers"
+      ],
+      "correct_answer": 0
+    }
+  ]
+  

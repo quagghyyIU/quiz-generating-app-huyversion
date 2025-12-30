@@ -1,0 +1,703 @@
+[
+    {
+      "question": "What is the primary purpose of administrative scripting in system administration?",
+      "answers": [
+        "Increase programmer efficiency by automating repetitive tasks",
+        "Replace all configuration management systems",
+        "Make scripts computationally optimal",
+        "Eliminate the need for documentation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which approach is recommended for writing administrative scripts?",
+      "answers": [
+        "Write microscripts (small scriptlets) for specific chores",
+        "Always build one large monolithic script",
+        "Optimize performance first, then clarity",
+        "Avoid using comments to keep scripts short"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file descriptor number represents STDERR?",
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which symbol connects the STDOUT of one command to the STDIN of another?",
+      "answers": [
+        "&&",
+        "|",
+        ">",
+        "<"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which redirection sends only STDERR to a file?",
+      "answers": [
+        "> file",
+        "2> file",
+        ">& file",
+        "< file"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which redirection appends STDOUT to an existing file (rather than overwriting)?",
+      "answers": [
+        ">",
+        "2>",
+        "<<",
+        ">>"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which operator executes the next command only if the previous command succeeds?",
+      "answers": [
+        ";",
+        "||",
+        "&&",
+        "|"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which operator executes the next command only if the previous command fails?",
+      "answers": [
+        "||",
+        "&&",
+        ";",
+        "&"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command prints the current environment variables?",
+      "answers": [
+        "printenv",
+        "envset",
+        "export",
+        "setenv"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "By convention, environment variable names are typically written as:",
+      "answers": [
+        "all-lowercase",
+        "camelCase",
+        "ALL-CAPS",
+        "kebab-case"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which command promotes a shell variable to an environment variable for child processes?",
+      "answers": [
+        "export",
+        "declare",
+        "source",
+        "eval"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is the most reliable way to display the currently running shell name?",
+      "answers": [
+        "echo \"$SHELL\"",
+        "ps -p $$",
+        "echo $PATH",
+        "cat ~/.profile"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command changes your login shell?",
+      "answers": [
+        "chsh -s /bin/zsh",
+        "shell --set zsh",
+        "setsh zsh",
+        "loginsh -c zsh"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about quoting is correct?",
+      "answers": [
+        "Single quotes allow variable expansion",
+        "Double quotes prevent variable expansion",
+        "Double quotes allow variable expansion",
+        "Backticks disable command substitution"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What is the primary purpose of backticks ( `command` ) in the shell?",
+      "answers": [
+        "Escape special characters",
+        "Perform command substitution",
+        "Disable globbing",
+        "Define functions"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which best describes globbing in the shell?",
+      "answers": [
+        "Expansion of filename-matching patterns like * and ?",
+        "Matching text using regular expressions",
+        "Encrypting command output",
+        "Redirecting STDERR"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool is used to split lines into fields based on a delimiter?",
+      "answers": [
+        "cut",
+        "uniq",
+        "wc",
+        "tee"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command sorts lines and can remove duplicates with -u?",
+      "answers": [
+        "sort",
+        "uniq",
+        "grep",
+        "head"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command counts lines, words, and characters in a file?",
+      "answers": [
+        "wc",
+        "cut",
+        "sort",
+        "tee"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command copies standard input to both standard output and a file?",
+      "answers": [
+        "tee",
+        "tail",
+        "uniq",
+        "printf"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which option makes grep ignore case?",
+      "answers": [
+        "-c",
+        "-i",
+        "-v",
+        "-l"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which grep option prints non-matching lines?",
+      "answers": [
+        "-l",
+        "-v",
+        "-c",
+        "-n"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What does grep -c output?",
+      "answers": [
+        "Only the names of matching files",
+        "A count of matching lines",
+        "Non-matching lines only",
+        "Lines with line numbers"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which option makes grep print only the names of files with matches?",
+      "answers": [
+        "-l",
+        "-v",
+        "-c",
+        "-i"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does tail -f do?",
+      "answers": [
+        "Prints the first lines of a file",
+        "Follows a file and prints new lines as they are appended",
+        "Filters lines that match a regex",
+        "Sorts a file in reverse"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In shell scripts, which character begins a comment (to end of line)?",
+      "answers": [
+        "//",
+        "#",
+        ";",
+        "--"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the main purpose of the shebang line (e.g., #!/bin/sh)?",
+      "answers": [
+        "Declare the script’s interpreter",
+        "Enable root privileges",
+        "Force execution in the current shell",
+        "Disable variable expansion"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command turns on execute permission for a script file?",
+      "answers": [
+        "chmod +x script.sh",
+        "chown +x script.sh",
+        "exec script.sh",
+        "permit +x script.sh"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about invoking a script is correct?",
+      "answers": [
+        "Running sh script.sh executes it in the current shell process",
+        "Running ./script.sh executes it as a program (new process)",
+        "Shebang is ignored when using ./script.sh",
+        "chmod +x is not required if a shebang exists"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In a shell script, what does $0 represent?",
+      "answers": [
+        "The number of arguments",
+        "The script name as invoked",
+        "The first argument",
+        "The exit status of the last command"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In a shell script, what does $# represent?",
+      "answers": [
+        "The PID of the current process",
+        "The number of positional parameters",
+        "The value of the last argument",
+        "The current working directory"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which positional parameter is the second command-line argument?",
+      "answers": [
+        "$0",
+        "$1",
+        "$2",
+        "$#"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What does an exit code of 0 typically mean?",
+      "answers": [
+        "Failure",
+        "Success",
+        "Syntax error",
+        "Permission denied"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Where should error messages be printed according to best practices?",
+      "answers": [
+        "STDOUT",
+        "STDERR",
+        "A random temp file",
+        "/dev/null"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which bash option prints each command before executing it (useful for debugging)?",
+      "answers": [
+        "-n",
+        "-x",
+        "-c",
+        "-u"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which bash option checks syntax without executing commands?",
+      "answers": [
+        "-n",
+        "-x",
+        "-v",
+        "-p"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is the correct way to safely reference a variable next to text?",
+      "answers": [
+        "$varnameText",
+        "${varname}Text",
+        "$(varname)Text",
+        "@varnameText"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about variable assignments in sh is correct?",
+      "answers": [
+        "Spaces are allowed around = in assignments",
+        "Variables are untyped strings in sh",
+        "Variables must be declared with var keyword",
+        "Variables cannot be exported"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which test checks if a string is NOT null in sh?",
+      "answers": [
+        "[ -n \"$s\" ]",
+        "[ -z \"$s\" ]",
+        "[ -f \"$s\" ]",
+        "[ -d \"$s\" ]"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file test operator checks if a path is a directory?",
+      "answers": [
+        "-f",
+        "-d",
+        "-x",
+        "-n"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which file test operator checks if a file exists and is a regular file?",
+      "answers": [
+        "-d",
+        "-f",
+        "-z",
+        "-r"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which file test operator checks if a file is executable?",
+      "answers": [
+        "-x",
+        "-w",
+        "-s",
+        "-e"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which construct is commonly used for multi-branch selection in sh scripts?",
+      "answers": [
+        "switch...case",
+        "case ... in",
+        "choose ... when",
+        "if ... elif ... fi only"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which loop iterates over a list of values (often from globbing) in sh?",
+      "answers": [
+        "for ... in",
+        "until ... do",
+        "select ... in",
+        "repeat ... while"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "If you omit the list in a for loop, what does it iterate over by default?",
+      "answers": [
+        "All files in the directory",
+        "The script’s positional parameters",
+        "The system environment variables",
+        "Only numeric values"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which loop is especially useful for reading lines from a file?",
+      "answers": [
+        "for ... in",
+        "while read line; do ...; done",
+        "case ... in",
+        "if ... then"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which redirection commonly feeds a file into a loop or command as STDIN?",
+      "answers": [
+        "> file",
+        "< file",
+        "2> file",
+        "| file"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What does $(( ... )) do in shell scripts?",
+      "answers": [
+        "Performs command substitution",
+        "Forces arithmetic (numeric) evaluation",
+        "Performs regex matching",
+        "Disables globbing"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about arithmetic in sh is correct?",
+      "answers": [
+        "sh variables are numeric by default",
+        "sh distinguishes between 1 and \"1\" automatically",
+        "sh variables are string-valued; arithmetic needs explicit evaluation",
+        "Arithmetic is impossible in sh"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which command combination redirects both STDOUT and STDERR to the same file (traditional syntax)?",
+      "answers": [
+        "command >file 2>&1",
+        "command 2>file 1>&2",
+        "command <file >2",
+        "command >>file <&2"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the purpose of 1>&2 in a script?",
+      "answers": [
+        "Send STDOUT to STDERR",
+        "Send STDERR to STDOUT",
+        "Append output to a file",
+        "Pipe output to another command"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is the correct way to break a long command across multiple lines in sh?",
+      "answers": [
+        "End the line with a comma",
+        "End the line with a backslash (\\)",
+        "Use two semicolons",
+        "Put the command in single quotes"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about spaces in filenames is correct?",
+      "answers": [
+        "Spaces are not allowed in Unix filenames",
+        "You must escape spaces or quote the path",
+        "Spaces automatically become underscores",
+        "Only root can create spaceful filenames"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command creates a directory and then changes into it only if mkdir succeeds?",
+      "answers": [
+        "mkdir foo; cd foo",
+        "mkdir foo && cd foo",
+        "mkdir foo || cd foo",
+        "cd foo && mkdir foo"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command prints unique lines and counts duplicates when combined properly?",
+      "answers": [
+        "sort | uniq -c",
+        "uniq -c | sort",
+        "wc -c | uniq",
+        "cut -c | uniq"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best describes regular expressions vs shell globbing?",
+      "answers": [
+        "Globbing is regex matching",
+        "Regex matching is performed by the shell automatically",
+        "Globbing and regex are different; shell filename expansion is not regex",
+        "Regex can only match filenames"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In regex, what do the anchors ^ and $ represent?",
+      "answers": [
+        "Start of line and end of line",
+        "Any whitespace and any digit",
+        "One or more and zero or more",
+        "Literal caret and literal dollar"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which regex matches exactly a 5-digit ZIP code (US)?",
+      "answers": [
+        "^\\d{5}$",
+        "\\d{5}",
+        "^\\d+$",
+        "\\d{5}$\\d"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which regex matches either a 5-digit ZIP or ZIP+4 (e.g., 12345-6789)?",
+      "answers": [
+        "^\\d{5}(-\\d{4})?$",
+        "^\\d{5}-\\d{4}$",
+        "\\d{5}(-\\d{4})+",
+        "^\\d{9}$"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In regex, what does * mean?",
+      "answers": [
+        "Match exactly one character",
+        "Match zero or more of the previous token",
+        "Match one or more of the previous token",
+        "Match the start of a line"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In regex, what does ? mean after a token or group?",
+      "answers": [
+        "Match the previous token exactly twice",
+        "Make the previous token optional (zero or one)",
+        "Match any whitespace",
+        "Match a literal question mark only"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which regex feature creates a capture group?",
+      "answers": [
+        "Square brackets [ ]",
+        "Parentheses ( )",
+        "Curly braces { }",
+        "Angle brackets < >"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "When a regex match succeeds, capture groups are returned in which order?",
+      "answers": [
+        "By the order of closing parentheses",
+        "By the order of opening parentheses",
+        "Alphabetical by group name",
+        "Random order depending on engine"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about regex matching is correct?",
+      "answers": [
+        "A match can span multiple non-contiguous parts of text",
+        "The entire pattern must match the entire string always",
+        "A successful match must cover a contiguous section of the text",
+        "Regex matching ignores case by default"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which command displays the names of login shells from /etc/passwd when combined correctly?",
+      "answers": [
+        "cut -d: -f7 /etc/passwd | sort -u",
+        "grep -d: -f7 /etc/passwd | uniq",
+        "sort -d: -f7 /etc/passwd | cut -u",
+        "wc -d: -f7 /etc/passwd | sort -u"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command sorts human-readable sizes correctly (e.g., from du -sh)?",
+      "answers": [
+        "sort -h",
+        "sort -n",
+        "sort -u",
+        "sort -t"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command finds files named core while suppressing permission errors?",
+      "answers": [
+        "find / -name core 2> /dev/null",
+        "find / -name core > /dev/null 2> core",
+        "find / -name core >& /dev/null",
+        "find / -name core < /dev/null"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about best practices is correct?",
+      "answers": [
+        "Scripts should silently continue on invalid arguments",
+        "Scripts should validate inputs and return meaningful exit codes",
+        "Scripts should avoid usage messages to reduce output",
+        "Scripts should be setuid whenever root access is needed"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why is making scripts setuid generally discouraged?",
+      "answers": [
+        "It prevents scripts from running",
+        "It can create serious security risks",
+        "It breaks variable expansion",
+        "It disables pipes and redirection"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which best describes the recommended optimization priority for admin scripts?",
+      "answers": [
+        "Computational efficiency over everything",
+        "Code clarity and admin productivity over premature optimization",
+        "Obfuscation to prevent others reading it",
+        "Always use C for speed"
+      ],
+      "correct_answer": 1
+    }
+  ]
+  

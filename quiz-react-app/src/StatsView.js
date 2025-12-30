@@ -15,14 +15,30 @@ function StatsView() {
     fetch(`${process.env.PUBLIC_URL}/data/index.json`)
       .then((response) => {
         if (!response.ok) {
-          console.error("Error fetching quiz list:", response.statusText);
-          setLoading(false);
-          return;
+          throw new Error(`Failed to fetch quiz list: ${response.statusText}`);
         }
         return response.json();
       })
       .then((data) => {
-        setQuizFiles(data.files);
+        // Flatten all quiz files from folder structure
+        // Each file needs folder info for correct path and unique key
+        const allQuizFiles = [];
+        if (data.folders && Array.isArray(data.folders)) {
+          data.folders.forEach(folder => {
+            if (folder.files && Array.isArray(folder.files)) {
+              folder.files.forEach(file => {
+                allQuizFiles.push({
+                  filename: file,
+                  folderId: folder.id,
+                  folderName: folder.name,
+                  // Unique key for localStorage: folderId/filename
+                  quizKey: `${folder.id}/${file}`
+                });
+              });
+            }
+          });
+        }
+        setQuizFiles(allQuizFiles);
         setLoading(false);
       })
       .catch((error) => {
@@ -34,24 +50,25 @@ function StatsView() {
   // Update document title based on selected quiz or stats page
   useEffect(() => {
     if (selectedQuiz) {
-      const quizName = selectedQuiz.replace(".json", "");
-      document.title = `${quizName} - Stats`;
+      // Extract just the filename part for display
+      const displayName = selectedQuiz.split('/').pop().replace(".json", "");
+      document.title = `${displayName} - Stats`;
     } else {
       document.title = "Quiz - Stats";
     }
   }, [selectedQuiz]);
 
-  const handleQuizSelect = (filename) => {
-    setSelectedQuiz(filename);
+  const handleQuizSelect = (quizKey) => {
+    setSelectedQuiz(quizKey);
   };
 
   const handleBack = () => {
     setSelectedQuiz(null);
   };
 
-  // Get stats summary for each quiz
-  const getQuizStatsSummary = (filename) => {
-    const history = getQuizHistory(filename);
+  // Get stats summary for each quiz using the unique quizKey
+  const getQuizStatsSummary = (quizKey) => {
+    const history = getQuizHistory(quizKey);
     if (history.length === 0) {
       return null;
     }
@@ -65,13 +82,15 @@ function StatsView() {
 
   // If a quiz is selected, show its stats
   if (selectedQuiz) {
+    // Extract display name from quizKey (folderId/filename.json -> filename)
+    const displayName = selectedQuiz.split('/').pop().replace(".json", "");
     return (
       <div className="stats-view-container">
         <div className="stats-header">
           <button onClick={handleBack} className="back-button">
             ← BACK TO STATS LIST
           </button>
-          <h2>Stats for: {selectedQuiz.replace(".json", "")}</h2>
+          <h2>Stats for: {displayName}</h2>
         </div>
         <PerformanceStats quizName={selectedQuiz} />
       </div>
@@ -87,13 +106,19 @@ function StatsView() {
       </p>
 
       <div className="quiz-cards">
-        {quizFiles.map((file, index) => {
-          const stats = getQuizStatsSummary(file);
+        {quizFiles.map((quizItem, index) => {
+          // Use the unique quizKey for stats lookup
+          const stats = getQuizStatsSummary(quizItem.quizKey);
+          // Check for fast mode stats
+          const fastModeStats = getQuizStatsSummary(quizItem.quizKey + '__quick__');
+
           const hasHistory = stats !== null;
+          const hasFastMode = fastModeStats !== null;
 
           return (
             <div key={index} className="quiz-card">
-              <h3 className="quiz-card-title">{file.replace(".json", "")}</h3>
+              <h3 className="quiz-card-title">{quizItem.filename.replace(".json", "")}</h3>
+              <div className="quiz-folder-badge">{quizItem.folderName}</div>
               {hasHistory ? (
                 <div className="quiz-stats-preview">
                   <div className="stat-preview-item">
@@ -115,34 +140,47 @@ function StatsView() {
                 </div>
               ) : (
                 <div className="no-stats-message">
-                  <p>No attempts yet</p>
+                  <p>No full quiz attempts yet</p>
                 </div>
               )}
-              <button
-                onClick={() => handleQuizSelect(file)}
-                className="view-stats-button"
-              >
-                {hasHistory ? "VIEW STATS" : "VIEW DETAILS"}
-              </button>
+
+              <div className="card-actions" style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%', marginTop: '15px' }}>
+                <button
+                  onClick={() => handleQuizSelect(quizItem.quizKey)}
+                  className="view-stats-button"
+                >
+                  {hasHistory ? "VIEW FULL STATS" : "VIEW DETAILS"}
+                </button>
+
+                {hasFastMode && (
+                  <button
+                    onClick={() => handleQuizSelect(quizItem.quizKey + '__quick__')}
+                    className="view-stats-button"
+                    style={{ backgroundColor: '#2196f3', opacity: 0.9 }}
+                  >
+                    🚀 VIEW FAST MODE STATS
+                  </button>
+                )}
+              </div>
             </div>
           );
         })}
       </div>
 
-      {quizFiles.filter((file) => getQuizStatsSummary(file) !== null).length ===
+      {quizFiles.filter((quizItem) => getQuizStatsSummary(quizItem.quizKey) !== null).length ===
         0 && (
-        <div className="no-history-message">
-          <p>🎯 You haven't taken any quizzes yet!</p>
-          <p>Start taking quizzes to see your performance statistics here.</p>
-          <button
-            onClick={() => navigate("/")}
-            className="start-quiz-button"
-            style={{ marginTop: "20px" }}
-          >
-            GO TO QUIZ LIST
-          </button>
-        </div>
-      )}
+          <div className="no-history-message">
+            <p>🎯 You haven't taken any quizzes yet!</p>
+            <p>Start taking quizzes to see your performance statistics here.</p>
+            <button
+              onClick={() => navigate("/")}
+              className="start-quiz-button"
+              style={{ marginTop: "20px" }}
+            >
+              GO TO QUIZ LIST
+            </button>
+          </div>
+        )}
     </div>
   );
 }

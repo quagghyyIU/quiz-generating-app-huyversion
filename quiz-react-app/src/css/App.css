@@ -52,7 +52,7 @@
 /* General App Styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,13 +60,15 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
 }
 
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure footer stays at bottom */
+  min-height: 100vh;
+  /* Ensure footer stays at bottom */
 }
 
 .App-logo {
@@ -93,7 +95,7 @@ body {
 .App-header h1 {
   margin: 0;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -120,11 +122,13 @@ body {
 }
 
 main {
-  flex-grow: 1; /* Allow main content to expand */
+  flex-grow: 1;
+  /* Allow main content to expand */
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align quiz to the top */
+  align-items: flex-start;
+  /* Align quiz to the top */
   width: 100%;
   box-sizing: border-box;
 }
@@ -143,6 +147,7 @@ main {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -164,5 +169,5 @@ main {
 
 .error-message {
   color: var(--error-color);
-  font-weight: bold;
+  font-weight: 600;
 }

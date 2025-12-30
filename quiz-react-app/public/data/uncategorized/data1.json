@@ -1,0 +1,52 @@
+[
+    {
+      "question": "What does the YAML value `0123` evaluate to?",
+      "answers": [
+        "The string '0123'",
+        "The integer 123",
+        "The octal value 83",
+        "The hexadecimal value 291"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "How is the boolean value `true` typically represented in YAML?",
+      "answers": [
+        "TRUE",
+        "1",
+        "True",
+        "true"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which symbol can represent a null value in YAML, besides `null`?",
+      "answers": [
+        "?",
+        "!",
+        "~",
+        "%"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Can keys in a YAML map contain spaces?",
+      "answers": [
+        "Yes, without any special handling",
+        "Yes, but they must be enclosed in quotes",
+        "Yes, but spaces must be escaped with backslashes",
+        "No, keys cannot contain spaces"
+      ],
+      "correct_answer": 0
+    },
+    {
+        "question": "What is the primary difference in how newlines are handled between literal style (`|`) and folded style (`>`) block scalars?",
+        "answers": [
+            "Literal preserves newlines, Folded removes them.",
+            "Literal removes newlines, Folded preserves them.",
+            "Literal preserves newlines, Folded replaces most with spaces.",
+            "Literal replaces newlines with spaces, Folded preserves them."
+        ],
+        "correct_answer": 2
+    }
+  ]

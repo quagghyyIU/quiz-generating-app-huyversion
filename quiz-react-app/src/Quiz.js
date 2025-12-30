@@ -9,25 +9,39 @@ function Quiz() {
   const location = useLocation();
   const navigate = useNavigate(); // Hook for navigation
   const selectedQuiz = location.state?.selectedQuiz; // Removed default 'data.json'
+  const folderPath = location.state?.folderPath; // Folder path for physical folder structure
 
-  // Redirect if no quiz is selected (e.g., direct navigation to /quiz)
+  // Shuffle folder mode - combines all quizzes in a folder
+  const shuffleFolder = location.state?.shuffleFolder;
+  const folderName = location.state?.folderName;
+  const quizFiles = location.state?.quizFiles;
+  const questionLimit = location.state?.questionLimit; // null = all questions
+  const shuffleModeName = location.state?.shuffleModeName || "Full Test";
+  const quizModeName = location.state?.quizModeName || "Full Quiz"; // For single quiz mode
+
+  // Redirect if no quiz is selected and not shuffle folder mode
   useEffect(() => {
-    if (!selectedQuiz) {
+    if (!selectedQuiz && !shuffleFolder) {
       navigate("/"); // Redirect to the quiz list
     }
-  }, [selectedQuiz, navigate]);
+  }, [selectedQuiz, shuffleFolder, navigate]);
 
-  // Update document title based on selected quiz
+  // Update document title based on selected quiz or shuffle mode
   useEffect(() => {
-    if (selectedQuiz) {
+    if (shuffleFolder && folderName) {
+      const modeIcon = shuffleModeName === "Quick Refresh" ? "🚀" :
+        shuffleModeName === "Lock-in Mode" ? "🔥" : "📚";
+      document.title = `${modeIcon} ${shuffleModeName}`;
+    } else if (selectedQuiz) {
       const quizName = selectedQuiz.replace(".json", "");
       document.title = quizName;
     } else {
       document.title = "Quiz";
     }
-  }, [selectedQuiz]);
+  }, [selectedQuiz, shuffleFolder, folderName, shuffleModeName]);
 
   const [questions, setQuestions] = useState([]);
+  const [originalQuestions, setOriginalQuestions] = useState([]); // Store full question pool for restart
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -43,14 +57,58 @@ function Quiz() {
   const [wrongQuestions, setWrongQuestions] = useState([]); // Array of wrong question objects with original index
   const [practiceScore, setPracticeScore] = useState(0);
 
-  // Fetch quiz data - only if selectedQuiz is available
+  // Fetch quiz data - handles both single quiz and shuffle folder mode
   useEffect(() => {
+    // Shuffle folder mode: fetch all quizzes in the folder and combine them
+    if (shuffleFolder && quizFiles && folderPath) {
+      setIsLoading(true);
+
+      // Fetch all quiz files in the folder
+      const fetchPromises = quizFiles.map(file =>
+        fetch(`${process.env.PUBLIC_URL}/data/${folderPath}/${file}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Failed to load ${file}`);
+            }
+            return response.json();
+          })
+          .then(data => data.map(q => ({ ...q, sourceQuiz: file.replace('.json', '') })))
+      );
+
+      Promise.all(fetchPromises)
+        .then(allQuizData => {
+          // Combine all questions from all quizzes
+          const combinedQuestions = allQuizData.flat();
+          // Store original questions for restart functionality
+          setOriginalQuestions(combinedQuestions);
+          // Shuffle all questions first
+          let shuffledQuestions = shuffleQuestions(combinedQuestions);
+          // If there's a question limit, take only that many
+          if (questionLimit && questionLimit < shuffledQuestions.length) {
+            shuffledQuestions = shuffledQuestions.slice(0, questionLimit);
+          }
+          setQuestions(shuffledQuestions);
+          setIsLoading(false);
+        })
+        .catch(error => {
+          console.error("Error fetching quiz data:", error);
+          setError(`Failed to load quizzes from ${folderName}. Please try again.`);
+          setIsLoading(false);
+        });
+      return;
+    }
+
+    // Single quiz mode
     if (!selectedQuiz) {
       setIsLoading(false); // Don't load if no quiz is selected
       return;
     }
     setIsLoading(true); // Set loading true when fetching
-    fetch(`${process.env.PUBLIC_URL}/data/${selectedQuiz}`)
+    // Build the path: if folderPath is provided, use folder/file structure
+    const quizPath = folderPath
+      ? `${process.env.PUBLIC_URL}/data/${folderPath}/${selectedQuiz}`
+      : `${process.env.PUBLIC_URL}/data/${selectedQuiz}`;
+    fetch(quizPath)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -58,7 +116,15 @@ function Quiz() {
         return response.json();
       })
       .then((data) => {
-        setQuestions(shuffleQuestions(data));
+        // Store original questions for restart functionality
+        setOriginalQuestions(data);
+        // Shuffle questions first
+        let shuffledQuestions = shuffleQuestions(data);
+        // If there's a question limit, take only that many
+        if (questionLimit && questionLimit < shuffledQuestions.length) {
+          shuffledQuestions = shuffledQuestions.slice(0, questionLimit);
+        }
+        setQuestions(shuffledQuestions);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -66,7 +132,7 @@ function Quiz() {
         setError(`Failed to load quiz: ${selectedQuiz}. Please try again.`);
         setIsLoading(false);
       });
-  }, [selectedQuiz]); // Dependency remains selectedQuiz
+  }, [selectedQuiz, folderPath, shuffleFolder, quizFiles, folderName, questionLimit]); // Dependencies include shuffle mode
 
   const handleAnswerOptionClick = useCallback(
     (isCorrect, index) => {
@@ -112,18 +178,28 @@ function Quiz() {
             setIsAnswered(false); // Reset answered state
           } else {
             // Collect wrong questions - use updatedAnswers to include the last answer
+            // Note: idx matches currentQuestionIndex used when storing answers
             const wrong = questions
-              .map((q, idx) => ({ question: q, originalIndex: idx }))
+              .map((q, idx) => ({ question: q, questionIndex: idx }))
               .filter((item) => {
-                const userAnswer = updatedAnswers[item.originalIndex];
+                const userAnswer = updatedAnswers[item.questionIndex];
                 return userAnswer !== item.question.correct_answer;
               });
             setWrongQuestions(wrong);
 
             setShowScore(true); // Show results if it was the last question
             // Save quiz attempt to history (ONLY in normal mode)
-            if (selectedQuiz) {
-              saveQuizAttempt(selectedQuiz, newScore, questions.length);
+            // Use folder/filename as unique key to prevent conflicts
+            // For shuffle folder mode, use folder path + mode as the key
+            if (shuffleFolder && folderPath) {
+              const modeKey = questionLimit ? `__${shuffleModeName.toLowerCase().replace(/\s+/g, '_')}__` : '__full_test__';
+              const quizKey = `${folderPath}/${modeKey}`;
+              saveQuizAttempt(quizKey, newScore, questions.length);
+            } else if (selectedQuiz) {
+              // For single quiz, include mode suffix if using quick mode
+              const basePath = folderPath ? `${folderPath}/${selectedQuiz}` : selectedQuiz;
+              const quizKey = questionLimit ? `${basePath}__quick__` : basePath;
+              saveQuizAttempt(quizKey, newScore, questions.length);
             }
           }
         }, 1000); // Delay of 1.0 seconds
@@ -133,6 +209,10 @@ function Quiz() {
       currentQuestionIndex,
       questions,
       selectedQuiz,
+      folderPath,
+      shuffleFolder,
+      questionLimit,
+      shuffleModeName,
       score,
       isPracticeMode,
       wrongQuestions,
@@ -241,7 +321,17 @@ function Quiz() {
   };
 
   const restartQuiz = () => {
-    setQuestions((prevQuestions) => shuffleQuestions(prevQuestions)); // Shuffle questions for new random order
+    // If there's a question limit, pick fresh random questions from the original pool
+    if (questionLimit && originalQuestions.length > 0) {
+      let shuffledQuestions = shuffleQuestions(originalQuestions);
+      if (questionLimit < shuffledQuestions.length) {
+        shuffledQuestions = shuffledQuestions.slice(0, questionLimit);
+      }
+      setQuestions(shuffledQuestions);
+    } else {
+      // No limit - just shuffle the current questions for new order
+      setQuestions((prevQuestions) => shuffleQuestions(prevQuestions));
+    }
     setCurrentQuestionIndex(0);
     setScore(0);
     setShowScore(false);
@@ -261,14 +351,17 @@ function Quiz() {
     navigate("/");
   };
 
-  // Redirect if no selected quiz and not loading/error
-  if (!selectedQuiz && !isLoading && !error) {
+  // Redirect if no selected quiz and not shuffle mode and not loading/error
+  if (!selectedQuiz && !shuffleFolder && !isLoading && !error) {
     return <div className="loading">No quiz selected. Redirecting...</div>;
   }
 
   if (isLoading && !error) {
     // Show loading only if not errored
-    return <div className="loading">Loading Quiz: {selectedQuiz}...</div>;
+    const loadingText = shuffleFolder
+      ? `Loading ${quizFiles?.length || 0} quizzes from ${folderName}...`
+      : `Loading Quiz: ${selectedQuiz}...`;
+    return <div className="loading">{loadingText}</div>;
   }
 
   if (error) {
@@ -279,10 +372,25 @@ function Quiz() {
     return <div className="loading">No questions found.</div>;
   }
 
+  // Display name for the quiz
+  const getModeIcon = (modeName) => {
+    if (modeName === "Quick Refresh") return "🚀";
+    if (modeName === "Lock-in Mode") return "🔥";
+    if (modeName === "Fast Pace") return "⚡";
+    if (modeName === "Quiz Oriented") return "🎯";
+    return "📚";
+  };
+
+  const displayName = shuffleFolder
+    ? `${getModeIcon(shuffleModeName)} ${shuffleModeName} - ${folderName} (${questions.length} Q)`
+    : questionLimit
+      ? `${getModeIcon(quizModeName)} ${selectedQuiz?.replace('.json', '')} (${questions.length} Q)`
+      : selectedQuiz;
+
   return (
     <div className="quiz-container">
-      <p className="quiz-name-display">Playing: {selectedQuiz}</p>{" "}
-      {/* Display selected quiz name */}
+      <p className="quiz-name-display">Playing: {displayName}</p>{" "}
+      {/* Display selected quiz name or shuffle mode */}
       {showScore ? (
         <div className="score-section">
           {isPracticeMode ? (
@@ -320,14 +428,7 @@ function Quiz() {
             <>
               <h2>Quiz Complete!</h2>
 
-              {/* Performance Stats - Now shown automatically */}
-              <PerformanceStats
-                quizName={selectedQuiz}
-                currentScore={score}
-                totalQuestions={questions.length}
-              />
-
-              <div className="score-actions">
+              <div className="score-actions" style={{ marginBottom: '20px' }}>
                 {wrongQuestions.length > 0 && (
                   <button
                     onClick={startPracticeMode}
@@ -349,6 +450,22 @@ function Quiz() {
                   BACK TO QUIZ LIST
                 </button>
               </div>
+
+              {/* Performance Stats - Now shown automatically */}
+              {/* Use folder/filename as unique key to prevent conflicts */}
+              {/* For shuffle mode, use folder path + mode as key */}
+              <PerformanceStats
+                quizName={
+                  shuffleFolder
+                    ? `${folderPath}/${questionLimit ? `__${shuffleModeName.toLowerCase().replace(/\s+/g, '_')}__` : '__full_test__'}`
+                    : (() => {
+                      const basePath = folderPath ? `${folderPath}/${selectedQuiz}` : selectedQuiz;
+                      return questionLimit ? `${basePath}__quick__` : basePath;
+                    })()
+                }
+                currentScore={score}
+                totalQuestions={questions.length}
+              />
             </>
           ) : (
             <div className="review-section">
@@ -405,6 +522,17 @@ function Quiz() {
               <span>Question {currentQuestionIndex + 1}</span>/
               {isPracticeMode ? wrongQuestions.length : questions.length}
             </div>
+            {/* Show source quiz in shuffle mode */}
+            {shuffleFolder && !isPracticeMode && questions[currentQuestionIndex]?.sourceQuiz && (
+              <div className="source-quiz-badge">
+                📄 {questions[currentQuestionIndex].sourceQuiz}
+              </div>
+            )}
+            {shuffleFolder && isPracticeMode && wrongQuestions[currentQuestionIndex]?.question?.sourceQuiz && (
+              <div className="source-quiz-badge">
+                📄 {wrongQuestions[currentQuestionIndex].question.sourceQuiz}
+              </div>
+            )}
             <div className="question-text">
               {isPracticeMode
                 ? wrongQuestions[currentQuestionIndex]?.question?.question
@@ -435,8 +563,8 @@ function Quiz() {
                             ? "answer-button correct"
                             : "answer-button incorrect"
                           : index === currentQ?.correct_answer
-                          ? "answer-button correct-unselected"
-                          : "answer-button disabled"
+                            ? "answer-button correct-unselected"
+                            : "answer-button disabled"
                         : "answer-button"
                       : getButtonClass(currentQuestionIndex, index)
                   }
@@ -452,13 +580,12 @@ function Quiz() {
             <div
               className="progress-bar"
               style={{
-                width: `${
-                  ((currentQuestionIndex + 1) /
-                    (isPracticeMode
-                      ? wrongQuestions.length
-                      : questions.length)) *
+                width: `${((currentQuestionIndex + 1) /
+                  (isPracticeMode
+                    ? wrongQuestions.length
+                    : questions.length)) *
                   100
-                }%`,
+                  }%`,
               }}
             ></div>
           </div>
