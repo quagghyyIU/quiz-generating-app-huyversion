@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Quiz from "./Quiz";
@@ -8,19 +8,6 @@ import { ThemeProvider } from "./ThemeContext";
 import DarkModeToggle from "./components/DarkModeToggle";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
-  };
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [darkMode]);
-
   return (
     <ThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>

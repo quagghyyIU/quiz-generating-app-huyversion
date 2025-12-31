@@ -24,12 +24,14 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Save theme preference to localStorage
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    
+
     // Apply theme to document root
     if (isDarkMode) {
       document.documentElement.setAttribute('data-theme', 'dark');
+      document.body.classList.add('dark-mode');
     } else {
       document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('dark-mode');
     }
   }, [isDarkMode]);
 
