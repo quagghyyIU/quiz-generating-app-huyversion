@@ -15,6 +15,126 @@
   max-width: 1000px;
 }
 
+.quiz-container.dark-mode {
+    background-color: #181a1b;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .answer-button {
+    background-color: #23272f;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .answer-button:hover:not(:disabled) {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+.quiz-container.dark-mode .nav-button {
+    background-color: #23272f;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .answer-button.correct {
+    background-color: #388e3c;
+    color: #fff;
+    border-color: #66bb6a;
+}
+
+.quiz-container.dark-mode .answer-button.incorrect {
+    background-color: #b71c1c;
+    color: #fff;
+    border-color: #ef5350;
+}
+
+.quiz-container.dark-mode .answer-button.correct-unselected {
+    background-color: #388e3c;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.quiz-container.dark-mode .answer-button.disabled:not(.correct):not(.incorrect):not(.correct-unselected) {
+    opacity: 0.5;
+}
+
+.quiz-container.dark-mode .score-section h2,
+.quiz-container.dark-mode .review-section h2 {
+    color: #90caf9;
+}
+
+.quiz-container.dark-mode .restart-button {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .restart-button:hover {
+    background-color: #1565c0;
+}
+
+.quiz-container.dark-mode .progress-bar-container {
+    background-color: #333;
+}
+
+.quiz-container.dark-mode .progress-bar {
+    background: linear-gradient(90deg, #1976d2, #64b5f6);
+}
+
+.quiz-container.dark-mode .quiz-name-display {
+    color: #bbb;
+}
+
+.quiz-container.dark-mode .review-question-block hr {
+    background-color: #333;
+}
+
+.quiz-container.dark-mode .question-count {
+    color: #bbb;
+}
+
+.quiz-container.dark-mode .question-text {
+    color: #fff;
+}
+
+.quiz-container.dark-mode .answer-section.review .answer-button.review {
+    color: #fff;
+}
+
+.quiz-container.dark-mode .review-button,
+.quiz-container.dark-mode .back-button {
+    background-color: #444;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .review-button:hover,
+.quiz-container.dark-mode .back-button:hover {
+    background-color: #666;
+}
+
+.quiz-container.dark-mode .start-quiz-button {
+    background-color: #444;
+    color: #fff;
+}
+
+.quiz-container.dark-mode .start-quiz-button:hover {
+    background-color: #666;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+}
+
+.quiz-container.dark-mode .dark-mode-toggle {
+    background-color: #555555;
+    color: #ffffff;
+}
+
 .question-section {
   margin-bottom: 25px;
 }
