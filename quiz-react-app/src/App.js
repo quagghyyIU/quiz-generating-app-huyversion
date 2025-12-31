@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Quiz from "./Quiz";
@@ -14,7 +14,7 @@ function App() {
   };
 
   useEffect(() => {
-    if(darkMode) {
+    if (darkMode) {
       document.body.classList.add('dark-mode');
     } else {
       document.body.classList.remove('dark-mode');
