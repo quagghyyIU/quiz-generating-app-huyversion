@@ -1,0 +1,683 @@
+[
+    {
+      "question": "Which approach best matches the performance tuning philosophy in the lecture?",
+      "answers": [
+        "Compare changes against a baseline over time",
+        "Maximize load until failure to find limits",
+        "Tune only after users complain",
+        "Disable monitoring to reduce overhead"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool is suggested as lightweight for routine background performance data collection?",
+      "answers": [
+        "sar or vmstat",
+        "tcpdump only",
+        "strace only",
+        "gdb only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why is intentionally overloading systems discouraged in the lecture?",
+      "answers": [
+        "It can distort measurements and create outages",
+        "It always improves cache hit rate",
+        "It guarantees higher throughput",
+        "It automatically reduces paging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A recommended practice when tuning is to:",
+      "answers": [
+        "Make changes that allow comparison to a baseline",
+        "Change multiple variables at the same time",
+        "Ignore historical data",
+        "Always upgrade hardware first"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "If performance is suddenly bad, the lecture suggests first checking for:",
+      "answers": [
+        "Runaway processes using high CPU",
+        "Broken DNSSEC keys",
+        "Missing kernel headers",
+        "Incorrect sudoers syntax"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A process using more than about 50% CPU is described as likely:",
+      "answers": [
+        "At fault for a performance issue",
+        "A normal idle process",
+        "A harmless kernel helper",
+        "Always a GUI rendering task"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "If several processes each use around 10% CPU, the lecture suggests the load average is likely:",
+      "answers": [
+        "High and worth checking",
+        "Always zero on Linux",
+        "Unrelated to CPU contention",
+        "Only affected by disk capacity"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is specifically suggested for checking load average?",
+      "answers": [
+        "uptime",
+        "du",
+        "fdisk",
+        "route"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "To see whether the CPU is ever idle, the lecture suggests using:",
+      "answers": [
+        "vmstat or top",
+        "ls or cd",
+        "tar or gzip",
+        "ping or traceroute"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "If CPU contention is not evident, the next check suggested is:",
+      "answers": [
+        "Paging activity using vmstat",
+        "Rebuilding initramfs",
+        "Changing filesystem type",
+        "Reinstalling the OS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement is emphasized about disk traffic and CPU time?",
+      "answers": [
+        "Disk activity still consumes some CPU time",
+        "Disk traffic uses zero CPU",
+        "CPU time is independent from I/O",
+        "Only network traffic uses CPU"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Some network overloading problems are described as hard to diagnose because they:",
+      "answers": [
+        "Come and go very quickly",
+        "Never affect performance",
+        "Always leave clear kernel traces",
+        "Only happen on IPv6"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Server-related delays mentioned as possible performance causes include:",
+      "answers": [
+        "NFS, Kerberos, and DNS",
+        "FTP, SMTP, and POP3",
+        "SSH, SCP, and SFTP",
+        "ARP, ICMP, and LLDP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file is listed as a hardware information source for CPU type/description?",
+      "answers": [
+        "/proc/cpuinfo",
+        "/proc/uptime",
+        "/etc/hosts",
+        "/var/log/dmesg"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file is listed as a source for memory size and usage?",
+      "answers": [
+        "/proc/meminfo",
+        "/proc/cpuinfo",
+        "/etc/passwd",
+        "/var/log/secure"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file is listed as a source for disk device usage statistics?",
+      "answers": [
+        "/proc/diskstats",
+        "/proc/loadavg",
+        "/etc/fstab",
+        "/var/log/syslog"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The lecture outlines performance analysis as a process that starts with:",
+      "answers": [
+        "Formulating the question to be answered",
+        "Buying faster disks",
+        "Disabling swap",
+        "Replacing the kernel scheduler"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "After gathering evidence, the next step emphasized is to:",
+      "answers": [
+        "Classify and appraise the data",
+        "Delete raw measurements",
+        "Tune without documenting",
+        "Ignore outliers by default"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The lecture suggests summarizing results:",
+      "answers": [
+        "Narratively and graphically",
+        "Only as raw logs",
+        "Only as code output",
+        "Only as a final number"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In virtualization, 'stolen CPU cycles' refer to CPU time:",
+      "answers": [
+        "Taken by the hypervisor from a VM",
+        "Lost due to disk fragmentation",
+        "Spent in kernel interrupts only",
+        "Converted into swap I/O"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Stolen CPU time becomes noticeable when hardware is:",
+      "answers": [
+        "Oversubscribed by many VMs",
+        "Underclocked intentionally",
+        "Air-gapped from the network",
+        "Using static IP addresses"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which metric name is shown in tools to represent stolen time?",
+      "answers": [
+        "st",
+        "wa",
+        "si",
+        "bi"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "vmstat is described as taking two key arguments commonly as:",
+      "answers": [
+        "Interval seconds and number of reports",
+        "CPU count and memory size",
+        "Disk name and mount point",
+        "Username and PID"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat output, the 'r' column under procs indicates:",
+      "answers": [
+        "Processes waiting to run (run queue)",
+        "Processes writing to swap",
+        "Processes in zombie state",
+        "Processes holding open sockets"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat output, the 'b' column under procs indicates:",
+      "answers": [
+        "Processes blocked (often on I/O)",
+        "Background jobs in a shell",
+        "Broken processes terminated",
+        "Boot-time kernel threads"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat CPU columns, 'us' represents:",
+      "answers": [
+        "Time spent in user space",
+        "Time spent waiting on I/O only",
+        "Time stolen by hypervisor only",
+        "Time spent swapping out pages"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat CPU columns, 'sy' represents:",
+      "answers": [
+        "Time spent in kernel/system space",
+        "Time spent in user applications only",
+        "Time spent reading from disk only",
+        "Time spent in network latency only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat CPU columns, 'id' represents:",
+      "answers": [
+        "Idle CPU time",
+        "Interrupt CPU time",
+        "Disk service time",
+        "Swap-in rate"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In vmstat CPU columns, 'wa' represents:",
+      "answers": [
+        "Time waiting on I/O",
+        "Time stolen by hypervisor",
+        "Time in kernel space",
+        "Time in user space"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which vmstat columns relate most directly to swapping activity?",
+      "answers": [
+        "si and so",
+        "us and sy",
+        "bi and bo",
+        "in and cs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "According to the lecture, vmstat 'si' indicates:",
+      "answers": [
+        "Pages swapped in from swap area",
+        "Bytes written to disk cache",
+        "Packets received on an interface",
+        "CPU time stolen by hypervisor"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "According to the lecture, vmstat 'so' indicates:",
+      "answers": [
+        "Pages written out to swap by the kernel",
+        "User-space CPU utilization",
+        "Disk reads per second",
+        "Run queue length"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The lecture summarizes memory load using two key ideas:",
+      "answers": [
+        "Virtual memory demand and paging rate",
+        "Disk capacity and inode count",
+        "Interface speed and packet loss",
+        "CPU frequency and core count"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The goal when paging is high is to:",
+      "answers": [
+        "Reduce activity or increase memory until acceptable",
+        "Disable caching entirely",
+        "Force the kernel into FIFO scheduling",
+        "Increase swap and ignore paging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is specifically suggested to check swap areas?",
+      "answers": [
+        "swapon -s",
+        "free -h",
+        "df -i",
+        "ip link"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command provides load averages over 1, 5, and 15 minutes?",
+      "answers": [
+        "uptime",
+        "who",
+        "dd",
+        "grep"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Load average is best interpreted as:",
+      "answers": [
+        "Average runnable or uninterruptible tasks over time",
+        "CPU temperature in Celsius",
+        "Available disk blocks per second",
+        "Number of logged-in users"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool is described as providing vmstat-like output per CPU?",
+      "answers": [
+        "mpstat -P ALL",
+        "ps aux",
+        "lsof -i",
+        "dmesg -w"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In performance analysis, a useful first comparison point is:",
+      "answers": [
+        "A previous baseline under normal conditions",
+        "A random snapshot during peak load",
+        "A fresh install with default settings",
+        "A system with different workloads"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which situation most strongly suggests CPU contention?",
+      "answers": [
+        "High run queue with low idle time",
+        "High disk space usage percentage",
+        "Low swap usage with many files",
+        "Low network traffic on interface"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which situation most strongly suggests I/O wait as a bottleneck?",
+      "answers": [
+        "High wa with relatively low us/sy",
+        "High id with low wa",
+        "High si with low so",
+        "High cs with low in"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which metric would best indicate a VM is being CPU-throttled by a hypervisor?",
+      "answers": [
+        "High st",
+        "High bi",
+        "High free memory",
+        "High cache only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement matches the lecture’s guidance on over-tuning?",
+      "answers": [
+        "Tune cautiously and measure each change",
+        "Tune by changing everything at once",
+        "Tune by ignoring historical trends",
+        "Tune only when swap is full"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool is used in the lecture for disk I/O analysis?",
+      "answers": [
+        "iostat",
+        "ifconfig",
+        "lsmod",
+        "useradd"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In iostat output, 'tps' refers to:",
+      "answers": [
+        "Transfers per second",
+        "Total pages swapped",
+        "Time per scheduler slice",
+        "Threads per system"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In iostat output, 'kB_read/s' refers to:",
+      "answers": [
+        "Kilobytes read per second",
+        "Kernel buffers read total",
+        "Kibibytes reserved for cache",
+        "Kbytes read since boot only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In iostat output, 'kB_wrtn/s' refers to:",
+      "answers": [
+        "Kilobytes written per second",
+        "Kernel writeback queue depth",
+        "Kbytes of swap written total",
+        "Write operations per interrupt"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In iostat output, 'kB_read' refers to:",
+      "answers": [
+        "Total kilobytes read",
+        "Read requests waiting",
+        "Read latency average",
+        "Read cache hit ratio"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In iostat output, 'kB_wrtn' refers to:",
+      "answers": [
+        "Total kilobytes written",
+        "Write errors per second",
+        "Write latency per request",
+        "Writes remaining in queue"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which disk scenario is most consistent with a throughput bottleneck?",
+      "answers": [
+        "High transfers and sustained read/write rates",
+        "Low transfers and high idle CPU",
+        "Stable load average and high free RAM",
+        "Low paging and low I/O wait"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The lecture lists three I/O scheduling algorithms. Which set matches it?",
+      "answers": [
+        "CFQ, Deadline, NOOP",
+        "FIFO, LIFO, Round-robin",
+        "CFS, BFS, O(1)",
+        "SSTF, SCAN, LOOK"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which I/O scheduler is described as best for general-purpose servers with mechanical disks?",
+      "answers": [
+        "Completely Fair Queuing (CFQ)",
+        "Deadline",
+        "NOOP",
+        "SCHED_RR"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which I/O scheduler is described as minimizing latency per request?",
+      "answers": [
+        "Deadline",
+        "CFQ",
+        "NOOP",
+        "CFS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which I/O scheduler is described as simple FIFO and often best for SSD drives?",
+      "answers": [
+        "NOOP",
+        "CFQ",
+        "Deadline",
+        "SCHED_FIFO"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which environment is mentioned as a case where NOOP can be a best choice?",
+      "answers": [
+        "Some SAN environments",
+        "All laptop HDDs",
+        "Only RAM disks",
+        "Only USB keyboards"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which situation best matches a memory pressure issue?",
+      "answers": [
+        "Sustained swap-in/swap-out activity",
+        "High idle CPU with low wa",
+        "Stable disk throughput with low tps",
+        "Low load average with low r"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which metric combination best suggests heavy paging?",
+      "answers": [
+        "Nonzero si/so over time",
+        "High id and low r",
+        "High us and low sy",
+        "High tps and low wa"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches the lecture’s view of diagnosing performance?",
+      "answers": [
+        "Collect evidence, then conclude",
+        "Conclude first, then look for support",
+        "Tune immediately without measuring",
+        "Avoid summarizing results"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is a correct interpretation of vmstat 'in' and 'cs' columns?",
+      "answers": [
+        "Interrupts and context switches",
+        "Inodes and cache sizes",
+        "Input packets and checksum errors",
+        "Init processes and child spawns"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which vmstat I/O columns represent blocks received and blocks sent?",
+      "answers": [
+        "bi and bo",
+        "si and so",
+        "us and sy",
+        "r and b"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A common trap: high load average always means high CPU usage. Which is most correct?",
+      "answers": [
+        "Load can be high due to I/O waits too",
+        "Load measures only CPU frequency",
+        "Load is the same as %CPU in top",
+        "Load ignores blocked processes"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which symptom most strongly suggests disk I/O is limiting performance rather than CPU?",
+      "answers": [
+        "High wa with many blocked processes",
+        "High us with low r",
+        "High id with low wa",
+        "High st with low wa"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which action is most aligned with 'compare to previous baseline'?",
+      "answers": [
+        "Measure before and after a single change",
+        "Upgrade CPU, RAM, and disk together",
+        "Stop collecting historical metrics",
+        "Apply random tuning guides"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool pairing best matches the lecture’s workflow for CPU crises?",
+      "answers": [
+        "uptime then vmstat/top",
+        "du then tar",
+        "ip then route",
+        "useradd then passwd"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which scenario is most consistent with stolen cycles as the main cause?",
+      "answers": [
+        "VM shows high st while host is busy",
+        "Bare metal shows high si/so",
+        "Disk shows low tps and low wa",
+        "Network shows stable latency"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about paging is consistent with the lecture?",
+      "answers": [
+        "It can be reduced by adding memory or reducing demand",
+        "It is fixed by increasing CPU frequency",
+        "It is unrelated to performance",
+        "It always indicates disk failure"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which measurement would best support a claim that disk throughput is saturated?",
+      "answers": [
+        "High sustained kB_read/s or kB_wrtn/s",
+        "High number of logged-in users",
+        "High /proc/cpuinfo model number",
+        "High count of /etc/passwd entries"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which conclusion format is explicitly recommended by the lecture?",
+      "answers": [
+        "A clear conclusion supported by summarized evidence",
+        "A raw dump of all metrics without context",
+        "A single screenshot of top only",
+        "A guess based on one spike"
+      ],
+      "correct_answer": 0
+    }
+  ]
+  

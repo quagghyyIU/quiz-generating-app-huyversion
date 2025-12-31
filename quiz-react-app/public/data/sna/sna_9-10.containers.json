@@ -1,0 +1,522 @@
+[
+  {
+    "question": "What is the primary goal of container technology?",
+    "answers": [
+      "Provide lightweight application isolation using OS-level virtualization",
+      "Run multiple operating systems on one machine",
+      "Replace the Linux kernel",
+      "Eliminate the need for networking"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best describes containers compared to virtual machines?",
+    "answers": [
+      "Containers share the host kernel while VMs run separate kernels",
+      "Containers require a hypervisor to boot",
+      "Containers always consume more resources than VMs",
+      "Containers must run Windows only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which component provides isolation of process IDs, networks, and filesystems in containers?",
+    "answers": [
+      "Linux namespaces",
+      "Linux PAM",
+      "SELinux",
+      "systemd"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which kernel feature limits and accounts for resource usage (CPU, memory, I/O) in containers?",
+    "answers": [
+      "cgroups",
+      "namespaces",
+      "ACLs",
+      "udev"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best describes Linux namespaces?",
+    "answers": [
+      "They provide isolated views of system resources",
+      "They encrypt container filesystems",
+      "They replace file permissions",
+      "They manage kernel scheduling"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace isolates process ID numbering?",
+    "answers": [
+      "PID namespace",
+      "NET namespace",
+      "MNT namespace",
+      "USER namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace isolates network interfaces and routing tables?",
+    "answers": [
+      "NET namespace",
+      "PID namespace",
+      "UTS namespace",
+      "IPC namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace isolates mount points and filesystem views?",
+    "answers": [
+      "MNT namespace",
+      "PID namespace",
+      "NET namespace",
+      "USER namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace allows containers to have different hostnames?",
+    "answers": [
+      "UTS namespace",
+      "PID namespace",
+      "NET namespace",
+      "MNT namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace isolates System V IPC and POSIX message queues?",
+    "answers": [
+      "IPC namespace",
+      "NET namespace",
+      "PID namespace",
+      "USER namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which namespace allows UID/GID mapping between container and host?",
+    "answers": [
+      "USER namespace",
+      "PID namespace",
+      "NET namespace",
+      "UTS namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is the primary role of cgroups?",
+    "answers": [
+      "Limit and measure resource usage of processes",
+      "Provide filesystem isolation",
+      "Manage user authentication",
+      "Encrypt container images"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which resource can be controlled by cgroups?",
+    "answers": [
+      "CPU usage",
+      "DNS resolution",
+      "Filesystem permissions",
+      "Kernel modules"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which resource can be controlled by cgroups?",
+    "answers": [
+      "Memory usage",
+      "User passwords",
+      "Hostnames",
+      "Network routing tables"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which resource can be controlled by cgroups?",
+    "answers": [
+      "Block I/O usage",
+      "File ownership",
+      "SELinux labels",
+      "Environment variables"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best explains why containers start faster than VMs?",
+    "answers": [
+      "Containers do not need to boot a full OS kernel",
+      "Containers preload application binaries into ROM",
+      "Containers skip all security checks",
+      "Containers bypass the kernel scheduler"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best describes container isolation?",
+    "answers": [
+      "Isolation is provided by the kernel, not hardware virtualization",
+      "Isolation is complete and identical to VMs",
+      "Isolation requires a separate BIOS",
+      "Isolation is enforced by systemd only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which is a limitation of containers compared to virtual machines?",
+    "answers": [
+      "Containers cannot run different kernels from the host",
+      "Containers cannot access the network",
+      "Containers cannot use storage",
+      "Containers cannot be automated"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which operating systems can Linux containers run?",
+    "answers": [
+      "Linux-based user spaces only",
+      "Any operating system",
+      "Windows kernels only",
+      "macOS kernels only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is a container image?",
+    "answers": [
+      "A packaged filesystem with application and dependencies",
+      "A running instance of an application",
+      "A virtual disk with a kernel",
+      "A firmware snapshot"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is a container?",
+    "answers": [
+      "A running instance of a container image",
+      "A compressed backup archive",
+      "A virtual machine template",
+      "A kernel module"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement correctly distinguishes image vs container?",
+    "answers": [
+      "Image is static, container is running",
+      "Image is running, container is static",
+      "Both are identical concepts",
+      "Neither includes a filesystem"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which technology introduced the layered filesystem model used by containers?",
+    "answers": [
+      "Union filesystems",
+      "NFS",
+      "EXT4 journaling",
+      "RAID"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which filesystem concept allows container images to reuse layers?",
+    "answers": [
+      "Copy-on-write",
+      "Hard links",
+      "Symbolic links",
+      "Block-level mirroring"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which benefit results from layered container images?",
+    "answers": [
+      "Reduced storage usage and faster image distribution",
+      "Automatic kernel upgrades",
+      "Elimination of security risks",
+      "Removal of all dependencies"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which file typically defines how a container image is built?",
+    "answers": [
+      "Dockerfile",
+      "Makefile",
+      "systemd unit file",
+      "fstab"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which instruction in a Dockerfile specifies the base image?",
+    "answers": [
+      "FROM",
+      "RUN",
+      "CMD",
+      "COPY"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Dockerfile instruction executes commands during image build?",
+    "answers": [
+      "RUN",
+      "CMD",
+      "ENTRYPOINT",
+      "EXPOSE"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Dockerfile instruction specifies the default command to run in a container?",
+    "answers": [
+      "CMD",
+      "RUN",
+      "FROM",
+      "COPY"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Dockerfile instruction sets the container's main executable?",
+    "answers": [
+      "ENTRYPOINT",
+      "RUN",
+      "ENV",
+      "LABEL"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which Dockerfile instruction documents which ports the container listens on?",
+    "answers": [
+      "EXPOSE",
+      "PUBLISH",
+      "PORT",
+      "NET"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does docker run primarily do?",
+    "answers": [
+      "Create and start a container from an image",
+      "Build a new image",
+      "Push an image to a registry",
+      "Remove unused volumes"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What does docker build do?",
+    "answers": [
+      "Build an image from a Dockerfile",
+      "Start an existing container",
+      "Download a kernel",
+      "Configure cgroups manually"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command lists running containers?",
+    "answers": [
+      "docker ps",
+      "docker images",
+      "docker ls",
+      "docker info"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command lists locally stored images?",
+    "answers": [
+      "docker images",
+      "docker ps",
+      "docker inspect",
+      "docker logs"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command stops a running container?",
+    "answers": [
+      "docker stop",
+      "docker kill -9",
+      "docker rm",
+      "docker pause"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command removes a stopped container?",
+    "answers": [
+      "docker rm",
+      "docker rmi",
+      "docker stop",
+      "docker prune"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command removes an image?",
+    "answers": [
+      "docker rmi",
+      "docker rm",
+      "docker stop",
+      "docker kill"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command displays logs of a container?",
+    "answers": [
+      "docker logs",
+      "docker inspect",
+      "docker stats",
+      "docker top"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command shows resource usage statistics of containers?",
+    "answers": [
+      "docker stats",
+      "docker logs",
+      "docker info",
+      "docker df"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What is the primary role of a container registry?",
+    "answers": [
+      "Store and distribute container images",
+      "Run containers on hosts",
+      "Schedule containers across clusters",
+      "Manage kernel namespaces"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which is a public container registry service?",
+    "answers": [
+      "Docker Hub",
+      "systemd",
+      "Git",
+      "NFS"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which security concern is especially important with containers?",
+    "answers": [
+      "Container breakout due to shared kernel",
+      "BIOS corruption",
+      "Incorrect DNS TTL values",
+      "ARP spoofing inside ROM"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which practice improves container security?",
+    "answers": [
+      "Run containers with least privilege",
+      "Always run containers as root",
+      "Disable cgroups",
+      "Share host PID namespace"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which practice improves container security?",
+    "answers": [
+      "Use minimal base images",
+      "Install full desktop environments in images",
+      "Disable logging",
+      "Grant all capabilities"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which kernel feature allows containers to drop unnecessary privileges?",
+    "answers": [
+      "Linux capabilities",
+      "SELinux contexts",
+      "PAM modules",
+      "systemd targets"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Why are containers well-suited for microservices?",
+    "answers": [
+      "They are lightweight, fast to start, and easy to deploy independently",
+      "They require monolithic architectures",
+      "They eliminate networking",
+      "They enforce GUI usage"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best describes container orchestration?",
+    "answers": [
+      "Automated deployment, scaling, and management of containers",
+      "Manual execution of containers one by one",
+      "Firmware-level scheduling of processes",
+      "Filesystem encryption"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which container orchestration platform is widely used?",
+    "answers": [
+      "Kubernetes",
+      "GRUB",
+      "systemd",
+      "OpenSSH"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "What problem does orchestration solve?",
+    "answers": [
+      "Managing containers at scale across multiple hosts",
+      "Replacing the Linux kernel",
+      "Building container images",
+      "Encrypting container storage"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which feature allows containers to communicate with each other?",
+    "answers": [
+      "Virtual networking",
+      "Shared ROM",
+      "BIOS configuration",
+      "Kernel recompilation"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which statement best summarizes containers?",
+    "answers": [
+      "Containers provide OS-level isolation for applications using shared kernels",
+      "Containers are full hardware virtual machines",
+      "Containers eliminate the need for operating systems",
+      "Containers replace access control mechanisms"
+    ],
+    "correct_answer": 0
+  }
+]

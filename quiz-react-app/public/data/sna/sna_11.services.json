@@ -1,0 +1,523 @@
+[
+    {
+      "question": "What is the primary purpose of a network service?",
+      "answers": [
+        "Provide functionality to clients over a network",
+        "Replace the operating system",
+        "Manage hardware interrupts",
+        "Compile kernel modules"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which component typically provides network services to clients?",
+      "answers": [
+        "Server processes (daemons)",
+        "System firmware",
+        "Boot loader",
+        "Kernel scheduler only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Network services usually run as:",
+      "answers": [
+        "Background daemons",
+        "Interactive shell commands",
+        "Kernel threads only",
+        "User login sessions"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which user account is commonly used to run network services for security reasons?",
+      "answers": [
+        "A dedicated non-root service account",
+        "root always",
+        "Any random logged-in user",
+        "guest"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service provides remote login and command execution securely?",
+      "answers": [
+        "SSH",
+        "Telnet",
+        "FTP",
+        "HTTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by SSH by default?",
+      "answers": [
+        "22",
+        "23",
+        "21",
+        "80"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why is Telnet considered insecure?",
+      "answers": [
+        "It transmits data including passwords in plaintext",
+        "It cannot authenticate users",
+        "It cannot transmit commands",
+        "It requires root privileges"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service is commonly used for secure file transfer over SSH?",
+      "answers": [
+        "SCP",
+        "FTP",
+        "TFTP",
+        "NFS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol provides file transfer without encryption?",
+      "answers": [
+        "FTP",
+        "SFTP",
+        "SCP",
+        "HTTPS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by FTP control connection?",
+      "answers": [
+        "21",
+        "20",
+        "22",
+        "25"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service is used to deliver electronic mail between servers?",
+      "answers": [
+        "SMTP",
+        "POP3",
+        "IMAP",
+        "HTTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by SMTP by default?",
+      "answers": [
+        "25",
+        "110",
+        "143",
+        "443"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service allows users to retrieve emails and remove them from the server?",
+      "answers": [
+        "POP3",
+        "IMAP",
+        "SMTP",
+        "SNMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service allows users to keep emails on the server and synchronize across devices?",
+      "answers": [
+        "IMAP",
+        "POP3",
+        "SMTP",
+        "FTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by POP3?",
+      "answers": [
+        "110",
+        "143",
+        "25",
+        "53"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by IMAP?",
+      "answers": [
+        "143",
+        "110",
+        "25",
+        "80"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service provides web content to clients?",
+      "answers": [
+        "HTTP",
+        "FTP",
+        "SMTP",
+        "SNMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by HTTP?",
+      "answers": [
+        "80",
+        "443",
+        "21",
+        "53"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol provides encrypted web communication?",
+      "answers": [
+        "HTTPS",
+        "HTTP",
+        "FTP",
+        "SMTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by HTTPS?",
+      "answers": [
+        "443",
+        "80",
+        "25",
+        "22"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service translates hostnames into IP addresses?",
+      "answers": [
+        "DNS",
+        "DHCP",
+        "NTP",
+        "SNMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by DNS?",
+      "answers": [
+        "53",
+        "67",
+        "68",
+        "123"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol is primarily used to synchronize system clocks?",
+      "answers": [
+        "NTP",
+        "SNMP",
+        "DNS",
+        "SMTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by NTP?",
+      "answers": [
+        "123",
+        "161",
+        "53",
+        "110"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service is used to monitor and manage network devices?",
+      "answers": [
+        "SNMP",
+        "SMTP",
+        "FTP",
+        "HTTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which SNMP component runs on managed devices?",
+      "answers": [
+        "SNMP agent",
+        "SNMP manager",
+        "MIB browser",
+        "Trap receiver"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which SNMP component polls and collects data?",
+      "answers": [
+        "SNMP manager",
+        "SNMP agent",
+        "Kernel daemon",
+        "Boot loader"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which SNMP message type is sent asynchronously to report events?",
+      "answers": [
+        "Trap",
+        "Get",
+        "Set",
+        "Response"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by SNMP?",
+      "answers": [
+        "161",
+        "162",
+        "53",
+        "25"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is used by SNMP traps?",
+      "answers": [
+        "162",
+        "161",
+        "123",
+        "80"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service dynamically assigns IP addresses to hosts?",
+      "answers": [
+        "DHCP",
+        "DNS",
+        "ARP",
+        "ICMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which ports are used by DHCP?",
+      "answers": [
+        "67 and 68",
+        "53 and 54",
+        "80 and 443",
+        "20 and 21"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service allows file sharing over a network using Unix semantics?",
+      "answers": [
+        "NFS",
+        "FTP",
+        "SMB",
+        "HTTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network file-sharing service is commonly used in Windows environments?",
+      "answers": [
+        "SMB/CIFS",
+        "NFS",
+        "FTP",
+        "TFTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service provides simple file transfer without authentication?",
+      "answers": [
+        "TFTP",
+        "FTP",
+        "SCP",
+        "SFTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol is often used for booting diskless clients?",
+      "answers": [
+        "TFTP",
+        "FTP",
+        "HTTP",
+        "SMTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service is commonly used to share printers over a network?",
+      "answers": [
+        "IPP",
+        "SMTP",
+        "DNS",
+        "NTP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service allows users to resolve usernames to user information across the network?",
+      "answers": [
+        "LDAP",
+        "DNS",
+        "NFS",
+        "SNMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service provides centralized authentication and directory services?",
+      "answers": [
+        "LDAP",
+        "FTP",
+        "HTTP",
+        "ICMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is typically used by LDAP?",
+      "answers": [
+        "389",
+        "636",
+        "443",
+        "25"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol secures LDAP communication?",
+      "answers": [
+        "LDAPS",
+        "HTTPS",
+        "SFTP",
+        "IPSec"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service provides name-to-address resolution for mail servers?",
+      "answers": [
+        "DNS (MX records)",
+        "SMTP",
+        "POP3",
+        "IMAP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service is responsible for logging system events remotely?",
+      "answers": [
+        "Syslog",
+        "SNMP",
+        "SMTP",
+        "DNS"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which port is commonly used by Syslog?",
+      "answers": [
+        "514",
+        "161",
+        "25",
+        "123"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which protocol is often used to secure network services using encryption at the transport layer?",
+      "answers": [
+        "TLS",
+        "UDP",
+        "ARP",
+        "ICMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which network service is commonly used for load balancing web traffic?",
+      "answers": [
+        "Reverse proxy",
+        "DNS resolver",
+        "NTP server",
+        "SNMP agent"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which service can act as both a web server and a reverse proxy?",
+      "answers": [
+        "Nginx",
+        "SSH",
+        "DHCP",
+        "SNMP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which principle should be applied when exposing network services?",
+      "answers": [
+        "Least privilege and minimal exposure",
+        "Expose all services by default",
+        "Run all services as root",
+        "Disable logging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which practice improves network service security?",
+      "answers": [
+        "Restricting access using firewalls",
+        "Using default passwords",
+        "Disabling updates",
+        "Running services without authentication"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which practice improves network service reliability?",
+      "answers": [
+        "Monitoring service availability and logs",
+        "Running services only at boot time",
+        "Disabling redundancy",
+        "Ignoring error messages"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which practice improves scalability of network services?",
+      "answers": [
+        "Load balancing and replication",
+        "Single-server deployment only",
+        "Manual configuration per client",
+        "Hardcoding IP addresses"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best summarizes network services?",
+      "answers": [
+        "They provide shared functionality over a network using well-defined protocols",
+        "They operate only at the kernel level",
+        "They replace TCP/IP networking",
+        "They eliminate the need for servers"
+      ],
+      "correct_answer": 0
+    }
+  ]
+  

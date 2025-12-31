@@ -1,0 +1,702 @@
+[
+  {
+    "question": "Which statement best explains why monitoring is important?",
+    "answers": [
+      "It removes the need for backups entirely",
+      "It helps detect issues before users notice them",
+      "It guarantees zero downtime for all services",
+      "It replaces configuration management tools"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "What is a key difference mentioned in the lecture?",
+    "answers": [
+      "A monitoring outage is always worse than a service outage",
+      "Monitoring makes outages impossible",
+      "Service outages only affect dashboards",
+      "A service outage is more serious than a monitoring outage"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which is part of the basic monitoring structure described?",
+    "answers": [
+      "Encrypt all traffic and rotate keys hourly",
+      "Harvest raw data and evaluate it using rules",
+      "Compile kernels and rebuild initramfs daily",
+      "Disable logs to reduce disk usage"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "After a monitoring platform evaluates data, it should typically:",
+    "answers": [
+      "Delete old user accounts immediately",
+      "Take an appropriate action based on rules",
+      "Reinstall the operating system automatically",
+      "Disable all nonessential services permanently"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which option is an example approach given for simple monitoring?",
+    "answers": [
+      "Run custom scripts periodically from cron",
+      "Monitor by rebooting systems nightly",
+      "Only check metrics during business hours",
+      "Use only GUI tools instead of scripts"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "A graph showing CPU usage sampled every few seconds is best classified as which monitoring data type?",
+    "answers": [
+      "Real-time metrics",
+      "Kernel symbol tables",
+      "Static source code snapshots",
+      "Encrypted password hashes"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "A single 'service restarted at 02:13' record is best classified as which monitoring data type?",
+    "answers": [
+      "Events",
+      "BIOS settings",
+      "Filesystem ACL templates",
+      "Compiler warnings"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "A weekly summary of average latency over the past year is best classified as which monitoring data type?",
+    "answers": [
+      "Aggregated and summarized historic trends",
+      "Raw packet payload archives by default",
+      "Only real-time CPU cycles",
+      "Full disk images every minute"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "First-generation monitoring platforms (e.g., Nagios/Icinga) focus primarily on:",
+    "answers": [
+      "Only visualizing dashboards with no alerts",
+      "Replacing time-series databases with flat files",
+      "Detecting and responding to problems as they occur",
+      "Storing every metric forever without summarization"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "The 'modern approach' in the lecture organizes monitoring around:",
+    "answers": [
+      "A spreadsheet updated by operators",
+      "A specialized time-series data store",
+      "A single cron job that emails logs",
+      "A BIOS-level hardware logger only"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "As time-series data ages, the store typically:",
+    "answers": [
+      "Summarizes older data to limit storage needs",
+      "Expands older data into more granular samples",
+      "Deletes all new data first to preserve history",
+      "Encrypts data and disables charting"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Why is historical monitoring data useful according to the lecture?",
+    "answers": [
+      "It removes the need for capacity planning",
+      "It provides a baseline for comparison and dashboards",
+      "It replaces incident response procedures",
+      "It allows disabling alerts permanently"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which rule about notifications is emphasized in the lecture?",
+    "answers": [
+      "Notifications should be frequent regardless of value",
+      "Notifications should be actionable",
+      "Notifications should never wake anyone up",
+      "Notifications should be purely informational"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "What happens when notifications are purely informational?",
+    "answers": [
+      "Users stop generating incidents",
+      "The monitoring system gains accuracy",
+      "Staff learn to ignore them over time",
+      "Staff automatically fixes issues faster"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which channel is explicitly suggested beyond email for alerts?",
+    "answers": [
+      "Printed tickets by default",
+      "SMS notifications",
+      "IRC channels only",
+      "Fax alerts"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "The lecture mentions an LED lighting system that changes colors primarily to:",
+    "answers": [
+      "Store time-series data visually",
+      "Replace network cabling indicators",
+      "Provide at-a-glance status indication",
+      "Reduce CPU temperature via lighting"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which is listed as an 'other option' for notifications/handling?",
+    "answers": [
+      "Calling an administrator on the phone",
+      "Rotating SSH keys on every alert",
+      "Recompiling the kernel automatically",
+      "Disabling the monitored host from DNS"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "The lecture suggests it can be acceptable to sometimes:",
+    "answers": [
+      "Force a reboot whenever load rises",
+      "Disable monitoring entirely after first alert",
+      "Do nothing and review later through the system",
+      "Replace the host hardware immediately"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "What is the main purpose of dashboards and UIs in monitoring?",
+    "answers": [
+      "Provide kernel-level debugging automatically",
+      "Transform raw data into structured presentations of state",
+      "Eliminate authentication requirements",
+      "Replace the need for metric collection"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "A recommended first step when designing dashboards is to:",
+    "answers": [
+      "Disable alerts to focus on charts",
+      "Graph every available metric at once",
+      "Pick the most important metrics and general health states",
+      "Hide trend data to reduce confusion"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which is a recommended dashboard practice from the lecture?",
+    "answers": [
+      "Avoid labels to reduce clutter",
+      "Provide context clues for interpretation",
+      "Use random units to prevent bias",
+      "Only show raw counters without meaning"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "How should time-based metrics typically be displayed on dashboards?",
+    "answers": [
+      "As kernel panic logs",
+      "As one-time static tables only",
+      "As charts or time series",
+      "As binary hex dumps"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which factor is mentioned as important when selecting a monitoring platform?",
+    "answers": [
+      "Data-gathering flexibility",
+      "CPU microcode version only",
+      "Keyboard layout support",
+      "Screen resolution of operators"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which factor is mentioned as important when selecting a monitoring platform?",
+    "answers": [
+      "Whether it supports floppy drives",
+      "Whether it disables encryption",
+      "Quality of the user interface",
+      "Whether it runs only on 32-bit CPUs"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which factor is mentioned as important when selecting a monitoring platform?",
+    "answers": [
+      "Length of system hostname",
+      "Number of installed games",
+      "Cost",
+      "Default shell prompt color"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which feature is mentioned in the lecture as a desirable platform capability?",
+    "answers": [
+      "Automatic deletion of logs",
+      "Automated discovery",
+      "Automatic password sharing",
+      "Automatic disabling of firewalls"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which platform characteristic is mentioned as useful for management needs?",
+    "answers": [
+      "Reporting features",
+      "Kernel signing enforcement",
+      "GPU overclocking support",
+      "BIOS flashing automation"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which open-source platforms are cited as first-generation, alert-focused tools?",
+    "answers": [
+      "Sysdig and SolarWinds",
+      "Prometheus and InfluxDB",
+      "Nagios and Icinga",
+      "Grafana and Kibana"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "According to the lecture, Nagios/Icinga work well for networks of roughly:",
+    "answers": [
+      "Exactly ten thousand hosts",
+      "Fewer than about a thousand hosts/devices",
+      "More than a million hosts",
+      "Only two or three hosts"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which monitoring platform is described as having an open-source core with paid add-ons?",
+    "answers": [
+      "Sensu",
+      "Pingdom",
+      "Tripwire",
+      "Grafana"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Sensu can run legacy monitoring plug-ins originally written for:",
+    "answers": [
+      "dns, dhcp, or ntp",
+      "syslog, journald, or logrotate",
+      "Nagios, Icinga, or Zabbix",
+      "ssh, scp, or sftp"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which open-source tool is described as a flexible time-series database with an easy query language?",
+    "answers": [
+      "Graphite",
+      "Nagios",
+      "logwatch",
+      "Zenoss"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Graphite is described as doing which behavior with metrics as they age?",
+    "answers": [
+      "Deleting all history immediately",
+      "Replacing them with audit logs",
+      "Aggregating and summarizing them",
+      "Converting them into packet captures"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which open-source platform is described as integrating collection, trending, and alerting?",
+    "answers": [
+      "Librato",
+      "Icinga",
+      "Prometheus",
+      "Pingdom"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which open-source platform is described as developer-friendly with richer data management features?",
+    "answers": [
+      "InfluxDB",
+      "OSSEC",
+      "SolarWinds",
+      "SNMP"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which pairing is listed as an open-source charting approach?",
+    "answers": [
+      "POP3 with IMAP",
+      "SSH with Telnet",
+      "Grafana with Graphite",
+      "Nagios with Tripwire"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which commercial platform is described as having a huge list of supported systems, apps, and services?",
+    "answers": [
+      "Datadog",
+      "Tripwire",
+      "Zenoss",
+      "Monitus"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which commercial platform is described as 'plug and play' using existing open-source plugins?",
+    "answers": [
+      "SolarWinds",
+      "Librato",
+      "SignalFx",
+      "Icinga"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which commercial platform is described as focused on e-commerce monitoring?",
+    "answers": [
+      "Grafana",
+      "Datadog",
+      "Pingdom",
+      "Monitus"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which commercial platform is SaaS-based and noted as a good fit for web apps only (no install required)?",
+    "answers": [
+      "InfluxDB",
+      "Zenoss",
+      "Pingdom",
+      "Sysdig Cloud"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which commercial platform is described as SaaS with many cloud integrations?",
+    "answers": [
+      "Tripwire",
+      "SolarWinds",
+      "SignalFx",
+      "Nagios"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which product is described as a network monitoring stalwart?",
+    "answers": [
+      "AIDE",
+      "SolarWinds",
+      "Librato",
+      "Prometheus"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which platform is described as specializing in Docker monitoring and alerting?",
+    "answers": [
+      "Icinga",
+      "Monitus",
+      "Graphite",
+      "Sysdig Cloud"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which commercial platform is described as an incredibly complex alternative to Icinga?",
+    "answers": [
+      "Zenoss",
+      "Datadog",
+      "Grafana",
+      "Pingdom"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which tool is specifically listed under network monitoring?",
+    "answers": [
+      "logwatch",
+      "ping",
+      "df",
+      "free"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which tool is specifically listed under network monitoring for IPv6 reachability?",
+    "answers": [
+      "mpstat",
+      "sar",
+      "du",
+      "ping6"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which protocol is listed under network monitoring for management/monitoring?",
+    "answers": [
+      "SNMP",
+      "SMTP",
+      "NTP",
+      "SFTP"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which item is listed as a system monitoring target in the lecture?",
+    "answers": [
+      "DNS zone serials only",
+      "Load averages",
+      "Kernel source trees",
+      "User home quotas only"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which command is listed as a way to view load averages?",
+    "answers": [
+      "df",
+      "du",
+      "uptime",
+      "lsof"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which file is listed as a direct source of load average data?",
+    "answers": [
+      "/var/log/messages",
+      "/etc/hosts",
+      "/proc/loadavg",
+      "/proc/cpuinfo"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which command is listed as yielding free/used disk space and inodes?",
+    "answers": [
+      "free",
+      "df",
+      "mpstat",
+      "du"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which command is listed as yielding directory sizes?",
+    "answers": [
+      "vmstat",
+      "free",
+      "du",
+      "df"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which command is listed as yielding free, used, and swap memory?",
+    "answers": [
+      "iostat",
+      "du",
+      "free",
+      "lsof"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "Which command is listed as yielding disk performance and throughput?",
+    "answers": [
+      "df",
+      "free",
+      "mpstat",
+      "iostat"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which command is listed as yielding open files and network ports?",
+    "answers": [
+      "lsof",
+      "vmstat",
+      "df",
+      "sar"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which command is listed as yielding per-processor utilization on multiprocessor systems?",
+    "answers": [
+      "du",
+      "lsof",
+      "ping6",
+      "mpstat"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which command is listed as yielding process, CPU, and memory statistics?",
+    "answers": [
+      "free",
+      "df",
+      "vmstat",
+      "iostat"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "question": "In the lecture, application monitoring is exemplified by:",
+    "answers": [
+      "Log monitoring using logwatch",
+      "Packet filtering using iptables",
+      "Disk partitioning using fdisk",
+      "User management using sudo"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "System integrity verification is defined as:",
+    "answers": [
+      "Encrypting all disks with a new key",
+      "Comparing current state against a known-good baseline",
+      "Blocking all inbound network traffic",
+      "Running anti-malware scans only on demand"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which tool is listed for system integrity verification?",
+    "answers": [
+      "Pingdom",
+      "Tripwire",
+      "Grafana",
+      "mpstat"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which tool is listed for system integrity verification?",
+    "answers": [
+      "SignalFx",
+      "ping",
+      "vmstat",
+      "OSSEC"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "question": "Which tool is also listed for system integrity verification?",
+    "answers": [
+      "SSH",
+      "mtree",
+      "SMTP",
+      "NTP"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Intrusion detection monitoring is categorized into:",
+    "answers": [
+      "Local-only and cloud-only monitoring",
+      "Host-based (HIDS) and network-based (NIDS)",
+      "CPU-based and disk-based monitoring",
+      "User-based and admin-based monitoring"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which pair is mentioned as popular open-source HIDS platforms?",
+    "answers": [
+      "Datadog and Librato",
+      "OSSEC and AIDE",
+      "ping and ping6",
+      "Nagios and Icinga"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which goal is explicitly mentioned in the 'tips and tricks' slide?",
+    "answers": [
+      "Disable dashboards completely",
+      "Avoid monitoring burn-out",
+      "Maximize alert volume",
+      "Ignore historical trends"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "A recommended way to reduce alert fatigue is to:",
+    "answers": [
+      "Turn every metric into a page",
+      "Eliminate monitoring noise",
+      "Remove run books to stay flexible",
+      "Disable thresholds entirely"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "The lecture suggests defining:",
+    "answers": [
+      "Which users can bypass authentication",
+      "Which situations truly need 24/7 attention",
+      "Which hosts should never be monitored",
+      "Which services must run as root"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "The lecture recommends creating run books primarily to:",
+    "answers": [
+      "Remove the need for alerts",
+      "Make response steps repeatable and fast",
+      "Avoid collecting metrics",
+      "Replace monitoring with documentation"
+    ],
+    "correct_answer": 1
+  },
+  {
+    "question": "Which practice is recommended to ensure monitoring itself stays reliable?",
+    "answers": [
+      "Monitor the monitoring platform",
+      "Disable monitoring checks on weekends",
+      "Avoid any redundancy in monitoring",
+      "Store metrics only in text files"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "question": "Which policy is recommended before deploying a server/service to production?",
+    "answers": [
+      "Disable logs to save storage",
+      "Change its hostname daily",
+      "Add it to the monitoring system first",
+      "Remove all alerts for the first month"
+    ],
+    "correct_answer": 2
+  }
+]

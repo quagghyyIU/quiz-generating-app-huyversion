@@ -1,0 +1,533 @@
+[
+    {
+      "question": "What is a process in a Unix-like operating system?",
+      "answers": [
+        "A running instance of a program",
+        "A compiled binary file",
+        "A kernel module",
+        "A system call"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which identifier uniquely identifies a process?",
+      "answers": [
+        "PID",
+        "UID",
+        "GID",
+        "TID"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process always has PID 1?",
+      "answers": [
+        "init or systemd",
+        "bash",
+        "kernel",
+        "login"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary responsibility of PID 1?",
+      "answers": [
+        "Start and manage system services",
+        "Handle hardware interrupts",
+        "Schedule CPU time slices",
+        "Provide user authentication"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command displays currently running processes?",
+      "answers": [
+        "ps",
+        "ls",
+        "top",
+        "jobs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command shows a dynamic, real-time view of processes?",
+      "answers": [
+        "top",
+        "ps",
+        "kill",
+        "nice"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command shows process hierarchy in a tree format?",
+      "answers": [
+        "pstree",
+        "ps aux",
+        "top",
+        "htopd"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process state indicates that a process is currently running on the CPU?",
+      "answers": [
+        "Running",
+        "Sleeping",
+        "Stopped",
+        "Zombie"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process state indicates that a process is waiting for an event or resource?",
+      "answers": [
+        "Sleeping",
+        "Running",
+        "Zombie",
+        "Stopped"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is a zombie process?",
+      "answers": [
+        "A terminated process waiting for its parent to collect its exit status",
+        "A process consuming 100% CPU",
+        "A kernel thread",
+        "A process blocked on I/O"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process is responsible for reaping orphaned zombie processes?",
+      "answers": [
+        "PID 1 (init/systemd)",
+        "The kernel scheduler",
+        "The shell",
+        "The login process"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What happens when a parent process exits before its child?",
+      "answers": [
+        "The child is adopted by PID 1",
+        "The child is immediately killed",
+        "The child becomes a kernel thread",
+        "The child stops executing"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command sends a signal to a process?",
+      "answers": [
+        "kill",
+        "ps",
+        "top",
+        "exec"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which signal requests a process to terminate gracefully?",
+      "answers": [
+        "SIGTERM",
+        "SIGKILL",
+        "SIGSTOP",
+        "SIGSEGV"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which signal cannot be caught or ignored by a process?",
+      "answers": [
+        "SIGKILL",
+        "SIGTERM",
+        "SIGINT",
+        "SIGHUP"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which signal is typically sent by pressing Ctrl+C?",
+      "answers": [
+        "SIGINT",
+        "SIGTERM",
+        "SIGSTOP",
+        "SIGQUIT"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which signal stops (pauses) a process but allows it to be resumed?",
+      "answers": [
+        "SIGSTOP",
+        "SIGKILL",
+        "SIGTERM",
+        "SIGSEGV"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which signal resumes a stopped process?",
+      "answers": [
+        "SIGCONT",
+        "SIGSTOP",
+        "SIGKILL",
+        "SIGINT"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command lists all available signals?",
+      "answers": [
+        "kill -l",
+        "ps -l",
+        "top -l",
+        "signal -a"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does the kill command actually do?",
+      "answers": [
+        "Send a signal to a process",
+        "Immediately destroy a process",
+        "Reboot the system",
+        "Free memory directly"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command sends SIGKILL to a process by name?",
+      "answers": [
+        "pkill -9",
+        "killall -SIGTERM",
+        "kill -15",
+        "nice"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command terminates processes by name?",
+      "answers": [
+        "killall",
+        "kill",
+        "ps",
+        "exec"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process priority value represents the highest priority?",
+      "answers": [
+        "-20",
+        "0",
+        "10",
+        "19"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process priority value represents the lowest priority?",
+      "answers": [
+        "19",
+        "-20",
+        "0",
+        "1"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command starts a process with a modified priority?",
+      "answers": [
+        "nice",
+        "renice",
+        "kill",
+        "top"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command changes the priority of a running process?",
+      "answers": [
+        "renice",
+        "nice",
+        "kill",
+        "bg"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which users are allowed to decrease the nice value (increase priority)?",
+      "answers": [
+        "root",
+        "Any regular user",
+        "Only the process owner",
+        "Nobody"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which scheduling class is typically used for normal user processes?",
+      "answers": [
+        "CFS (Completely Fair Scheduler)",
+        "FIFO",
+        "Round-robin only",
+        "Real-time exclusive"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which scheduling policy is used for real-time FIFO tasks?",
+      "answers": [
+        "SCHED_FIFO",
+        "SCHED_OTHER",
+        "SCHED_IDLE",
+        "SCHED_BATCH"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which scheduling policy provides round-robin scheduling for real-time tasks?",
+      "answers": [
+        "SCHED_RR",
+        "SCHED_FIFO",
+        "SCHED_OTHER",
+        "SCHED_BATCH"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which scheduling class gives CPU time only when the system is idle?",
+      "answers": [
+        "SCHED_IDLE",
+        "SCHED_FIFO",
+        "SCHED_RR",
+        "SCHED_OTHER"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is used to run a process in the background?",
+      "answers": [
+        "&",
+        "bg",
+        "fg",
+        "jobs"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command lists jobs started from the current shell?",
+      "answers": [
+        "jobs",
+        "ps",
+        "top",
+        "bg"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command brings a background job to the foreground?",
+      "answers": [
+        "fg",
+        "bg",
+        "jobs",
+        "kill"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command resumes a stopped job in the background?",
+      "answers": [
+        "bg",
+        "fg",
+        "jobs",
+        "nice"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which key combination typically suspends a foreground job?",
+      "answers": [
+        "Ctrl+Z",
+        "Ctrl+C",
+        "Ctrl+D",
+        "Ctrl+X"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process attribute represents the parent-child relationship?",
+      "answers": [
+        "PPID",
+        "UID",
+        "GID",
+        "TTY"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command replaces the current process image with a new program?",
+      "answers": [
+        "exec",
+        "fork",
+        "kill",
+        "wait"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which system call creates a new process?",
+      "answers": [
+        "fork",
+        "exec",
+        "exit",
+        "wait"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which system call waits for a child process to terminate?",
+      "answers": [
+        "wait",
+        "fork",
+        "exec",
+        "kill"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which system call terminates the current process?",
+      "answers": [
+        "exit",
+        "kill",
+        "wait",
+        "fork"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command shows CPU and memory usage per process?",
+      "answers": [
+        "top",
+        "ps",
+        "jobs",
+        "fg"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which field in top indicates CPU usage?",
+      "answers": [
+        "%CPU",
+        "%MEM",
+        "PID",
+        "TIME+"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which field in top indicates memory usage?",
+      "answers": [
+        "%MEM",
+        "%CPU",
+        "PID",
+        "NI"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which state letter indicates a zombie process in ps output?",
+      "answers": [
+        "Z",
+        "S",
+        "R",
+        "T"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which state letter indicates a running process in ps output?",
+      "answers": [
+        "R",
+        "S",
+        "Z",
+        "T"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which state letter indicates a stopped process in ps output?",
+      "answers": [
+        "T",
+        "R",
+        "S",
+        "Z"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command can be used to trace system calls made by a process?",
+      "answers": [
+        "strace",
+        "ltrace",
+        "ps",
+        "nice"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which tool traces library calls instead of system calls?",
+      "answers": [
+        "ltrace",
+        "strace",
+        "top",
+        "pstree"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why should SIGKILL be used as a last resort?",
+      "answers": [
+        "It prevents the process from cleaning up resources",
+        "It logs too much information",
+        "It slows down the system",
+        "It requires root always"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which concept ensures the CPU is shared fairly among processes?",
+      "answers": [
+        "Scheduling",
+        "Paging",
+        "Swapping",
+        "Fragmentation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which process control principle aims to avoid starving low-priority processes?",
+      "answers": [
+        "Fair scheduling",
+        "Priority inversion",
+        "Busy waiting",
+        "Spin locking"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best summarizes process control?",
+      "answers": [
+        "It manages creation, execution, scheduling, and termination of processes",
+        "It only manages memory usage",
+        "It replaces access control mechanisms",
+        "It only applies to kernel threads"
+      ],
+      "correct_answer": 0
+    }
+  ]
+  

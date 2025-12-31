@@ -1,0 +1,753 @@
+[
+    {
+      "question": "What is the primary purpose of using a pipeline (|) in shell text processing?",
+      "answers": [
+        "Send STDOUT of one command to STDIN of the next",
+        "Redirect STDERR to a file",
+        "Execute commands in parallel",
+        "Disable command output"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the pipeline: cat Experiment_6-1.txt | grep -v Team, what does grep -v do?",
+      "answers": [
+        "Print only matching lines",
+        "Print non-matching lines",
+        "Print line numbers",
+        "Print matching file names"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command is used first to output the contents of Experiment_6-1.txt into the pipeline?",
+      "answers": [
+        "cat",
+        "awk",
+        "sed",
+        "vim"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In grep, the simplest type of pattern that matches an exact string like Team is called:",
+      "answers": [
+        "A literal pattern",
+        "A capture group",
+        "A quantifier",
+        "An alternation"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why is the regex for removing empty lines often enclosed in quotes in grep (e.g., grep -v \"^\\s*$\")?",
+      "answers": [
+        "To force grep to use case-insensitive matching",
+        "To prevent the shell from interpreting special characters",
+        "To automatically enable extended regex",
+        "To redirect output to a file"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which regex is used in the document to match empty lines that may contain only whitespace?",
+      "answers": [
+        "^\\s*$",
+        "^\\S+$",
+        ".*\\S.*",
+        "\\s+"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the regex ^\\s*$, what does the ^ anchor mean?",
+      "answers": [
+        "End of line",
+        "Start of line",
+        "Match any digit",
+        "Match a literal caret"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the regex ^\\s*$, what does the $ anchor mean?",
+      "answers": [
+        "Start of line",
+        "End of line",
+        "Match any letter",
+        "Match a literal dollar sign only"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the regex ^\\s*$, what does \\s represent (as described in the document)?",
+      "answers": [
+        "Any digit",
+        "Any whitespace such as spaces and tabs",
+        "A literal letter s",
+        "Any punctuation"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the regex ^\\s*$, what does the * quantifier mean?",
+      "answers": [
+        "Match exactly one whitespace character",
+        "Match zero or more whitespace characters",
+        "Match one or more whitespace characters",
+        "Match exactly three whitespace characters"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which part of ^\\s*$ ensures that the entire line is checked (not just a substring)?",
+      "answers": [
+        "Only the \\s",
+        "Only the *",
+        "The anchors ^ and $",
+        "The use of quotes"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which command removes lines containing the word Team from the input stream?",
+      "answers": [
+        "grep -v Team",
+        "grep Team",
+        "sed -e \"s/Team//\"",
+        "awk '{print Team}'"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary purpose of using sed in the given pipeline?",
+      "answers": [
+        "Reorder fields by whitespace",
+        "Perform stream editing such as substitutions",
+        "Display whitespace in Vim",
+        "Count matching lines"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In sed, what does the -e option indicate?",
+      "answers": [
+        "Enable extended regex automatically",
+        "The following quoted text is a sed script/expression",
+        "Export variables for child processes",
+        "Edit files in place by default"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What does the s in the sed substitution form s/<regex>/<replacement>/ mean?",
+      "answers": [
+        "Sort",
+        "Substitute",
+        "Split",
+        "Suppress output"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the expression sed -e \"s/[Ll]eader//\", what is the replacement string?",
+      "answers": [
+        "leader",
+        "Leader",
+        "A single space",
+        "An empty (null) string"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "What does the character set [Ll] match in the pattern [Ll]eader?",
+      "answers": [
+        "Only uppercase L",
+        "Only lowercase l",
+        "Either L or l",
+        "Any letter"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which strings are matched by the regex [Ll]eader?",
+      "answers": [
+        "Only Leader",
+        "Only leader",
+        "Both leader and Leader",
+        "Only leaders (plural)"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which sed command removes the literal left square bracket character '[' from the stream?",
+      "answers": [
+        "sed -e \"s/[//g\"",
+        "sed -e \"s/\\[//g\"",
+        "sed -e \"s/\\]//g\"",
+        "sed -e \"s/()//g\""
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why must '[' be escaped as \\[ in sed in this document's example?",
+      "answers": [
+        "Because [ always indicates a file name",
+        "Because [ can begin a character set in regex",
+        "Because sed cannot process brackets at all",
+        "Because grep removes brackets automatically"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which sed expression removes the literal right square bracket character ']' from the stream?",
+      "answers": [
+        "sed -e \"s/\\]//g\"",
+        "sed -e \"s/\\[//g\"",
+        "sed -e \"s/]//g\"",
+        "sed -e \"s/[//g\""
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In sed, what does the trailing g flag in s/pat/repl/g mean?",
+      "answers": [
+        "Use greedy matching",
+        "Apply substitution globally on the line (all matches)",
+        "Group the match",
+        "Generate output in gzip"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which set of extra characters is removed using multiple -e expressions in the example?",
+      "answers": [
+        "Only commas and periods",
+        "Brackets [] and parentheses ()",
+        "Only digits",
+        "Only whitespace"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command in the pipeline is responsible for formatting output as: <first> <last> <email>?",
+      "answers": [
+        "grep",
+        "sed",
+        "awk",
+        "cat"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In awk, what do $1, $2, and $3 represent by default?",
+      "answers": [
+        "The first three characters of a line",
+        "The first three lines of the file",
+        "The first three whitespace-separated fields",
+        "The first three regex matches"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "According to the document, the default awk field separator is:",
+      "answers": [
+        "A comma",
+        "A tab only",
+        "Spaces (any amount of whitespace)",
+        "A semicolon"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What does this awk program output: awk '{print $1\" \"$2\" <\"$3\">\"}'",
+      "answers": [
+        "Only $3 in angle brackets",
+        "First name, last name, and email in < >",
+        "Only lines that match Team",
+        "Only empty lines"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why does awk help with leading/trailing whitespace in fields in this example?",
+      "answers": [
+        "awk automatically trims field boundaries when splitting by whitespace",
+        "awk converts everything to uppercase",
+        "awk removes all punctuation by default",
+        "awk disables regex processing"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operator is used at the end of the pipeline to write final output into a file (addresses.txt)?",
+      "answers": [
+        "|",
+        ">",
+        "<",
+        "&&"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the effect of using > addresses.txt at the end of a pipeline?",
+      "answers": [
+        "Append output to addresses.txt",
+        "Overwrite/create addresses.txt with pipeline output",
+        "Send errors to addresses.txt only",
+        "Read input from addresses.txt"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which part of the pipeline specifically removes empty lines after removing Team lines?",
+      "answers": [
+        "grep -v \"^\\s*$\"",
+        "sed -e \"s/[Ll]eader//\"",
+        "awk '{print $1}'",
+        "cat Experiment_6-1.txt"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the regex ^\\s*$, which component allows matching lines that contain tabs or spaces only?",
+      "answers": [
+        "^",
+        "\\s*",
+        "$",
+        "Quotes around the regex"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement best describes what grep -v \"^\\s*$\" does?",
+      "answers": [
+        "Keeps only empty lines",
+        "Removes empty/whitespace-only lines",
+        "Replaces whitespace with plus signs",
+        "Sorts lines by length"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which tool is described as 'a powerful programming language' that can accept data streams on STDIN?",
+      "answers": [
+        "cat",
+        "sed",
+        "awk",
+        "grep"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In the given workflow, why is it better to automate the text cleanup rather than using a word processor repeatedly?",
+      "answers": [
+        "Word processors cannot open text files",
+        "Automation is repeatable and avoids doing the same manual steps again",
+        "Automation makes files smaller automatically",
+        "Automation prevents typos by disabling editing"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command is used in the document to display invisible whitespace characters in Vim?",
+      "answers": [
+        "set listchars=eol:$,nbsp:_,tab:<->,trail:~,extends:>,space:+",
+        "set showwhitespace=1",
+        "vim --whitespace",
+        "set tabstop=4"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Where can the Vim listchars configuration be added according to the document?",
+      "answers": [
+        "~/.bashrc only",
+        "~/.vimrc or /etc/vimrc",
+        "/etc/profile only",
+        "~/.profile only"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the Vim listchars configuration shown, what does eol:$ indicate?",
+      "answers": [
+        "End-of-line is displayed as $",
+        "Dollar signs are removed from lines",
+        "Variables are expanded",
+        "Lines are appended to a file"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the Vim listchars configuration shown, what does space:+ indicate?",
+      "answers": [
+        "Spaces are displayed as +",
+        "Spaces are converted to tabs",
+        "Spaces are removed",
+        "Spaces are treated as regex wildcards"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which stage in the pipeline removes the word leader regardless of whether it is Leader or leader?",
+      "answers": [
+        "grep -v Team",
+        "grep -v \"^\\s*$\"",
+        "sed -e \"s/[Ll]eader//\"",
+        "awk '{print $1\" \"$2}'"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What does sed -e \"s/[Ll]eader//\" do to a line containing 'Leader  Virginia Jones  vjones88@example.com'?",
+      "answers": [
+        "Deletes the entire line",
+        "Removes the substring 'Leader' and keeps the rest",
+        "Replaces Leader with 'leader'",
+        "Keeps only the word Leader"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which sed expression in the example removes the literal ')' character?",
+      "answers": [
+        "sed -e \"s/(//g\"",
+        "sed -e \"s/)//g\"",
+        "sed -e \"s/\\)//g\"",
+        "sed -e \"s/\\(//g\""
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which sed expression in the example removes the literal '(' character?",
+      "answers": [
+        "sed -e \"s/(//g\"",
+        "sed -e \"s/)//g\"",
+        "sed -e \"s/\\)//g\"",
+        "sed -e \"s/\\(//g\""
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the main reason the document uses multiple sed -e expressions in one command?",
+      "answers": [
+        "To execute sed in parallel",
+        "To apply multiple substitutions in a single pass of the stream",
+        "To force sed to use binary mode",
+        "To sort fields before printing"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which component of the pipeline is most directly responsible for removing unwanted punctuation characters like []()?",
+      "answers": [
+        "cat",
+        "grep",
+        "sed",
+        "awk"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In the sed substitution form s/<regex>/<replacement>/, what does the <regex> represent?",
+      "answers": [
+        "The output filename",
+        "The search pattern to match",
+        "The user’s environment variables",
+        "A required numeric value"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In sed, what does an empty replacement string (//) effectively mean?",
+      "answers": [
+        "Replace with a single slash character",
+        "Replace with the original match (no change)",
+        "Delete the matched text",
+        "Swap the first two fields"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which statement about the backslash (\\) in regex is consistent with the document?",
+      "answers": [
+        "It always means 'match any character'",
+        "It acts as an escape character to change a literal into a metacharacter meaning (e.g., \\s)",
+        "It only works in awk, not grep",
+        "It disables anchors ^ and $"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which of the following best describes \\s in the document’s explanation?",
+      "answers": [
+        "A wildcard for any printable character",
+        "A metacharacter for whitespace (spaces, tabs, etc.)",
+        "A command-line option for grep",
+        "A file extension"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "The document calls the asterisk (*) also known as:",
+      "answers": [
+        "pipe",
+        "splat",
+        "anchor",
+        "group"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In regex, why does \\s* match an empty string of whitespace?",
+      "answers": [
+        "Because \\s means 'empty'",
+        "Because * allows zero occurrences of the preceding token",
+        "Because ^ forces zero matches",
+        "Because $ removes whitespace"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which of these lines would be matched by ^\\s*$ ?",
+      "answers": [
+        "Team 1 Apr 3",
+        "Leader Virginia Jones vjones88@example.com",
+        "A line containing only spaces and tabs",
+        "A line containing the word Team"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which command stage is used specifically to eliminate lines that contain non-address content like 'Team 1 Apr 3'?",
+      "answers": [
+        "grep -v Team",
+        "grep -v \"^\\s*$\"",
+        "sed -e \"s/\\[//g\"",
+        "awk '{print $3}'"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary role of grep in this W7 workflow?",
+      "answers": [
+        "Perform field reordering",
+        "Filter out unwanted lines based on patterns",
+        "Add angle brackets around emails",
+        "Remove brackets using substitution"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which tool is used to add the angle brackets < > around the email address in output?",
+      "answers": [
+        "grep",
+        "sed",
+        "awk",
+        "vim"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which part of the awk print statement adds angle brackets around the email field?",
+      "answers": [
+        "\"<\"$3\">\"",
+        "$1\" \"$2",
+        "print $3 only",
+        "print \"<\"$1\">\""
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the final desired format <first> <last> <email@example.com>, which field is assumed to be the email in the cleaned stream?",
+      "answers": [
+        "$1",
+        "$2",
+        "$3",
+        "$0"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In awk, what does $0 typically represent?",
+      "answers": [
+        "The entire current line",
+        "The script filename",
+        "The exit code",
+        "Only the first field"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the main benefit of building a pipeline one stage at a time (as described in the document)?",
+      "answers": [
+        "It makes commands run faster automatically",
+        "You can inspect the stream after each stage and adjust safely",
+        "It prevents syntax errors completely",
+        "It converts regex into globbing patterns"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command is described as a 'stream editor' in the document?",
+      "answers": [
+        "cat",
+        "sed",
+        "grep",
+        "tail"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In sed substitution syntax s/<regex>/<replacement>/, which delimiter is used in the examples?",
+      "answers": [
+        ":",
+        "/",
+        "|",
+        ","
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which sed command removes the literal character ']' globally on each line?",
+      "answers": [
+        "sed -e \"s/\\]//g\"",
+        "sed -e \"s/]//\"",
+        "sed -e \"s/[\\]]//\"",
+        "sed -e \"s/\\]//\""
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches why awk was suggested over sed for removing leading spaces in some lines?",
+      "answers": [
+        "awk cannot reorder fields, sed can",
+        "awk can work with fields, reorder them, and format output easily",
+        "sed can only delete lines, not characters",
+        "sed automatically adds angle brackets"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "According to the document, experiments should be performed as:",
+      "answers": [
+        "root user only",
+        "a non-privileged user",
+        "a network administrator account",
+        "a systemd service account"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command sequence removes Team lines AND empty/whitespace-only lines (in order)?",
+      "answers": [
+        "grep -v \"^\\s*$\" | grep -v Team",
+        "grep -v Team | grep -v \"^\\s*$\"",
+        "sed -e \"s/Team//\" | awk '{print}'",
+        "awk '{print}' | sed -e \"s/Team//\""
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which stage removes the word 'leader' but keeps the line contents like names and email?",
+      "answers": [
+        "grep -v Team",
+        "grep -v \"^\\s*$\"",
+        "sed -e \"s/[Ll]eader//\"",
+        "awk '{print $1}'"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What is the main purpose of escaping special characters when using sed/regex?",
+      "answers": [
+        "To make commands run in background",
+        "To ensure special characters are treated as literal characters",
+        "To convert regex into arithmetic",
+        "To disable pipes"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which character is explicitly mentioned as needing escaping in sed because it can start a set?",
+      "answers": [
+        "[",
+        ")",
+        ".",
+        "+"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is produced by redirecting the final pipeline output to addresses.txt?",
+      "answers": [
+        "A file containing only Team headers",
+        "A cleaned list formatted as first last <email>",
+        "A binary log of grep matches",
+        "A list of removed lines only"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which of the following best describes what the pipeline is transforming?",
+      "answers": [
+        "A mail server into a DNS server",
+        "A messy text list into a format usable by mailing list software",
+        "A JSON file into CSV",
+        "A regex into a shell glob"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which command would be responsible for removing bracket characters if you see names like [Fred Mack] in the input?",
+      "answers": [
+        "grep -v Team",
+        "sed -e \"s/\\[//g\" -e \"s/\\]//g\"",
+        "awk '{print $1\" \"$2}'",
+        "cat | sort"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the context of this W7 example, what does 'global' (g) substitution avoid?",
+      "answers": [
+        "Replacing only the first occurrence on a line",
+        "Replacing only uppercase letters",
+        "Replacing only whitespace",
+        "Replacing across multiple files"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which component in awk output ensures there is exactly one space between first and last name?",
+      "answers": [
+        "$1$2",
+        "\" \"",
+        "\"\\t\"",
+        "FS"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "If a line contains multiple spaces/tabs between fields, why does awk still correctly identify $1, $2, $3?",
+      "answers": [
+        "Because awk ignores whitespace completely",
+        "Because default field separation treats any amount of whitespace as separator",
+        "Because awk uses commas by default",
+        "Because awk automatically runs sed first"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the primary purpose of displaying whitespace in Vim for this task?",
+      "answers": [
+        "To make the file smaller",
+        "To visualize hidden spaces/tabs and empty lines",
+        "To convert regex into globs",
+        "To automatically delete brackets"
+      ],
+      "correct_answer": 1
+    }
+  ]
+  

@@ -1,6 +1,30 @@
 {
-  "files": [
-    "data1.json",
-    "newfile.json"
+  "folders": [
+    {
+      "id": "sna",
+      "name": "SNA - System & Network Admin",
+      "files": [
+        "sna_11.dns.json",
+        "sna_11.services.json",
+        "sna_11.tcpip1.json",
+        "sna_14.monitor.json",
+        "sna_14.perf.json",
+        "sna_14.process.json",
+        "sna_5-6.scripting.json",
+        "sna_7.regex.json",
+        "sna_8.1.booting.json",
+        "sna_8.2.access.json",
+        "sna_9-10.containers.json",
+        "sna_9-10.virtual.json"
+      ]
+    },
+    {
+      "id": "uncategorized",
+      "name": "Uncategorized",
+      "files": [
+        "data1.json",
+        "newfile.json"
+      ]
+    }
   ]
 }

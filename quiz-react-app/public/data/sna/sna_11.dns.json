@@ -1,0 +1,368 @@
+[
+    {
+      "question": "What is DNS primarily used for in the Internet?",
+      "answers": ["Encrypting application traffic", "Mapping hostnames to IP addresses", "Allocating MAC addresses", "Scheduling network bandwidth"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why is DNS implemented as a distributed system instead of a centralized database?",
+      "answers": ["To reduce CPU usage on clients", "To eliminate the need for IP addresses", "To avoid single point of failure and scaling issues", "To force all queries through routers"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which DNS service supports using an alternate name for the same host?",
+      "answers": ["Host aliasing", "IP fragmentation", "Packet encapsulation", "Flow control"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which DNS feature enables one hostname to map to multiple IP addresses for load distribution?",
+      "answers": ["NAT translation", "Replicated Web servers under one name", "MAC address randomization", "Port forwarding"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In a typical DNS lookup for www.amazon.com, which server type is contacted first (in the basic hierarchy)?",
+      "answers": ["Authoritative server for amazon.com", "Local DNS resolver", "Root DNS server", "TLD server for .com"],
+      "correct_answer": 2
+    },
+    {
+      "question": "What is the role of a Root DNS server in name resolution?",
+      "answers": ["Stores all A records for the Internet", "Acts as contact-of-last-resort when a name cannot be resolved", "Translates MAC addresses to IP addresses", "Enforces NAT policies for home networks"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Who manages the root DNS domain (as covered in the slides)?",
+      "answers": ["IETF", "ICANN", "IEEE", "ISOC"],
+      "correct_answer": 1
+    },
+    {
+      "question": "How many logical root name “servers” are described in the slides?",
+      "answers": ["7", "10", "13", "26"],
+      "correct_answer": 2
+    },
+    {
+      "question": "What is the responsibility of a TLD DNS server?",
+      "answers": ["Managing private IP ranges", "Serving domains like .com, .org, and country TLDs", "Caching browser cookies", "Handling TCP retransmissions"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What best describes an authoritative DNS server?",
+      "answers": ["A server that always performs recursive resolution for clients", "An organization’s DNS server providing authoritative hostname-to-IP mappings", "A router that applies NAT to DNS traffic", "A server that stores only root zone information"],
+      "correct_answer": 1
+    },
+    {
+      "question": "When a host makes a DNS query, where is it typically sent first?",
+      "answers": ["Root DNS server", "Local DNS server (resolver)", "Authoritative server", "TLD server"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about a local DNS server is correct?",
+      "answers": ["It strictly belongs to the DNS hierarchy", "It does not strictly belong to the hierarchy", "It is always a root server replica", "It cannot cache results"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In an iterated DNS query, what does a contacted server usually return if it does not know the final answer?",
+      "answers": ["The final IP address anyway", "A referral: the name of another server to contact", "A TCP reset packet", "A new subnet mask"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In a recursive DNS query, who bears the burden of completing name resolution?",
+      "answers": ["The requesting host", "The contacted name server", "The root server only", "The authoritative server only"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why can recursive queries create concerns at upper levels of the DNS hierarchy?",
+      "answers": ["They require MAC address lookups", "They can create heavy load at upper levels", "They eliminate caching", "They prevent UDP from being used"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the main benefit of DNS caching?",
+      "answers": ["Improves response time", "Guarantees mappings are always current", "Prevents DDoS attacks completely", "Eliminates the need for authoritative servers"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does TTL represent in DNS caching?",
+      "answers": ["Total Transfer Latency", "Time until a cache entry expires", "Type-to-Label mapping", "Transport Tunnel Limit"],
+      "correct_answer": 1
+    },
+    {
+      "question": "A key risk of DNS caching is that cached entries can be:",
+      "answers": ["Always encrypted", "Out-of-date", "Converted into MAC addresses", "Forced to use TCP only"],
+      "correct_answer": 1
+    },
+    {
+      "question": "If a named host changes IP address, why might the new mapping not be known Internet-wide immediately?",
+      "answers": ["Because routers block DNS", "Because DNS uses only TCP", "Because old cached entries persist until TTLs expire", "Because TLD servers never update records"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which server information is typically cached in local name servers (per the slides)?",
+      "answers": ["TLD servers", "ARP tables", "TCP congestion windows", "MAC OUIs"],
+      "correct_answer": 0
+    },
+    {
+      "question": "DNS is described as a distributed database storing what kind of entries?",
+      "answers": ["Resource Records (RR)", "Ethernet frames", "TCP segments", "Routing table ACLs"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is the correct RR tuple format shown in the slides?",
+      "answers": ["(ip, name, port, ttl)", "(name, value, type, ttl)", "(type, name, ttl, checksum)", "(domain, subnet, gateway, ttl)"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In an NS record, what does the 'name' field represent?",
+      "answers": ["A hostname", "A domain (e.g., foo.com)", "An IP address", "A mail server IP"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In an NS record, what does the 'value' field represent?",
+      "answers": ["Hostname of the authoritative name server for the domain", "IP address of the client", "Alias name for a canonical name", "TTL of the record"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does a DNS A record map?",
+      "answers": ["Domain to mail server", "Hostname to IP address", "Alias to canonical name", "IP address to hostname only"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the purpose of a CNAME record?",
+      "answers": ["Maps a hostname to an IP address", "Maps a domain to its authoritative server hostname", "Maps an alias name to a canonical (real) name", "Maps a domain to an SMTP mail server"],
+      "correct_answer": 2
+    },
+    {
+      "question": "What does an MX record’s value represent?",
+      "answers": ["Name of an SMTP mail server associated with the name", "IP address of a root server", "Canonical name of a host", "Subnet mask for the domain"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which DNS service is specifically related to email delivery?",
+      "answers": ["Mail server aliasing", "IP tunneling", "Frame relay", "Path MTU discovery"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement matches the slide’s description of DNS reliability/security goals?",
+      "answers": ["DNS is designed to be “bulletproof”", "DNS must be centralized to be secure", "DNS avoids caching for integrity", "DNS relies on NAT for reliability"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which security properties are explicitly mentioned for DNSSEC in the slides?",
+      "answers": ["Confidentiality and anonymity", "Authentication and message integrity", "Load balancing and compression", "Flow control and retransmission"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which RFC is referenced for DNSSEC authentication services in the slides?",
+      "answers": ["RFC 791", "RFC 4033", "RFC 768", "RFC 793"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which attack targets the DNS by intercepting queries and returning bogus replies?",
+      "answers": ["ARP spoofing", "DNS spoofing", "TCP slow start", "ICMP redirect"],
+      "correct_answer": 1
+    },
+    {
+      "question": "DNS cache poisoning is associated with which type of attack in the slides?",
+      "answers": ["Spoofing attacks", "MTU attacks", "Subnetting attacks", "Framing attacks"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which DDoS scenario is described as 'not successful to date' in the slides?",
+      "answers": ["Bombarding authoritative servers only", "Bombarding root servers with traffic", "Flooding client resolvers only", "Attacking /etc/hosts files"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Why can root servers sometimes be bypassed during attacks (per the slides)?",
+      "answers": ["Because browsers hardcode all IPs", "Because local DNS servers cache IPs of TLD servers", "Because TLD servers are offline by default", "Because ICANN disables recursion"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which DDoS target is described as potentially more dangerous in the slides?",
+      "answers": ["TLD servers", "Client laptops", "Home routers", "Web browsers"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file provides a static hostname mapping alternative to DNS?",
+      "answers": ["/etc/hosts", "/etc/shadow", "/etc/fstab", "/var/log/syslog"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file is described as the client resolver configuration listing name servers?",
+      "answers": ["/etc/resolv.conf", "/etc/hostname", "/etc/network/interfaces", "/etc/passwd"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which path is shown in the slides as a systemd-resolved resolv.conf location?",
+      "answers": ["/run/systemd/resolve/resolv.conf", "/usr/systemd/resolv.conf", "/etc/systemd/resolve.conf", "/var/run/resolv.conf"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is listed in the slides for querying DNS?",
+      "answers": ["dig", "traceroute", "netstat", "ping"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is listed in the slides for querying DNS (another valid option)?",
+      "answers": ["nslookup", "iptables", "top", "vmstat"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is listed in the slides for querying DNS (another valid option)?",
+      "answers": ["host", "systemctl", "journalctl", "lsof"],
+      "correct_answer": 0
+    },
+    {
+      "question": "To obtain a second-level domain name, what must you apply to (per the slides)?",
+      "answers": ["A router vendor", "A registrar for the appropriate TLD", "A local DNS cache", "An ISP’s DHCP server"],
+      "correct_answer": 1
+    },
+    {
+      "question": "When registering a domain name, which contact types are mentioned in the slides?",
+      "answers": ["Financial and legal contacts", "Technical and administrative contacts", "Root and TLD contacts", "MAC and LLC contacts"],
+      "correct_answer": 1
+    },
+    {
+      "question": "When registering a domain, what is the minimum number of name server hosts suggested?",
+      "answers": ["One", "Two", "Four", "Eight"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In the 'Network Utopia' example, what records does the registrar insert into the .com TLD server?",
+      "answers": ["NS and A records", "CNAME and MX records", "Only MX records", "Only PTR records"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the example, what type of record is created for www.networkuptopia.com?",
+      "answers": ["A record", "MX record", "NS record", "CNAME record only"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the example, what type of record is created for networkutopia.com mail handling?",
+      "answers": ["MX record", "A record", "NS record", "CNAME record"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best matches the slide’s description of DNS as an application-layer protocol?",
+      "answers": ["DNS is a link-layer protocol with MAC addressing", "DNS is an application-layer protocol for address/name translation", "DNS is a transport-layer protocol for reliable delivery", "DNS is a network-layer protocol for routing"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which of the following is NOT listed as a reason to avoid centralizing DNS?",
+      "answers": ["Single point of failure", "Traffic volume", "Distant centralized database", "Faster encryption of data packets"],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which statement about DNS performance is emphasized in the slides?",
+      "answers": ["DNS is rarely used, so milliseconds don’t matter", "Almost every Internet transaction interacts with DNS, so milliseconds count", "DNS is only used by routers", "DNS queries are slower than disk I/O by design"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What does the slide mean by 'many more reads than writes' in DNS?",
+      "answers": ["DNS records are updated constantly every second", "DNS mainly serves queries (reads) far more often than record updates (writes)", "DNS only stores write-ahead logs", "DNS disables caching to reduce reads"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which server type provides authoritative hostname-to-IP mappings for an organization’s named hosts?",
+      "answers": ["TLD server", "Authoritative DNS server", "Root server", "DHCP server"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which part of the DNS hierarchy is responsible for top-level country domains like .vn, .uk, .jp?",
+      "answers": ["Root servers", "TLD servers", "Local resolvers", "Authoritative servers only"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is one drawback of caching mentioned in the slides?",
+      "answers": ["It increases DNS message size", "Cached entries may be out-of-date", "It disables iterative queries", "It prevents load distribution"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which description best fits 'best-effort name-to-address translation' in the slides?",
+      "answers": ["DNS always returns the newest mapping instantly", "DNS can temporarily return stale mappings until TTLs expire", "DNS guarantees end-to-end encryption", "DNS prevents all spoofing without DNSSEC"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In an iterated query workflow, which component usually talks to root/TLD/authoritative servers on behalf of the host?",
+      "answers": ["Local DNS server", "Ethernet switch", "HTTP proxy", "NAT router"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which pair correctly matches DNS record type to its purpose?",
+      "answers": ["NS → hostname to IP", "A → alias to canonical name", "CNAME → alias to canonical name", "MX → domain to authoritative server"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which DNS record type is most directly used to locate a domain’s mail server?",
+      "answers": ["MX", "NS", "A", "CNAME"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which DNS record type is most directly used to find the authoritative name server for a domain?",
+      "answers": ["NS", "MX", "CNAME", "A"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the correct interpretation of an A record's fields (as described in the slides)?",
+      "answers": ["name = hostname, value = IP address", "name = IP address, value = hostname", "name = domain, value = mail server", "name = alias, value = TTL"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does a CNAME record’s value contain?",
+      "answers": ["An IP address", "A canonical (real) name", "A list of root servers", "A subnet mask"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which is a listed way a local DNS server can answer a query?",
+      "answers": ["Only by contacting the root server every time", "From its local cache of recent translation pairs", "By reading /etc/shadow", "By sending ARP broadcasts"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which OS-specific command is listed in the slides for finding your local DNS server on Windows?",
+      "answers": ["ipconfig /all", "ifconfig -a", "scutil --dns", "systemctl status dns"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which OS-specific command is listed in the slides for finding your local DNS server on macOS?",
+      "answers": ["scutil --dns", "ip route", "netsh dns show", "dig --list"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is one reason DNS is described as organizationally and physically decentralized?",
+      "answers": ["Only one company owns all domains", "Millions of organizations are responsible for their records", "All records are stored on root servers", "Clients store all records permanently"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which statement about root servers is consistent with the slide notes?",
+      "answers": ["There is exactly one physical root server worldwide", "Logical root servers are replicated many times in many locations", "Root servers store every organization’s full zone file", "Root servers require recursive queries from all hosts"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which scenario best matches a DNS spoofing/caching threat mentioned in the slides?",
+      "answers": ["Attacker returns bogus DNS replies to redirect users", "Attacker changes the MTU of a tunnel", "Attacker disables Ethernet framing", "Attacker forces TCP to use UDP ports"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is explicitly listed as a DNS query tracing/lookup tool set in the slides?",
+      "answers": ["dig / nslookup / host", "top / vmstat / iostat", "ssh / scp / sftp", "gcc / make / ld"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Creating your own subdomains requires coordination with whom (per the slides)?",
+      "answers": ["The administrator of the parent domain", "ICANN directly", "The router manufacturer", "The DHCP relay agent"],
+      "correct_answer": 0
+    },
+    {
+      "question": "When creating your own subdomains, what is emphasized about authority?",
+      "answers": ["Authority becomes local within your organization", "Authority moves to root servers only", "Authority is removed from DNS entirely", "Authority is always handled by TLD registries only"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about domain registration fees is consistent with the slides?",
+      "answers": ["Fees are typically quite inexpensive", "Fees must be paid daily", "Fees are only paid to ISOC", "Fees are waived if you run your own DNS server"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the general role of DNS in 'getting your info into the DNS' via a registrar?",
+      "answers": ["Registrar inserts certain records into the TLD server", "Registrar modifies your local /etc/hosts file", "Registrar encrypts all DNS queries with TLS by default", "Registrar assigns you a private IP address range"],
+      "correct_answer": 0
+    }
+  ]
+  

@@ -1,0 +1,702 @@
+[
+    {
+      "question": "What is the basic rule behind standard UNIX access control decisions?",
+      "answers": [
+        "They depend on the user attempting the operation and their group membership",
+        "They depend only on the file’s size",
+        "They depend only on the system’s hostname",
+        "They depend only on network latency"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In standard UNIX access control, objects such as files and processes have:",
+      "answers": [
+        "Owners that can control those objects",
+        "No ownership information at all",
+        "Only a group owner but no user owner",
+        "Only an owner if they are executable"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which special user account can act as the owner of any object?",
+      "answers": [
+        "root",
+        "guest",
+        "nobody",
+        "www-data"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the UID of the root account?",
+      "answers": [
+        "0",
+        "1",
+        "1000",
+        "65534"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement best describes the root account?",
+      "answers": [
+        "It can perform any valid operation on any file or process",
+        "It can only read system files",
+        "It can only manage networking",
+        "It cannot change process priorities"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operation is typically restricted to root?",
+      "answers": [
+        "Opening privileged network ports below 1024",
+        "Reading a user’s own home directory",
+        "Listing files with ls",
+        "Creating files in /tmp"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operation is typically restricted to root?",
+      "answers": [
+        "Setting the system clock",
+        "Reading /etc/hosts",
+        "Running grep on a text file",
+        "Changing directories"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which operation is typically restricted to root?",
+      "answers": [
+        "Creating device files",
+        "Creating regular text files",
+        "Copying files you own",
+        "Executing scripts you own"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file maps user IDs (UIDs) to usernames?",
+      "answers": [
+        "/etc/passwd",
+        "/etc/group",
+        "/etc/shadow",
+        "/etc/hosts"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which file maps group IDs (GIDs) to group names?",
+      "answers": [
+        "/etc/group",
+        "/etc/passwd",
+        "/etc/shadow",
+        "/etc/resolv.conf"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the filesystem, owners and groups are tracked internally as:",
+      "answers": [
+        "Numbers (UIDs and GIDs)",
+        "Usernames and group names only",
+        "Email addresses",
+        "Hostnames"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In standard UNIX access control, who can set a file’s permissions?",
+      "answers": [
+        "The file’s owner",
+        "Any user in the system",
+        "Only the group owner",
+        "Only the kernel administrator account"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is something the owner of a process can typically do?",
+      "answers": [
+        "Send the process signals",
+        "Change any user’s password without sudo",
+        "Rewrite the kernel",
+        "Modify firmware settings in ROM"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A process has multiple identities including real UID/GID and:",
+      "answers": [
+        "Effective UID/GID",
+        "MAC address",
+        "IP address",
+        "DNS name"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which additional identity is listed for processes besides real and effective IDs?",
+      "answers": [
+        "Saved UID and saved GID",
+        "Hostname ID",
+        "Port ID",
+        "Session cookie"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The real and effective IDs are normally:",
+      "answers": [
+        "The same",
+        "Always different",
+        "Undefined until login",
+        "Randomized each minute"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which UID is used only to determine file access permissions (usually same as effective UID)?",
+      "answers": [
+        "Filesystem UID",
+        "Hardware UID",
+        "Network UID",
+        "Login UID"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the primary purpose of setuid/setgid execution?",
+      "answers": [
+        "Allow programs to run with elevated permissions (identity substitution)",
+        "Encrypt files automatically",
+        "Disable file permissions",
+        "Make programs run faster"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "When an executable has the setuid bit set and is run, the kernel changes the process’s:",
+      "answers": [
+        "Effective UID to the file owner’s UID",
+        "Real UID to root always",
+        "GID to the user’s primary GID only",
+        "PID to 1"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "When an executable has the setgid bit set and is run, the kernel changes the process’s:",
+      "answers": [
+        "Effective GID to the file group owner’s GID",
+        "Real GID to 0 always",
+        "UID to the group name",
+        "Filesystem UID to the username"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which common command is mentioned as an example of a setuid program?",
+      "answers": [
+        "passwd",
+        "ls",
+        "cat",
+        "ping"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why are setuid-to-root programs considered risky?",
+      "answers": [
+        "They are prone to security problems and are attractive targets",
+        "They cannot access files",
+        "They disable logging automatically",
+        "They prevent networking"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Allowing direct root login is considered a bad idea primarily because:",
+      "answers": [
+        "Root logins leave no record of who performed operations",
+        "Root logins make the system faster",
+        "Root logins disable all services",
+        "Root logins are required for SSH"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Ubuntu’s default stance on direct root login is best described as:",
+      "answers": [
+        "It forbids it by default (root account locked)",
+        "It requires it for every admin task",
+        "It enables root SSH login by default",
+        "It deletes the root account"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is described as a marginally better way to access root than logging in directly?",
+      "answers": [
+        "su",
+        "ssh root@host",
+        "telnet",
+        "scp"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does su typically do after prompting for the root password?",
+      "answers": [
+        "Starts a root shell",
+        "Edits /etc/sudoers automatically",
+        "Disables the root account",
+        "Creates a new user"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What does su log compared to direct root login?",
+      "answers": [
+        "It logs who became root and when",
+        "It logs every command executed as root",
+        "It logs nothing at all",
+        "It logs network packets only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the recommended primary method for accessing root privileges?",
+      "answers": [
+        "sudo",
+        "telnet",
+        "rlogin",
+        "ftp"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "sudo typically prompts for which password?",
+      "answers": [
+        "The user’s own password",
+        "The root password always",
+        "No password ever",
+        "The BIOS setup password"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "sudo consults which file to determine authorization?",
+      "answers": [
+        "/etc/sudoers",
+        "/etc/passwd",
+        "/etc/group",
+        "/etc/fstab"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is a key advantage of sudo over su regarding accountability?",
+      "answers": [
+        "It keeps a log of executed command lines and who ran them",
+        "It disables all privileged operations",
+        "It encrypts all logs automatically",
+        "It prevents any misuse by design"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the slides, sudo allows repeated commands without re-entering the password for approximately:",
+      "answers": [
+        "Five minutes (configurable)",
+        "Five seconds",
+        "One hour (fixed)",
+        "Until logout (always)"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is listed as a sudo 'pro'?",
+      "answers": [
+        "Users can do specific chores without unlimited root privileges",
+        "No logs are ever created",
+        "All users share the root password",
+        "It requires a root shell all the time"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is listed as a sudo 'pro'?",
+      "answers": [
+        "Privileges can be revoked without changing the root password",
+        "It eliminates the need for any authentication",
+        "It prevents any account compromise",
+        "It forces setuid usage for all admin tasks"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is listed as a sudo 'con'?",
+      "answers": [
+        "Compromise of a sudoer account can be equivalent to compromising root",
+        "It cannot run commands as root",
+        "It disables networking automatically",
+        "It prevents shell escapes completely"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is listed as a way sudo logging can be subverted?",
+      "answers": [
+        "Shell escapes from within an allowed program",
+        "Using grep instead of sed",
+        "Running ls with -l",
+        "Editing /etc/hosts"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "How can root logins be disabled entirely as described?",
+      "answers": [
+        "Set root’s encrypted password to * or another fixed string",
+        "Delete /etc/passwd",
+        "Remove all group memberships",
+        "Rename the root home directory"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "On Linux, which command can lock the root password (disable root logins)?",
+      "answers": [
+        "passwd -l",
+        "passwd -u",
+        "useradd -l",
+        "chpasswd -l"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Ubuntu ships with the root account:",
+      "answers": [
+        "Locked",
+        "Deleted",
+        "Always enabled for SSH",
+        "Enabled with password 'root'"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which command is used to unlock the root account on Ubuntu (as mentioned)?",
+      "answers": [
+        "sudo passwd -u root",
+        "sudo passwd -l root",
+        "su -u root",
+        "unlock root"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Pseudo-users associated with software typically have UIDs in which range (as stated)?",
+      "answers": [
+        "10 to 100",
+        "1000 to 2000",
+        "20000 to 30000",
+        "0 to 9"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Why define pseudo-accounts and pseudo-groups instead of using root?",
+      "answers": [
+        "They provide safer, limited access to defined resources",
+        "They automatically grant full root power",
+        "They disable file permissions",
+        "They remove the need for authentication"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which is a drawback of the standard UNIX access control model mentioned?",
+      "answers": [
+        "Root is a potential single point of failure",
+        "It has perfect auditing by default",
+        "It subdivides root privileges easily without extra mechanisms",
+        "It is designed primarily for network security"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "According to the slides, the only way to subdivide root privileges in the standard model is often to:",
+      "answers": [
+        "Write setuid programs",
+        "Use DHCP",
+        "Use DNS",
+        "Use journald"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the standard model, group definition is described as:",
+      "answers": [
+        "A privileged operation",
+        "A non-privileged user operation",
+        "Automatic and unmanaged",
+        "Done by the browser"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Another drawback of the standard model is that many access control rules are:",
+      "answers": [
+        "Embedded in code of commands/daemons",
+        "Stored only in DNS",
+        "Enforced only by hardware",
+        "Defined only by MAC addresses"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about PAM is correct according to the slides?",
+      "answers": [
+        "PAM is an authentication framework, not an access control technology",
+        "PAM is a filesystem ACL system",
+        "PAM replaces the kernel permission model entirely",
+        "PAM is a container runtime"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is PAM (Pluggable Authentication Modules) primarily described as?",
+      "answers": [
+        "A wrapper for method-specific authentication libraries",
+        "A mandatory access control policy engine",
+        "A network routing protocol",
+        "A disk partitioning tool"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the PAM model, programs that require authentication typically:",
+      "answers": [
+        "Call PAM instead of implementing authentication themselves",
+        "Hard-code passwords into the source code",
+        "Disable login prompts entirely",
+        "Only work on UEFI systems"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Kerberos is primarily concerned with:",
+      "answers": [
+        "Authentication across a network using cryptographic credentials",
+        "File permission bits on local disks",
+        "Scheduling CPU time slices",
+        "Defragmenting filesystems"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Kerberos uses which concept to authenticate users to multiple services?",
+      "answers": [
+        "A trusted third party that issues credentials (tickets)",
+        "A local /etc/hosts file",
+        "A browser cookie",
+        "A setuid binary"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Filesystem Access Control Lists (ACLs) are best described as:",
+      "answers": [
+        "A generalization of user/group/other permissions for multiple users/groups",
+        "A replacement for IP routing",
+        "A system for encrypting files",
+        "A method to compile the kernel"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "ACLs are primarily implemented as part of:",
+      "answers": [
+        "The filesystem implementation",
+        "The browser sandbox",
+        "The BIOS firmware",
+        "The DNS resolver"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Linux capabilities primarily divide the powers of root into:",
+      "answers": [
+        "A set of separate permissions (capabilities)",
+        "A single password string",
+        "A list of IP addresses",
+        "A set of device drivers"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In the slides, the number of separate Linux capabilities is approximately:",
+      "answers": [
+        "~30",
+        "~3",
+        "~300",
+        "~3000"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which statement about Linux capabilities is correct?",
+      "answers": [
+        "The traditional powers of root are the union of all capabilities",
+        "Capabilities only exist in user space, not the kernel",
+        "Capabilities cannot be inherited by child processes",
+        "Capabilities replace all need for logging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Linux namespaces primarily provide:",
+      "answers": [
+        "Hierarchical partitions where processes see only a subset of system resources",
+        "A new filesystem permission bit for every file",
+        "A replacement for sudo",
+        "A user-level encryption scheme"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A key property of namespace confinement mentioned is that it is:",
+      "answers": [
+        "Irreversible (jailed processes are confined)",
+        "Temporary and automatically removed on login",
+        "Based only on MAC addresses",
+        "Implemented only in the browser"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Linux namespaces are described as a foundation of:",
+      "answers": [
+        "Software containerization (e.g., Docker)",
+        "DNS resolution",
+        "SMTP email delivery",
+        "BIOS booting"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Mandatory Access Control (MAC) systems allow administrators to:",
+      "answers": [
+        "Write policies that override or supplement discretionary permissions",
+        "Remove all file permission checks",
+        "Make users owners of all files",
+        "Disable auditing entirely"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "The standard UNIX model is considered a form of:",
+      "answers": [
+        "Discretionary Access Control (DAC)",
+        "Mandatory Access Control (MAC)",
+        "Role-Based Access Control (RBAC) only",
+        "Kerberos authentication"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A well-implemented MAC policy is said to rely on the principle of:",
+      "answers": [
+        "Least privilege",
+        "Maximum access",
+        "Default deny all networking always",
+        "Shared root passwords"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Role-Based Access Control (RBAC) assigns permissions primarily to:",
+      "answers": [
+        "Roles that are then assigned to users",
+        "Files that are then assigned to networks",
+        "IP addresses that are then assigned to users",
+        "Passwords that are then assigned to groups"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "RBAC roles can be hierarchical primarily to:",
+      "answers": [
+        "Simplify administration by inheriting permissions",
+        "Increase the number of passwords needed",
+        "Force every service to run as root",
+        "Disable logging"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "SELinux is described as:",
+      "answers": [
+        "A Linux MAC implementation originally from the U.S. National Security Agency",
+        "A web browser security feature",
+        "A DNS server software package",
+        "A boot loader replacement"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "SELinux is often described as difficult because it is:",
+      "answers": [
+        "Notoriously difficult to administer and troubleshoot",
+        "Unable to enforce any policy",
+        "Only supported on Windows",
+        "A purely user-space tool"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "AppArmor is described as a product of:",
+      "answers": [
+        "Canonical, Ltd.",
+        "Microsoft",
+        "NSA",
+        "IETF"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Ubuntu and SUSE are mentioned as enabling which access control mechanism by default installs?",
+      "answers": [
+        "AppArmor",
+        "SELinux",
+        "Kerberos",
+        "PAM only"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "AppArmor’s main goal is:",
+      "answers": [
+        "Service securement by limiting damage a program can do if compromised",
+        "Replacing TCP/IP networking",
+        "Eliminating the need for root",
+        "Running all programs with setuid root"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Programs without AppArmor profiles (e.g., user shells) generally:",
+      "answers": [
+        "Run with no special restrictions (as if AppArmor were not installed)",
+        "Are blocked from executing",
+        "Automatically become confined by default",
+        "Always run as root"
+      ],
+      "correct_answer": 0
+    }
+  ]

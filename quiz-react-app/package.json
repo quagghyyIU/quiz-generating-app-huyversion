@@ -2,6 +2,7 @@
   "name": "quiz-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -12,6 +13,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
+    "recharts": "^3.3.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -20,7 +22,11 @@
     "prebuild": "node scripts/generate-quiz-list.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "watch": "node scripts/watch-data.js",
+    "generate": "node scripts/generate-quiz-list.js"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0"
   }
 }

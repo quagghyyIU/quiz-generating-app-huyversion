@@ -1,13 +1,66 @@
+/* CSS Custom Properties for Theme System */
+:root {
+  /* Light theme colors */
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-muted: #555;
+  --header-bg: #61dafb;
+  --footer-bg: #282c34;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-color: #eee;
+  --button-bg: #e7e7e7;
+  --button-hover: #d4d4d4;
+  --button-text: #333;
+  --accent-color: #61dafb;
+  --accent-hover: #4fa8d1;
+  --card-bg: #f8f9fa;
+  --error-color: #d9534f;
+  --success-color: #5cb85c;
+  --correct-bg: #a7e9af;
+  --incorrect-bg: #f8d7da;
+  --correct-text: #1a531f;
+  --incorrect-text: #721c24;
+}
+
+/* Dark theme colors */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888;
+  --header-bg: #1e3a5f;
+  --footer-bg: #0f0f0f;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --border-color: #444;
+  --button-bg: #3a3a3a;
+  --button-hover: #4a4a4a;
+  --button-text: #e0e0e0;
+  --accent-color: #4a9eff;
+  --accent-hover: #3285d6;
+  --card-bg: #353535;
+  --error-color: #ff6b6b;
+  --success-color: #51cf66;
+  --correct-bg: #2b5a2f;
+  --incorrect-bg: #5a2b2b;
+  --correct-text: #a7e9af;
+  --incorrect-text: #f8d7da;
+}
+
 /* General App Styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5; /* Light background */
-  color: #333;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
 }
 
 body.dark-mode {
@@ -19,7 +72,8 @@ body.dark-mode {
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure footer stays at bottom */
+  min-height: 100vh;
+  /* Ensure footer stays at bottom */
 }
 
 .App-logo {
@@ -38,10 +92,13 @@ body.dark-mode .App-logo {
 }
 
 .App-header {
-  background-color: #61dafb; /* Cute blue */
+  background-color: var(--header-bg);
   padding: 20px;
   color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 body.dark-mode .App-header {
@@ -52,7 +109,30 @@ body.dark-mode .App-header {
 .App-header h1 {
   margin: 0;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left h1 {
+  line-height: 1;
+  margin: 0;
+}
+
+.header-left nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
 }
 
 body.dark-mode .App-header h1 {
@@ -60,11 +140,21 @@ body.dark-mode .App-header h1 {
 }
 
 main {
-  flex-grow: 1; /* Allow main content to expand */
+  flex-grow: 1;
+  /* Allow main content to expand */
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align quiz to the top */
+  align-items: flex-start;
+  /* Align quiz to the top */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
 }
 
 body.dark-mode main {
@@ -73,33 +163,30 @@ body.dark-mode main {
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--accent-color);
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 .App-footer {
-  background-color: #f0f2f5; /* Match light background */
+  background-color: var(--footer-bg);
   padding: 10px;
   color: #333; /* Dark text for light mode */
   font-size: 0.8rem;
 }
 
-body.dark-mode .App-footer {
-  background-color: #181a1b;
-  color: #fff;
-}
-
-.loading, .error-message {
+.loading,
+.error-message {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--text-secondary);
   margin-top: 50px;
 }
 
@@ -109,41 +196,6 @@ body.dark-mode .error-message {
 }
 
 .error-message {
-    color: red;
-    font-weight: bold;
-}
-
-body.dark-mode .quiz-list-container,
-body.dark-mode .quiz-card {
-  background-color: #23272f;
-  color: #fff;
-}
-
-body.dark-mode .quiz-card-title {
-  color: #fff;
-}
-
-body.dark-mode .start-quiz-button,
-body.dark-mode .review-button,
-body.dark-mode .back-button {
-  background-color: #444;
-  color: #fff;
-}
-
-body.dark-mode .start-quiz-button:hover,
-body.dark-mode .review-button:hover,
-body.dark-mode .back-button:hover {
-  background-color: #666;
-}
-
-body.dark-mode .nav-link {
-  color: #fff;
-}
-
-body.dark-mode .quiz-list-container h2 {
-  color: #fff;
-}
-
-body.dark-mode .quiz-card-description {
-  color: #ccc;
+  color: var(--error-color);
+  font-weight: 600;
 }
