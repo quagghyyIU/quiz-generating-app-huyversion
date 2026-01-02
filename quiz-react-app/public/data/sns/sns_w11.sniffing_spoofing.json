@@ -1,0 +1,502 @@
+[
+    {
+        "question": "Which of the following best describes the CIDR (Classless Inter-Domain Routing) scheme?",
+        "answers": [
+            "A method that allocates IP addresses based strictly on Class A, B, and C boundaries.",
+            "A method of encrypting IP addresses to hide the network structure.",
+            "A method that allows flexible allocation of IP addresses using a suffix (e.g., /24) to indicate the network ID.",
+            "A protocol used exclusively for routing packets within a local area network."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of the Loopback Address (127.0.0.0/8)?",
+        "answers": [
+            "To broadcast messages to all computers on the local network.",
+            "To allow communication between processes on the same host without sending packets to the physical network card.",
+            "To assign a temporary IP address to a device that has not yet received one from DHCP.",
+            "To route packets to the default gateway when the destination is unknown."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following IP addresses represents a 'Private IP Address' range as defined in the slides?",
+        "answers": [
+            "8.8.8.8",
+            "127.0.0.1",
+            "192.168.0.0/16",
+            "224.0.0.0/4"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of the DHCP protocol?",
+        "answers": [
+            "To resolve domain names to IP addresses.",
+            "To automatically assign IP addresses and configuration to hosts on a network.",
+            "To encrypt data transmitted over the transport layer.",
+            "To filter malicious packets based on port numbers."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the function of the DNS (Domain Name System)?",
+        "answers": [
+            "It translates human-readable host names (e.g., www.example.com) into IP addresses.",
+            "It assigns MAC addresses to IP addresses within a local network.",
+            "It establishes a secure tunnel between a client and a server.",
+            "It manages the routing tables on network routers."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "In the context of the network stack, what is the primary responsibility of the Transport Layer?",
+        "answers": [
+            "To handle physical transmission of bits over the wire.",
+            "To handle routing of packets across different networks using IP addresses.",
+            "To provide end-to-end communication services (e.g., TCP or UDP) for applications.",
+            "To manage MAC addressing and collision detection."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following best describes 'Packet Sniffing'?",
+        "answers": [
+            "The act of modifying the source IP address of a packet to hide identity.",
+            "The process of capturing and inspecting packets flowing through a network interface.",
+            "The method of overwhelming a server with excessive traffic.",
+            "The technique of injecting malicious code into a database query."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the `tcpdump` tool?",
+        "answers": [
+            "To launch Denial of Service attacks against web servers.",
+            "To capture and analyze network packets via the command line.",
+            "To automatically configure routing tables on Linux.",
+            "To generate graphical charts of network traffic volume."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents a key difference between UDP and TCP?",
+        "answers": [
+            "UDP is connection-oriented, while TCP is connectionless.",
+            "UDP is used for reliable data transfer, while TCP is used for real-time streaming.",
+            "UDP is connectionless and unreliable, while TCP is connection-oriented and reliable.",
+            "UDP uses IP addresses, while TCP uses MAC addresses."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of Scapy?",
+        "answers": [
+            "It is a kernel module for blocking network traffic.",
+            "It is a Python program/library used to sniff, manipulate, and spoof network packets.",
+            "It is a database management system for storing packet logs.",
+            "It is a GUI tool strictly for visualizing captured PCAP files."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In Scapy, what does the `/` operator signify when constructing packets (e.g., `Ether()/IP()/TCP()`)?",
+        "answers": [
+            "It represents division of packet sizes.",
+            "It is used to layer protocols, encapsulating the right side inside the left side.",
+            "It is used to separate multiple independent packets.",
+            "It indicates a comment in the code."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following commands in Scapy is used to send a packet at Layer 3?",
+        "answers": [
+            "send()",
+            "sendp()",
+            "sniff()",
+            "wireshark()"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the `bind()` function in a UDP server program?",
+        "answers": [
+            "To connect to a remote server IP address.",
+            "To associate the program with a specific port number so the OS knows where to deliver packets.",
+            "To encrypt the data payload before sending.",
+            "To release the network interface for other applications."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes 'Packet Spoofing'?",
+        "answers": [
+            "Listening to traffic on a network in promiscuous mode.",
+            "Setting arbitrary values in packet headers (like Source IP) to fake the packet's origin.",
+            "Encrypting the payload of a packet to prevent eavesdropping.",
+            "Dropping packets that originate from unknown IP addresses."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a fundamental cause that allows Packet Spoofing to occur?",
+        "answers": [
+            "Users can use raw sockets to construct their own packet headers, bypassing OS validation.",
+            "The Ethernet cable physically connects the attacker to the victim.",
+            "The DNS server automatically validates the source IP of every request.",
+            "TCP guarantees that the source IP address is authentic."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which of the following Scapy functions is primarily used to send a packet and wait for a reply?",
+        "answers": [
+            "send()",
+            "sniff()",
+            "sr1()",
+            "hexdump()"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the risk of running a sniffer without the `network_mode: host` setting in a Docker container?",
+        "answers": [
+            "The container will crash immediately.",
+            "The sniffer can only see traffic within that specific container, not the host or other containers.",
+            "The sniffer will consume all available CPU resources.",
+            "The container will inadvertently broadcast its private IP to the internet."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which command is used to display the routing table on a Linux system?",
+        "answers": [
+            "ip address",
+            "ip route",
+            "dig",
+            "nc"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of Berkeley Packet Filter (BPF) syntax?",
+        "answers": [
+            "To write scripts that generate random network traffic.",
+            "To define filter expressions for selecting specific packets during sniffing.",
+            "To configure the firewall rules for blocking ports.",
+            "To encode payload data into hexadecimal format."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following BPF filters would capture only TCP packets coming from port 23?",
+        "answers": [
+            "host 10.0.0.1",
+            "udp port 23",
+            "tcp src port 23",
+            "icmp and dst port 23"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is a key difference between `send()` and `sendp()` in Scapy?",
+        "answers": [
+            "send() sends at Layer 3 (IP), while sendp() sends at Layer 2 (MAC).",
+            "send() sends at Layer 2 (MAC), while sendp() sends at Layer 3 (IP).",
+            "send() receives a reply, while sendp() does not.",
+            "send() is for TCP, while sendp() is for UDP."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the purpose of the `-n` flag in the command `tcpdump -n -i eth0`?",
+        "answers": [
+            "To enable promiscuous mode.",
+            "To prevent resolving IP addresses to hostnames.",
+            "To save packets to a file.",
+            "To increase the verbosity of the output."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the default gateway?",
+        "answers": [
+            "The IP address of the DNS server.",
+            "The router interface where packets are sent when the destination is outside the local network.",
+            "The loopback address of the local machine.",
+            "The MAC address of the network interface card."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "When sniffing packets, why is root (superuser) privilege typically required?",
+        "answers": [
+            "To access the file system where logs are stored.",
+            "To put the network interface card into promiscuous mode to capture all traffic.",
+            "To decrypt SSL/TLS traffic automatically.",
+            "To compile Python scripts into machine code."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the correct sequence of packet construction in the OS network stack?",
+        "answers": [
+            "MAC Layer -> Network Layer -> Transport Layer -> Application",
+            "Application -> Transport Layer -> Network Layer -> MAC Layer",
+            "Network Layer -> Application -> MAC Layer -> Transport Layer",
+            "Transport Layer -> MAC Layer -> Application -> Network Layer"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does the `0.0.0.0` address typically signify when binding a server socket?",
+        "answers": [
+            "The server should listen only to localhost traffic.",
+            "The server is disconnected from the network.",
+            "The server should listen on all available network interfaces.",
+            "The server is broadcasting to the entire internet."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which tool allows you to manually send UDP or TCP data from the command line?",
+        "answers": [
+            "dig",
+            "netcat (nc)",
+            "ifconfig",
+            "docker"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the lab setup, what is the purpose of `docker-compose.yml`?",
+        "answers": [
+            "To compile C code for sniffing.",
+            "To configure and launch multiple containers and networks simultaneously.",
+            "To generate random IP addresses for the host machine.",
+            "To install the Wireshark GUI."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a limitation of using Python (Scapy) for sniffing compared to C?",
+        "answers": [
+            "Python cannot capture TCP packets.",
+            "Python is significantly slower than C in processing packets.",
+            "Python requires a GUI to run.",
+            "Python cannot resolve hostnames."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which Scapy function is used to print a summary of a captured packet?",
+        "answers": [
+            "pkt.summary()",
+            "pkt.compile()",
+            "pkt.send()",
+            "pkt.encrypt()"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the purpose of the `prn` argument in Scapy's `sniff()` function?",
+        "answers": [
+            "It specifies the network interface to sniff on.",
+            "It defines a callback function to process each captured packet.",
+            "It sets the number of packets to capture.",
+            "It filters packets based on protocol."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents a valid MAC address format?",
+        "answers": [
+            "192.168.1.1",
+            "08:00:27:84:5e:b9",
+            "tcp://localhost:80",
+            "fe80::42:1cff:fe17:f3e6"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary function of the `ip address` command (or `ip -br address`)?",
+        "answers": [
+            "To display the IP addresses assigned to network interfaces.",
+            "To ping a remote host.",
+            "To start the DHCP server.",
+            "To capture packets on the interface."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is a key difference between `sniff()` and `spoof()`?",
+        "answers": [
+            "Sniffing is active; spoofing is passive.",
+            "Sniffing involves reading packets; spoofing involves creating/sending fake packets.",
+            "Sniffing requires root privileges; spoofing does not.",
+            "Sniffing only works on TCP; spoofing only works on UDP."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which countermeasure uses the Time To Live (TTL) field?",
+        "answers": [
+            "Preventing IP spoofing.",
+            "Preventing packets from circulating endlessly in a routing loop.",
+            "Encrypting the packet payload.",
+            "Verifying the checksum of the TCP header."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which protocol is typically used by the `ping` command?",
+        "answers": [
+            "TCP",
+            "UDP",
+            "ICMP",
+            "HTTP"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In Scapy, how do you check if a packet contains a specific layer (e.g., TCP)?",
+        "answers": [
+            "pkt.haslayer(TCP)",
+            "pkt.contains(TCP)",
+            "pkt.check(TCP)",
+            "pkt.find(TCP)"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the result of running `ls(IP)` in Scapy?",
+        "answers": [
+            "It lists all IP addresses on the local network.",
+            "It lists the fields of the IP header class.",
+            "It sends an IP packet to the default gateway.",
+            "It sniffs for IP packets."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is an example of a 'Class C' network mask in CIDR notation?",
+        "answers": [
+            "/8",
+            "/16",
+            "/24",
+            "/32"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary use of the `dig` command?",
+        "answers": [
+            "To dig a tunnel through a firewall.",
+            "To query DNS servers for domain information.",
+            "To create a directory in Linux.",
+            "To inspect the content of a packet."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "When implementing a Traceroute using Scapy, which field in the IP header is incremented?",
+        "answers": [
+            "Source IP",
+            "Destination IP",
+            "TTL (Time To Live)",
+            "Checksum"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What happens when a packet's TTL reaches 0?",
+        "answers": [
+            "The packet is delivered to the destination.",
+            "The packet is encrypted.",
+            "The packet is discarded and an ICMP 'Time Exceeded' message is returned.",
+            "The packet is resent automatically."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which command saves captured packets to a file in tcpdump?",
+        "answers": [
+            "-r",
+            "-w",
+            "-s",
+            "-c"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does the alias `docksh <id>` do in the provided lab environment?",
+        "answers": [
+            "It builds the docker image.",
+            "It shuts down the container.",
+            "It provides a shell access into the running container.",
+            "It copies files from the host to the container."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which Scapy method allows you to explore the structure of a packet hierarchically?",
+        "answers": [
+            "pkt.show()",
+            "pkt.send()",
+            "pkt.write()",
+            "pkt.hide()"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the fundamental cause that makes C faster than Python for sniffing/spoofing?",
+        "answers": [
+            "C is an interpreted language.",
+            "C is a compiled language closer to the hardware.",
+            "C uses a GUI.",
+            "C does not support loops."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which filter expression would capture all traffic except that from host 10.0.2.5?",
+        "answers": [
+            "host 10.0.2.5",
+            "not host 10.0.2.5",
+            "only host 10.0.2.5",
+            "exclude 10.0.2.5"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the correct Scapy code to create an IP packet destined for 8.8.8.8?",
+        "answers": [
+            "IP(target='8.8.8.8')",
+            "IP(dest='8.8.8.8')",
+            "IP(dst='8.8.8.8')",
+            "IP(to='8.8.8.8')"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What does the `iface` argument specify in the `sniff()` function?",
+        "answers": [
+            "The file to save packets to.",
+            "The network interface to listen on (e.g., 'eth0').",
+            "The filter for the packets.",
+            "The callback function."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which layer in the network stack is responsible for handling MAC addresses?",
+        "answers": [
+            "Application Layer",
+            "Transport Layer",
+            "Network Layer",
+            "Data Link Layer"
+        ],
+        "correct_answer": 3
+    }
+]

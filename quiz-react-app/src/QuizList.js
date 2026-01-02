@@ -224,20 +224,29 @@ function QuizList() {
             <div className="shuffle-mode-options">
               <button
                 className="shuffle-mode-btn quick"
-                onClick={() => handleShuffleFolder(selectedFolderForShuffle, 20, "Quick Refresh")}
+                onClick={() => handleShuffleFolder(selectedFolderForShuffle, 20, "Random 20")}
               >
-                <span className="mode-icon">🚀</span>
-                <span className="mode-name">Quick Refresh</span>
+                <span className="mode-icon">🎲</span>
+                <span className="mode-name">Random 20</span>
                 <span className="mode-desc">20 questions</span>
               </button>
 
               <button
                 className="shuffle-mode-btn lockin"
-                onClick={() => handleShuffleFolder(selectedFolderForShuffle, 50, "Lock-in Mode")}
+                onClick={() => handleShuffleFolder(selectedFolderForShuffle, 50, "Sample Test")}
               >
-                <span className="mode-icon">🔥</span>
-                <span className="mode-name">Lock-in Mode</span>
+                <span className="mode-icon">📝</span>
+                <span className="mode-name">Sample Test</span>
                 <span className="mode-desc">50 questions</span>
+              </button>
+
+              <button
+                className="shuffle-mode-btn full"
+                onClick={() => handleShuffleFolder(selectedFolderForShuffle, null, "Full Quiz")}
+              >
+                <span className="mode-icon">📚</span>
+                <span className="mode-name">Full Quiz</span>
+                <span className="mode-desc">All questions</span>
               </button>
             </div>
 
@@ -267,12 +276,12 @@ function QuizList() {
                   selectedQuizForModal.folderId,
                   selectedQuizForModal.filename,
                   20,
-                  "Fast Pace"
+                  "Random 20"
                 )}
               >
-                <span className="mode-icon">⚡</span>
-                <span className="mode-name">Fast Pace</span>
-                <span className="mode-desc">20 questions max</span>
+                <span className="mode-icon">🎲</span>
+                <span className="mode-name">Random 20</span>
+                <span className="mode-desc">20 questions</span>
               </button>
 
               <button
@@ -281,12 +290,12 @@ function QuizList() {
                   selectedQuizForModal.folderId,
                   selectedQuizForModal.filename,
                   50,
-                  "Quiz Oriented"
+                  "Sample Test"
                 )}
               >
-                <span className="mode-icon">🎯</span>
-                <span className="mode-name">Quiz Oriented</span>
-                <span className="mode-desc">50 questions max</span>
+                <span className="mode-icon">📝</span>
+                <span className="mode-name">Sample Test</span>
+                <span className="mode-desc">50 questions</span>
               </button>
 
               <button
