@@ -1,0 +1,502 @@
+[
+    {
+        "question": "In a CSRF attack, why does the victim's browser include the session cookie in the forged request?",
+        "answers": [
+            "The malicious site explicitly scripts the cookie into the request header.",
+            "The browser automatically attaches cookies to requests destined for the domain that set them.",
+            "The attacker uses a Man-in-the-Middle attack to intercept and inject the cookie.",
+            "The target server requests the cookie from the browser using a callback function."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following HTTP request types is most inherently vulnerable to CSRF if not protected, simply by using an `<img>` tag?",
+        "answers": [
+            "A GET request that retrieves data without changing state.",
+            "A POST request that updates user profile information.",
+            "A GET request that performs a state-changing action (e.g., delete).",
+            "An OPTIONS request used for CORS preflight checks."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Why is the `Same-Origin Policy` (SOP) insufficient to prevent CSRF attacks?",
+        "answers": [
+            "SOP prevents the browser from reading the response, but does not stop the request from being sent/executed.",
+            "SOP only applies to JavaScript, whereas CSRF relies exclusively on HTML tags.",
+            "SOP is disabled by default in modern browsers for usability reasons.",
+            "SOP only checks the domain name but ignores the port and protocol."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "To effectively prevent CSRF, a 'Secret Token' should be validated in which part of the request?",
+        "answers": [
+            "It should be present in the cookie and the response body.",
+            "It should be present in the cookie and the request parameters (or headers) matching each other.",
+            "It should be present only in the URL query string to ensure visibility.",
+            "It should be encrypted within the session ID itself."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary risk of including the CSRF token in the URL (e.g., GET request parameters)?",
+        "answers": [
+            "The token becomes invalid immediately after the first use.",
+            "The token can be leaked via the `Referer` header to third-party sites.",
+            "The browser will refuse to cache the page, slowing down performance.",
+            "The token cannot be encrypted when placed in the URL."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which `SameSite` cookie attribute value prevents the cookie from being sent on cross-site subrequests (like images) but allows it for top-level navigations (like clicking a link)?",
+        "answers": [
+            "SameSite=Strict",
+            "SameSite=Lax",
+            "SameSite=None",
+            "SameSite=Secure"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "If a user is logged into `bank.com` and visits `evil.com`, which contains a hidden form submitting a POST request to `bank.com/transfer`, what happens in the absence of CSRF protection?",
+        "answers": [
+            "The browser blocks the request because the origins do not match.",
+            "The request is sent with the user's cookies, and the transaction succeeds.",
+            "The request is sent, but the browser strips the cookies for security.",
+            "The server rejects the request because the `Referer` is `evil.com`."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is the `Referer` header considered an unreliable sole defense against CSRF?",
+        "answers": [
+            "Attackers can easily spoof the Referer header using JavaScript.",
+            "Legitimate users or privacy tools may suppress the Referer header.",
+            "The Referer header is only sent for GET requests, not POST.",
+            "The Referer header is encrypted and cannot be read by the server."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the 'Double Submit Cookie' pattern for CSRF defense, what does the server verify?",
+        "answers": [
+            "That the session ID in the cookie matches the user's password hash.",
+            "That the token in the request body matches the token in the cookie.",
+            "That the request originates from a trusted IP address.",
+            "That the `Origin` header matches the server's domain exactly."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the specific role of the `Secure` flag on a cookie?",
+        "answers": [
+            "It encrypts the cookie content so it cannot be read by scripts.",
+            "It ensures the cookie is only sent over encrypted (HTTPS) connections.",
+            "It prevents the cookie from being sent in cross-site requests.",
+            "It prevents the cookie from being modified by the client."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which attack vector was primarily used in the Elgg case study to add the attacker as a friend?",
+        "answers": [
+            "A reflected XSS attack injecting a script into the search bar.",
+            "A CSRF attack using a forged GET request to the `addfriend` action.",
+            "A SQL injection attack modifying the `friends` table directly.",
+            "A Brute-force attack against the admin's password."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "How does `SameSite=Strict` affect user experience compared to `SameSite=Lax`?",
+        "answers": [
+            "It has no noticeable impact on user experience.",
+            "It breaks functionality like 'Remember Me' when following links from emails or external sites.",
+            "It causes the browser to load pages slower due to extra checks.",
+            "It requires the user to re-authenticate for every single request."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following scenarios is NOT a valid CSRF attack?",
+        "answers": [
+            "A hidden form submits a money transfer request.",
+            "An image tag triggers a 'delete account' endpoint.",
+            "A script on `evil.com` reads the response from `bank.com/api/balance`.",
+            "A malicious link performs a 'change password' action when clicked."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Why doesn't HTTPS prevent CSRF attacks?",
+        "answers": [
+            "HTTPS is broken and no longer provides security.",
+            "HTTPS authenticates the server but does not verify the intent of the request source.",
+            "CSRF attacks occur inside the encrypted tunnel, which HTTPS allows.",
+            "HTTPS only encrypts the response, not the request headers."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the fundamental difference between XSS and CSRF?",
+        "answers": [
+            "XSS targets the server database; CSRF targets the client browser.",
+            "XSS exploits the trust a user has in a site; CSRF exploits the trust a site has in a user's browser.",
+            "XSS requires authentication; CSRF can be performed anonymously.",
+            "XSS cannot steal data; CSRF is primarily for data theft."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In a Stored XSS attack, where is the malicious payload permanently saved?",
+        "answers": [
+            "In the victim's browser cache.",
+            "In the network proxy server.",
+            "On the target server (e.g., database, file system).",
+            "In the attacker's local storage."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which sink in the DOM is considered unsafe and leads to DOM-based XSS if inputs are not sanitized?",
+        "answers": [
+            "element.innerText",
+            "element.textContent",
+            "element.innerHTML",
+            "element.value"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "The `HttpOnly` flag on a cookie is a countermeasure primarily against:",
+        "answers": [
+            "Network sniffing attacks.",
+            "Cross-Site Request Forgery (CSRF).",
+            "Theft of the session ID via XSS (JavaScript access).",
+            "Dictionary attacks on the session ID."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What enables the Samy Worm to spread exponentially?",
+        "answers": [
+            "It emailed itself to all contacts in the user's address book.",
+            "It used a payload that automatically sent an Ajax request to update the viewer's profile with the same payload.",
+            "It exploited a buffer overflow in the web server software.",
+            "It guessed the passwords of other users to log in and post."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which Content Security Policy (CSP) directive would prevent the execution of inline scripts like `<script>alert(1)</script>`?",
+        "answers": [
+            "script-src 'self'",
+            "script-src 'unsafe-inline'",
+            "allow-scripts: true",
+            "x-xss-protection: 1"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Why is 'input filtering' (blacklisting) often considered a weaker defense than 'output encoding'?",
+        "answers": [
+            "It is computationally expensive to filter inputs.",
+            "Attackers can often bypass filters using obfuscation (e.g., mixed case, nested tags).",
+            "Input filtering causes data corruption in the database.",
+            "Output encoding is supported natively by all browsers."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the context of XSS, what does 'Context-Aware Encoding' mean?",
+        "answers": [
+            "Encoding the entire page in Base64.",
+            "Using different encoding methods depending on where data is placed (e.g., HTML body vs JavaScript variable vs CSS).",
+            "Only encoding data that comes from unauthenticated users.",
+            "Checking the user's geographical context before displaying data."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "A URL like `http://example.com/search?q=<script>alert(1)</script>` that executes script only when a user clicks it is an example of:",
+        "answers": [
+            "Stored XSS.",
+            "Reflected XSS.",
+            "DOM-based XSS.",
+            "Blind XSS."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary danger of XSS beyond just popping up an alert box?",
+        "answers": [
+            "It can crash the web server.",
+            "It allows the attacker to perform actions as the victim and steal sensitive data (tokens/cookies).",
+            "It allows the attacker to access the server's file system directly.",
+            "It exposes the database schema to the public."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is a valid XSS vector that does NOT use the `<script>` tag?",
+        "answers": [
+            "<div class='script'>...</div>",
+            "<img src='x' onerror='alert(1)'>",
+            "<meta name='description' content='...'>",
+            "<link rel='stylesheet' href='style.css'>"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the purpose of the `nonce` attribute in a Content Security Policy (CSP)?",
+        "answers": [
+            "To provide a unique ID for every user session.",
+            "To allow specific inline scripts to execute if they match the server-generated random token.",
+            "To encrypt the script content during transmission.",
+            "To count the number of times a script has been executed."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why might an attacker use `eval()` or `setTimeout()` in an XSS payload?",
+        "answers": [
+            "To make the script run faster.",
+            "To execute a string of code, often used to bypass simple string filters or obfuscate the payload.",
+            "To ensure the script runs on the server side.",
+            "To access the local file system."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In a DOM-based XSS attack, where is the malicious data typically processed?",
+        "answers": [
+            "By the web server's PHP engine.",
+            "By the database's SQL parser.",
+            "By the client-side JavaScript modifying the DOM environment.",
+            "By the firewall's inspection rules."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which character is most critical to escape to prevent breaking out of an HTML attribute context (e.g., `<input value='...'>`)?",
+        "answers": [
+            "The ampersand (&)",
+            "The quote marks (' or \")",
+            "The less-than sign (<)",
+            "The semi-colon (;)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "The `javascript:` pseudo-protocol can be used to execute XSS in which HTML attribute?",
+        "answers": [
+            "The `class` attribute.",
+            "The `href` attribute of an anchor tag `<a>`.",
+            "The `id` attribute.",
+            "The `style` attribute (in modern browsers)."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "If a developer uses `document.write()` to display URL parameters directly, what vulnerability is likely introduced?",
+        "answers": [
+            "SQL Injection.",
+            "DOM-based XSS.",
+            "Buffer Overflow.",
+            "Command Injection."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which header helps browsers detect and block simple reflected XSS attacks (though it is now deprecated in some modern browsers)?",
+        "answers": [
+            "X-Frame-Options",
+            "X-XSS-Protection",
+            "X-Content-Type-Options",
+            "Content-Security-Policy"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "How did the MySpace Samy Worm bypass the filter that blocked the word 'javascript'?",
+        "answers": [
+            "It used VBScript instead.",
+            "It split the word using a newline or unexpected breaking characters (e.g., `java\nscript`).",
+            "It encrypted the payload.",
+            "It uploaded a binary file."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is 'Self-XSS'?",
+        "answers": [
+            "A script that attacks the server itself.",
+            "A social engineering attack where a user is tricked into pasting malicious code into their own browser console.",
+            "An automated script that tests for vulnerabilities.",
+            "A feature that allows users to write their own scripts."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is `Access-Control-Allow-Origin: *` dangerous when combined with `Access-Control-Allow-Credentials: true`?",
+        "answers": [
+            "It allows any site to read data from the server on behalf of the user (Cross-Origin Read Blocking failure).",
+            "It is actually an invalid configuration; browsers will reject this specific combination.",
+            "It allows the server to send cookies to any domain.",
+            "It disables SSL encryption for that request."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the context of XSS defense, what does 'Sanitization' typically refer to?",
+        "answers": [
+            "Removing all data from the database.",
+            "Encoding characters for display.",
+            "Removing unsafe tags (like `<script>`) while preserving safe HTML (like `<b>` or `<i>`).",
+            "Encrypting the HTML output."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following is NOT a sink for DOM XSS?",
+        "answers": [
+            "location.href",
+            "document.body.innerHTML",
+            "document.title",
+            "eval()"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "For a 'Reflected' XSS attack to be successful, what action is typically required from the victim?",
+        "answers": [
+            "The victim must just wait for the attack.",
+            "The victim must click on a specifically crafted link sent by the attacker.",
+            "The victim must upload a file to the server.",
+            "The victim must be an administrator."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "When configuring cookies, what combination of flags offers the best baseline protection against XSS-based session theft?",
+        "answers": [
+            "HttpOnly and Secure",
+            "SameSite and Domain",
+            "Path and Expires",
+            "Readonly and NoScript"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What prevents an attacker from simply reading the CSRF token from the HTML source using an XSS attack?",
+        "answers": [
+            "Nothing; if XSS is present, CSRF protection can usually be bypassed.",
+            "The Same-Origin Policy prevents XSS from reading the token.",
+            "The CSRF token is stored in a way that JavaScript cannot access.",
+            "CSRF tokens are encrypted with the user's private key."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which HTML5 feature enables cross-origin communication but can introduce XSS if not handled correctly?",
+        "answers": [
+            "WebSockets",
+            "postMessage()",
+            "LocalStorage",
+            "ServiceWorkers"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is 'Polyglot' input (e.g., a string that is valid in multiple contexts) used in testing?",
+        "answers": [
+            "To translate the page into different languages.",
+            "To test multiple injection vectors (SQLi, XSS, Path Traversal) simultaneously with one payload.",
+            "To ensure the database can store Unicode characters.",
+            "To compress the payload size."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the Elgg attack lab, why did the attacker use `Ajax` requests instead of standard form submissions?",
+        "answers": [
+            "To make the attack faster.",
+            "To perform the action quietly in the background without navigating the user away from the page.",
+            "Because standard forms are disabled in Elgg.",
+            "To bypass the firewall."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "If a CSP header is defined as `Content-Security-Policy: default-src 'self'; img-src *;`, what is allowed?",
+        "answers": [
+            "Scripts from any domain, but images only from the same origin.",
+            "Scripts only from the same origin, but images from any domain.",
+            "Scripts and images from any domain.",
+            "Nothing is allowed from external domains."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the key limitation of 'Client-Side' CSRF defenses (like checking headers in JS)?",
+        "answers": [
+            "They slow down the browser.",
+            "They can be bypassed if the attacker can execute XSS or if the logic is handled solely on the client.",
+            "They are not supported by Internet Explorer.",
+            "They require paid licenses."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which statement about `LocalStorage` vs `Cookies` for session storage is true regarding XSS?",
+        "answers": [
+            "LocalStorage is safer because it doesn't expire.",
+            "Cookies are safer if `HttpOnly` is set, as LocalStorage is always accessible to JavaScript.",
+            "LocalStorage is immune to XSS.",
+            "There is no security difference between them."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "How does a 'Blind XSS' attack differ from standard Stored XSS?",
+        "answers": [
+            "The attacker cannot see the website.",
+            "The payload executes in an environment the attacker cannot see (e.g., an admin panel or log viewer).",
+            "It uses invisible characters.",
+            "It targets blind users specifically."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What logic error allows a CSRF attack to succeed on a 'Logout' function?",
+        "answers": [
+            "The logout function is usually unprotected because it's not considered data-damaging, but it causes Denial of Service for the user.",
+            "The logout function requires a password confirmation.",
+            "Logout functions are always GET requests.",
+            "Browsers don't send cookies on logout."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "If a site implements `CORS` incorrectly by reflecting the `Origin` header in `Access-Control-Allow-Origin`, what vulnerability is created?",
+        "answers": [
+            "It allows any site to perform CSRF attacks.",
+            "It allows any malicious site to read data from the victim's session on that server.",
+            "It allows XSS injection into the headers.",
+            "It crashes the CORS parser."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the `base` tag in HTML, and how can it be exploited?",
+        "answers": [
+            "It sets the font size; it cannot be exploited.",
+            "It defines the base URL for all relative URLs; if injected, it can hijack scripts and assets to load from the attacker's domain.",
+            "It defines the database connection string.",
+            "It sets the background color."
+        ],
+        "correct_answer": 1
+    }
+]

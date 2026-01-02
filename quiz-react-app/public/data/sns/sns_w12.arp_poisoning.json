@@ -1,0 +1,502 @@
+[
+    {
+        "question": "Which of the following best describes the primary purpose of the Address Resolution Protocol (ARP)?",
+        "answers": [
+            "To translate a Domain Name (e.g., www.example.com) into an IP address.",
+            "To map a known IP address to a physical MAC address on a local area network.",
+            "To encrypt data packets transferred between two computers.",
+            "To route packets across different networks on the Internet."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the 'Promiscuous Mode' of a Network Interface Card (NIC)?",
+        "answers": [
+            "A mode that allows the NIC to send packets faster by bypassing the kernel.",
+            "A mode where the NIC accepts all packets on the wire, regardless of the destination MAC address.",
+            "A mode that prevents the NIC from receiving broadcast packets.",
+            "A mode used exclusively for sending ARP requests."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the length of a standard MAC address?",
+        "answers": [
+            "32 bits (4 bytes)",
+            "48 bits (6 bytes)",
+            "64 bits (8 bytes)",
+            "128 bits (16 bytes)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the Broadcast MAC address?",
+        "answers": [
+            "00:00:00:00:00:00",
+            "ff:ff:ff:ff:ff:ff",
+            "127.0.0.1",
+            "255.255.255.255"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In an Ethernet frame, what is the size of the MAC header?",
+        "answers": [
+            "14 bytes",
+            "20 bytes",
+            "4 bytes",
+            "8 bytes"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which Scapy function is primarily used to send packets at Layer 2 (Ethernet layer)?",
+        "answers": [
+            "send()",
+            "sendp()",
+            "sr1()",
+            "sniff()"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the 'Opcode' value for an ARP Request message?",
+        "answers": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the 'Opcode' value for an ARP Reply message?",
+        "answers": [
+            "1",
+            "2",
+            "0",
+            "8"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes a 'Gratuitous ARP' message?",
+        "answers": [
+            "An ARP reply sent in response to a specific request.",
+            "An unsolicited ARP packet used to announce an IP-to-MAC mapping to the entire network.",
+            "An ARP packet used to request the MAC address of the default gateway.",
+            "An error message indicating that an IP address conflict has occurred."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the fundamental cause of the ARP Cache Poisoning vulnerability?",
+        "answers": [
+            "The ARP protocol uses weak encryption.",
+            "The ARP protocol is stateless and devices accept ARP replies without verifying if they sent a request.",
+            "The Ethernet cable physically leaks data.",
+            "The switch broadcasts all traffic to all ports."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In a Man-In-The-Middle (MITM) attack using ARP poisoning, what is the attacker's primary goal regarding the ARP cache?",
+        "answers": [
+            "To delete the ARP cache of the victim machine.",
+            "To associate the attacker's MAC address with the victim's IP address in the cache of other machines.",
+            "To fill the ARP cache with random garbage data to cause a crash.",
+            "To find the MAC address of the router."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is the loopback interface (lo) often referred to as a 'virtual' interface?",
+        "answers": [
+            "Because it connects to a virtual machine.",
+            "Because traffic sent to it stays within the kernel and is not put on the physical network wire.",
+            "Because it uses a randomized MAC address.",
+            "Because it is only used for encrypted traffic."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between a Loopback interface and a Dummy interface?",
+        "answers": [
+            "Loopback handles internal traffic; Dummy is used to trick applications into thinking a real interface exists with a specific IP.",
+            "Loopback has a MAC address; Dummy does not.",
+            "Loopback is physical; Dummy is virtual.",
+            "There is no difference; they are identical."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which command is used to display the current ARP cache on a Linux system?",
+        "answers": [
+            "ifconfig",
+            "ping -a",
+            "arp -n",
+            "netstat -r"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "When constructing an Ethernet frame in Scapy, which class is used?",
+        "answers": [
+            "IP()",
+            "TCP()",
+            "Ether()",
+            "Mac()"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In the context of the MITM attack lab, why must IP forwarding be disabled (`sysctl net.ipv4.ip_forward=0`) on the attacker's machine when using a sniffing-and-spoofing script?",
+        "answers": [
+            "To prevent the kernel from automatically forwarding the packet, allowing the script to modify and forward it instead.",
+            "To ensure the kernel drops all packets from the victim.",
+            "To speed up the network connection.",
+            "To prevent the victim from discovering the attacker's IP."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What happens if you ping a non-existent IP address on the local LAN?",
+        "answers": [
+            "The ping succeeds because ICMP is connectionless.",
+            "The computer sends an ARP request but receives no reply, so the ping fails.",
+            "The packet is sent to the default gateway.",
+            "The computer sends a broadcast ping to all devices."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What happens if you ping an IP address on the Internet (e.g., 8.8.8.8)?",
+        "answers": [
+            "An ARP request is sent for 8.8.8.8 directly.",
+            "An ARP request is sent for the Default Gateway's IP address.",
+            "The packet is dropped immediately.",
+            "The MAC address of 8.8.8.8 is retrieved from the DNS server."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the correct order of headers for an ARP packet sent over Ethernet?",
+        "answers": [
+            "IP Header -> Ethernet Header -> ARP Header",
+            "Ethernet Header -> IP Header -> ARP Header",
+            "Ethernet Header -> ARP Header",
+            "ARP Header -> Ethernet Header"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Why do we delete the checksums (`del newpkt.chksum`) when modifying a packet in Scapy?",
+        "answers": [
+            "To hide the packet from firewalls.",
+            "To force Scapy/OS to recalculate the correct checksum for the modified data.",
+            "Because checksums are optional in TCP/IP.",
+            "To make the packet smaller and faster."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Is it possible to launch an ARP Cache Poisoning attack from a remote computer (outside the LAN)?",
+        "answers": [
+            "Yes, if the attacker knows the victim's IP.",
+            "Yes, using a special Gratuitous ARP packet over the Internet.",
+            "No, because ARP packets are not routed across the Internet; they stay within the LAN.",
+            "No, because the firewall will always block ARP packets."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which field in the ARP message specifies the type of operation (Request or Reply)?",
+        "answers": [
+            "Hardware Type",
+            "Protocol Type",
+            "Opcode (op)",
+            "Sender MAC"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the hexadecimal EtherType value for ARP?",
+        "answers": [
+            "0x0800",
+            "0x0806",
+            "0x86DD",
+            "0x0001"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is an example of a countermeasure against ARP spoofing?",
+        "answers": [
+            "Using dynamic ARP caching.",
+            "Using static ARP table entries.",
+            "Disabling the network interface.",
+            "Using HTTP instead of HTTPS."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the Scapy code `pkt = Ether()/ARP()`, what does the `/` operator do?",
+        "answers": [
+            "It divides the packet into two fragments.",
+            "It encapsulates the ARP packet inside the Ethernet frame.",
+            "It sends the packet immediately.",
+            "It acts as a comment."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary function of the Network Interface Card (NIC)?",
+        "answers": [
+            "To route packets between different networks.",
+            "To serve as the physical or logical link between the computer and the network.",
+            "To assign IP addresses to applications.",
+            "To encrypt files on the hard drive."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "When `sysctl net.ipv4.ip_forward` is set to 1, what does the Linux kernel do?",
+        "answers": [
+            "It drops all packets not destined for itself.",
+            "It acts as a router, forwarding packets destined for other machines.",
+            "It encrypts all outgoing packets.",
+            "It blocks all incoming ARP requests."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which Scapy command lists the fields of the Ethernet header?",
+        "answers": [
+            "show(Ether)",
+            "list(Ether)",
+            "ls(Ether)",
+            "dir(Ether)"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In an ARP Request, what is the value of the 'Target MAC Address' field inside the ARP payload?",
+        "answers": [
+            "The sender's MAC address.",
+            "The broadcast MAC address (ff:ff:ff:ff:ff:ff).",
+            "00:00:00:00:00:00 (or ignored).",
+            "The gateway's MAC address."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the first step in a Man-In-The-Middle (MITM) attack using ARP spoofing?",
+        "answers": [
+            "Decrypting the traffic.",
+            "Forwarding the packets.",
+            "Intercepting packets by poisoning the ARP cache of the victims.",
+            "Modifying the DNS server."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following best describes the 'Ring Buffer' in the network stack?",
+        "answers": [
+            "A buffer in the user space for application data.",
+            "A memory area shared between the NIC and the device driver to store incoming packets.",
+            "A circular log file for storing ARP entries.",
+            "A firewall rule that drops packets in a loop."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the risk of using Promiscuous Mode?",
+        "answers": [
+            "It slows down the computer significantly.",
+            "It allows a user to sniff sensitive traffic (like passwords) meant for others on the LAN.",
+            "It automatically disables the firewall.",
+            "It changes the IP address of the machine."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the MITM attack scenario, if the attacker wants to modify 'Telnet' data, why is the `filter` important in the sniffing code?",
+        "answers": [
+            "To capture only the relevant TCP packets between the victims to minimize noise.",
+            "To ensure the attacker's own packets are not sniffed.",
+            "To automatically decrypt the Telnet traffic.",
+            "To block the victims from communicating."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which layer of the OSI model does the ARP protocol operate at?",
+        "answers": [
+            "Layer 1 (Physical)",
+            "Layer 2 (Data Link) / Layer 2.5",
+            "Layer 3 (Network)",
+            "Layer 4 (Transport)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What happens when the 'Stateful' ARP cache receives an unsolicited ARP reply?",
+        "answers": [
+            "It rejects it immediately.",
+            "It verifies it with a request.",
+            "It may update the cache with the new information depending on the OS implementation.",
+            "It shuts down the network interface."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following represents the source MAC address in a spoofed ARP reply sent by an attacker?",
+        "answers": [
+            "The victim's MAC address.",
+            "The attacker's MAC address.",
+            "The broadcast address.",
+            "00:00:00:00:00:00."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What represents the 'Target IP' in a Gratuitous ARP packet?",
+        "answers": [
+            "The gateway IP.",
+            "The same as the Source IP (the IP being announced).",
+            "0.0.0.0.",
+            "255.255.255.255."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is the Ethernet destination address set to broadcast (ff:ff:ff:ff:ff:ff) in an ARP Request?",
+        "answers": [
+            "Because the sender does not know the target's MAC address yet.",
+            "Because ARP requests are meant for routers only.",
+            "Because it is a Gratuitous ARP.",
+            "To bypass the firewall."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which command-line tool can be used to manually delete an ARP entry?",
+        "answers": [
+            "arp -d <ip>",
+            "arp -a",
+            "ping -d <ip>",
+            "netstat -kill"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the 'Hardware Type' field in the ARP header?",
+        "answers": [
+            "To specify the version of IP (IPv4 or IPv6).",
+            "To specify the type of hardware interface (e.g., 1 for Ethernet).",
+            "To specify the speed of the connection.",
+            "To specify the manufacturer of the NIC."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "If Machine A has a poisoned ARP cache mapping Machine B's IP to the Attacker's MAC, where do packets meant for Machine B go?",
+        "answers": [
+            "They go directly to Machine B.",
+            "They are dropped by the switch.",
+            "They go to the Attacker's machine.",
+            "They are broadcast to the whole network."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the purpose of the `re.sub()` function in the MITM modification script?",
+        "answers": [
+            "To substitute the MAC addresses.",
+            "To replace specific patterns in the packet payload (data) with new data.",
+            "To encrypt the payload.",
+            "To submit the packet to the kernel."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the 'Link-level driver'?",
+        "answers": [
+            "The software that manages the ARP cache.",
+            "The software interface between the OS kernel and the physical NIC hardware.",
+            "The physical cable connecting the computer.",
+            "The application that generates packets."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the typical sequence of events when `pinging` a local host?",
+        "answers": [
+            "ICMP Echo Request -> ARP Request -> ARP Reply -> ICMP Echo Reply",
+            "ARP Request -> ARP Reply -> ICMP Echo Request -> ICMP Echo Reply",
+            "DNS Request -> ARP Request -> Ping",
+            "Ping -> DNS -> ARP"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the Scapy `sniff()` function, what does the `prn` argument specify?",
+        "answers": [
+            "The protocol to sniff.",
+            "A callback function to execute for each captured packet.",
+            "The network interface name.",
+            "The number of packets to capture."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the destination MAC address of a Gratuitous ARP packet in the Ethernet header?",
+        "answers": [
+            "The gateway MAC.",
+            "The sender's MAC.",
+            "The broadcast MAC (ff:ff:ff:ff:ff:ff).",
+            "00:00:00:00:00:00."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following attacks creates a Denial of Service (DoS) by mapping an IP to a non-existent MAC address?",
+        "answers": [
+            "ARP Poisoning (blackholing).",
+            "DNS Spoofing.",
+            "SYN Flooding.",
+            "Buffer Overflow."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the first task in the provided MITM code example?",
+        "answers": [
+            "Enable IP forwarding.",
+            "Construct a spoofed ARP request.",
+            "Delete the ARP cache.",
+            "Ping the gateway."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is ARP considered a 'Layer 2.5' protocol by some?",
+        "answers": [
+            "It uses both MAC (Layer 2) and IP (Layer 3) addresses to function.",
+            "It is faster than Layer 2 protocols.",
+            "It encrypts Layer 2 data.",
+            "It runs on top of TCP."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What does the command `sysctl net.ipv4.ip_forward` control?",
+        "answers": [
+            "The speed of packet transmission.",
+            "Whether the system forwards packets destined for other hosts (routing function).",
+            "The size of the ARP cache.",
+            "The IP address of the machine."
+        ],
+        "correct_answer": 1
+    }
+]

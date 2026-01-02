@@ -4,18 +4,30 @@
       "id": "sna",
       "name": "SNA - System & Network Admin",
       "files": [
-        "sna_11.dns.json",
-        "sna_11.services.json",
-        "sna_11.tcpip1.json",
-        "sna_14.monitor.json",
-        "sna_14.perf.json",
-        "sna_14.process.json",
         "sna_5-6.scripting.json",
         "sna_7.regex.json",
         "sna_8.1.booting.json",
         "sna_8.2.access.json",
         "sna_9-10.containers.json",
-        "sna_9-10.virtual.json"
+        "sna_9-10.virtual.json",
+        "sna_11.dns.json",
+        "sna_11.services.json",
+        "sna_11.tcpip1.json",
+        "sna_14.monitor.json",
+        "sna_14.perf.json",
+        "sna_14.process.json"
+      ]
+    },
+    {
+      "id": "sns",
+      "name": "SNS - System & Network Security",
+      "files": [
+        "sns_w7.web_architecture.json",
+        "sns_w9.csrf.json",
+        "sns_w10.sql_injection.json",
+        "sns_w11.sniffing_spoofing.json",
+        "sns_w12.arp_poisoning.json",
+        "sns_w13.ip_icmp.json"
       ]
     },
     {

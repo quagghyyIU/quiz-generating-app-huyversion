@@ -1,0 +1,502 @@
+[
+    {
+        "question": "Which of the following best describes the MySQL database management system?",
+        "answers": [
+            "It is a proprietary, closed-source hierarchical database system.",
+            "It is an open-source relational database management system.",
+            "It is a client-side web browser scripting engine.",
+            "It is a protocol used for encrypting web traffic."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the 'SELECT' statement in SQL?",
+        "answers": [
+            "To modify existing records in a table.",
+            "To delete a database from the server.",
+            "To retrieve information from a database.",
+            "To create a new table in the database."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following best describes a 'relational database'?",
+        "answers": [
+            "A database that organizes data using tables with rows and columns.",
+            "A database that stores data as a single flat text file.",
+            "A database that organizes data in a tree-like hierarchical structure.",
+            "A database that only stores unstructured multimedia data."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the 'WHERE' clause in an SQL statement?",
+        "answers": [
+            "To select which columns to display in the output.",
+            "To set conditions for filtering rows in operations like SELECT or UPDATE.",
+            "To define the data types of columns during table creation.",
+            "To automatically comment out the rest of the query."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents a valid comment indicator in MySQL as described in the tutorial?",
+        "answers": [
+            "// (double slash)",
+            "<!-- (angle bracket comment)",
+            "# (hash character)",
+            "%% (double percent)"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of the 'UPDATE' statement?",
+        "answers": [
+            "To add a new row to a table.",
+            "To retrieve data from a table.",
+            "To modify an existing record in a table.",
+            "To delete a table from the database."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following best describes the 'INSERT INTO' statement?",
+        "answers": [
+            "It is used to create a new database.",
+            "It is used to insert a new record into a table.",
+            "It is used to change the structure of an existing table.",
+            "It is used to list all databases on the server."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the command 'SHOW DATABASES'?",
+        "answers": [
+            "To display the data inside a specific table.",
+            "To list existing databases managed by the MySQL server.",
+            "To show the structure of a specific table.",
+            "To display the current user's password."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes a predicate in a WHERE clause?",
+        "answers": [
+            "A logical expression that evaluates to True or False.",
+            "The name of the table being accessed.",
+            "The specific column being updated.",
+            "The comment character used to hide code."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the 'DESCRIBE' command in MySQL?",
+        "answers": [
+            "To list all tables in a database.",
+            "To display the structure of a table (attributes/columns).",
+            "To print the content of all rows in a table.",
+            "To explain the execution plan of a query."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the array '$_GET' in PHP?",
+        "answers": [
+            "An array that stores data retrieved from the database.",
+            "An array that stores parameters sent via an HTTP GET request.",
+            "An array that stores the database connection settings.",
+            "An array used to store prepared statements."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the 'mysqli::query()' API in the provided PHP examples?",
+        "answers": [
+            "To establish a connection to the database.",
+            "To send an SQL query string to the database for execution.",
+            "To encode special characters in the input string.",
+            "To automatically fix syntax errors in SQL."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes a Prepared Statement?",
+        "answers": [
+            "A feature that allows multiple SQL queries to be executed in a single call.",
+            "A method of encrypting the database connection.",
+            "An optimized feature where an SQL template is compiled before binding data.",
+            "A function that removes all spaces from user input."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of 'mysqli::real_escape_string()'?",
+        "answers": [
+            "To execute a query on the database.",
+            "To encode characters that have special meanings in SQL.",
+            "To close the database connection.",
+            "To create a new database user."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the result of the condition '1=1' in a WHERE clause?",
+        "answers": [
+            "It causes a syntax error.",
+            "It is always False, returning no rows.",
+            "It is always True, potentially affecting all rows.",
+            "It only returns rows where the ID is 1."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of the '#' character in an SQL Injection attack payload?",
+        "answers": [
+            "To concatenate two strings together.",
+            "To comment out the remainder of the original SQL statement.",
+            "To indicate the start of a new SQL command.",
+            "To encode whitespace characters."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the 'mysqli' extension in PHP?",
+        "answers": [
+            "It is a database server software.",
+            "It is an interface allowing PHP programs to interact with MySQL databases.",
+            "It is a tool for launching SQL injection attacks.",
+            "It is a deprecated library for connecting to Oracle databases."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of using 'cURL' in the context of SQL Injection?",
+        "answers": [
+            "To encrypt the database password.",
+            "To send HTTP requests from the command line without a browser.",
+            "To compile the PHP code on the server.",
+            "To visualize the database structure graphically."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the HTTP GET method?",
+        "answers": [
+            "Parameters are sent in the body of the request.",
+            "Parameters are attached after the question mark in the URL.",
+            "It is used exclusively for uploading files.",
+            "It encrypts all parameters by default."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the 'mysqli::bind_param()' function?",
+        "answers": [
+            "To connect to the database server.",
+            "To attach user-provided data to the placeholders in a prepared statement.",
+            "To execute the SQL query immediately.",
+            "To filter out all non-numeric characters."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the correct format for a comment in SQL using the dash style?",
+        "answers": [
+            "//",
+            "--",
+            "**",
+            "||"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is an example of a tautology used in SQL Injection?",
+        "answers": [
+            "DROP DATABASE",
+            "OR 1=1",
+            "SELECT *",
+            "UNION SELECT"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents a valid method to login to MySQL from the command line?",
+        "answers": [
+            "mysql -uroot -ppassword",
+            "sql_login root password",
+            "connect mysql:root@password",
+            "mysql_open --user root"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which of the following is an example of an attack surface in a web application?",
+        "answers": [
+            "The internal CPU clock speed.",
+            "The channel between the user and the database via web forms.",
+            "The color scheme of the website's CSS.",
+            "The local file system of the client's computer."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between HTTP GET and HTTP POST regarding parameter visibility?",
+        "answers": [
+            "GET parameters are in the URL; POST parameters are in the body (not in URL).",
+            "POST parameters are in the URL; GET parameters are in the body.",
+            "GET parameters are always encrypted; POST parameters are plain text.",
+            "There is no difference; both show parameters in the URL."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is a key difference between 'mysqli::query()' and 'mysqli::multi_query()'?",
+        "answers": [
+            "query() is faster than multi_query().",
+            "query() allows only one SQL statement, while multi_query() allows multiple statements.",
+            "multi_query() is more secure against SQL injection than query().",
+            "query() supports Prepared Statements, while multi_query() does not."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the URL encoded value for a space character?",
+        "answers": [
+            "%20",
+            "%27",
+            "%23",
+            "%0A"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which of the following is an example of a vulnerability caused by mixing data and code?",
+        "answers": [
+            "Denial of Service (DoS)",
+            "SQL Injection",
+            "Brute Force Attack",
+            "Man-in-the-Middle Attack"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents a C-style comment supported by MySQL?",
+        "answers": [
+            "<!-- comment -->",
+            "/* comment */",
+            "{ comment }",
+            "REM comment"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between the 'code channel' and 'data channel' in Prepared Statements?",
+        "answers": [
+            "Code channel sends encrypted data; data channel sends plain text.",
+            "Code channel sends the SQL template; data channel sends the user inputs.",
+            "Code channel is slower; data channel is faster.",
+            "Code channel is used for SELECT; data channel is used for UPDATE."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the correct syntax to create a database named 'dbtest'?",
+        "answers": [
+            "NEW DATABASE dbtest;",
+            "MAKE DATABASE dbtest;",
+            "CREATE DATABASE dbtest;",
+            "INIT DATABASE dbtest;"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following is an example of a stacked query injection payload?",
+        "answers": [
+            "admin' #",
+            "a'; DROP DATABASE dbtest; #",
+            "1' OR '1'='1",
+            "admin' --"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the fundamental cause of SQL Injection?",
+        "answers": [
+            "Lack of encryption on the database hard drive.",
+            "Mixing untrusted user data with trusted code.",
+            "Using open-source database software like MySQL.",
+            "Allowing users to have weak passwords."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of 'mysqli::execute()'?",
+        "answers": [
+            "To prepare the SQL statement template.",
+            "To bind the parameters to the statement.",
+            "To run the prepared statement with the bound data.",
+            "To fetch the results into an array."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following represents the correct syntax to select the 'Name' column from 'employee'?",
+        "answers": [
+            "GET Name FROM employee;",
+            "SELECT Name FROM employee;",
+            "SHOW Name IN employee;",
+            "EXTRACT Name FROM employee;"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the fundamental cause of the SQL Injection vulnerability?",
+        "answers": [
+            "The database server is too slow to parse queries.",
+            "The SQL language does not support authentication.",
+            "Mixing data and code together in the SQL statement.",
+            "The web server fails to encrypt the HTTP traffic."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which countermeasure against SQL Injection involves sending code and data in separate channels?",
+        "answers": [
+            "Input Filtering",
+            "Data Encoding",
+            "Prepared Statements",
+            "Firewall Configuration"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the risk of using the 'mysqli::multi_query()' API?",
+        "answers": [
+            "It prevents the database from returning any results.",
+            "It allows attackers to execute arbitrary SQL statements (like DROP TABLE) via injection.",
+            "It causes the web server to crash due to high memory usage.",
+            "It forces all passwords to be reset."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which countermeasure uses 'mysqli::real_escape_string()'?",
+        "answers": [
+            "Prepared Statements",
+            "Filtering and Encoding Data",
+            "Database Encryption",
+            "Two-Factor Authentication"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the risk of having the PHP instruction 'die($conn->connect_error)' in production code?",
+        "answers": [
+            "It stops the database from running.",
+            "It might reveal sensitive database connection errors to the user.",
+            "It automatically grants admin access to the attacker.",
+            "It deletes the configuration file."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What happens if an attacker inputs 'EID5002' #' into the EID field of a vulnerable query?",
+        "answers": [
+            "The database rejects the query due to a syntax error.",
+            "The password check is bypassed because the rest of the query is treated as a comment.",
+            "The database deletes the record for EID5002.",
+            "The query returns no results."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which mechanism makes Prepared Statements secure?",
+        "answers": [
+            "Data received from the data channel is never parsed as code.",
+            "It encrypts the SQL query before sending it.",
+            "It uses a special firewall to block malicious keywords.",
+            "It disables the use of the SELECT statement."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the risk of encoding special characters manually instead of using Prepared Statements?",
+        "answers": [
+            "It is impossible to encode all characters.",
+            "Developers might miss some obscure special characters, leaving holes.",
+            "Encoding makes the database query slower.",
+            "Encoding is not supported by MySQL."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does SQL stand for?",
+        "answers": [
+            "Structured Question List",
+            "Simple Query Language",
+            "Structured Query Language",
+            "Standard Query Logic"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which command is used to launch an HTTP request from the terminal in the examples?",
+        "answers": [
+            "wget",
+            "curl",
+            "ssh",
+            "telnet"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the first task when interacting with a database in PHP?",
+        "answers": [
+            "Execute the query.",
+            "Fetch the results.",
+            "Create a database connection.",
+            "Close the connection."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which character corresponds to the URL encoding '%27'?",
+        "answers": [
+            "Space",
+            "Hash (#)",
+            "Single Quote (')",
+            "Double Quote (\")"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In the 'mysqli' connection code 'new mysqli(...)', how many arguments are typically used?",
+        "answers": [
+            "2 (Host, User)",
+            "3 (Host, User, Password)",
+            "4 (Host, User, Password, Database)",
+            "5 (Host, User, Password, Database, Port)"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What does the 's' stand for in the bind_param argument 'ss'?",
+        "answers": [
+            "Integer",
+            "String",
+            "Statement",
+            "Secure"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which PHP function is NOT recommended because it allows multiple SQL statements to run?",
+        "answers": [
+            "mysqli::query()",
+            "mysqli::prepare()",
+            "mysqli::multi_query()",
+            "mysqli::execute()"
+        ],
+        "correct_answer": 2
+    }
+]

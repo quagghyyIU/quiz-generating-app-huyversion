@@ -1,0 +1,502 @@
+[
+    {
+        "question": "What are the three main components of the Web Architecture mentioned in the slides?",
+        "answers": [
+            "Client, Server, Internet",
+            "Browser, Web Application Server, Database",
+            "HTML, CSS, JavaScript",
+            "HTTP, TCP, IP"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does HTML stand for?",
+        "answers": [
+            "HyperText Markup Language",
+            "HyperText Transfer Language",
+            "HyperText Management Language",
+            "HyperText Modeling Language"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of CSS (Cascading Style Sheets)?",
+        "answers": [
+            "To define the content of the web page",
+            "To specify the presentation style and separate content from style",
+            "To handle server-side logic",
+            "To store database information"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is NOT listed as a technology for Dynamic Content in the slides?",
+        "answers": [
+            "Adobe Flash",
+            "Microsoft Silverlight",
+            "C++ Applets",
+            "Java Applets"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "JavaScript is also known as:",
+        "answers": [
+            "JavaScriptSource",
+            "LiveScript",
+            "ECMAScript",
+            "WebScript"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which HTML tag is used to include JavaScript code?",
+        "answers": [
+            "<js>",
+            "<script>",
+            "<code>",
+            "<javascript>"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the main role of a Web Application Server?",
+        "answers": [
+            "To render HTML for the user",
+            "To store cookies on the client side",
+            "To execute server-side scripts like PHP, Python, or ASP",
+            "To filter network traffic"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In the Apache Server case study, what configuration is used to host multiple websites (e.g., bank32.com and bank99.com) on the same server?",
+        "answers": [
+            "MultiHosting",
+            "Virtual Hosting",
+            "Server Aliasing",
+            "Domain Mapping"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does CGI stand for in the context of web servers?",
+        "answers": [
+            "Common Gateway Interface",
+            "Computer Graphics Interface",
+            "Central Gateway Interaction",
+            "Common Graphic Interaction"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "How does a standard CGI program typically execute?",
+        "answers": [
+            "It runs within the web server's memory space",
+            "It starts in a new process",
+            "It executes directly on the client's browser",
+            "It runs inside the database engine"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is a variation of CGI that is designed to be faster?",
+        "answers": [
+            "QuickCGI",
+            "TurboCGI",
+            "FastCGI",
+            "SpeedCGI"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In the 'Template Approach' for PHP, how is the content typically generated?",
+        "answers": [
+            "By writing HTML inside echo statements",
+            "By mixing PHP variables directly into HTML structure",
+            "By using external JavaScript files",
+            "By using CSS for logic"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which HTTP method is used in the example request: 'GET /index.html HTTP/1.1'?",
+        "answers": [
+            "POST",
+            "GET",
+            "PUT",
+            "DELETE"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which header field in an HTTP request identifies the client software (browser, OS, etc.)?",
+        "answers": [
+            "Host",
+            "Accept-Language",
+            "User-Agent",
+            "Connection"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What does the HTTP status code 200 signify?",
+        "answers": [
+            "Not Found",
+            "Forbidden",
+            "OK",
+            "Moved Permanently"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What does the HTTP status code 404 signify?",
+        "answers": [
+            "Server Error",
+            "Bad Request",
+            "Not Found",
+            "Unauthorized"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the main difference between GET and POST requests mentioned in the slides?",
+        "answers": [
+            "GET is secure, POST is not",
+            "How they send data to the server",
+            "GET cannot send data",
+            "POST is faster than GET"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Where is the data typically placed in a POST request?",
+        "answers": [
+            "In the URL parameters",
+            "In the HTTP header",
+            "After the headers (in the body)",
+            "In the cookie field"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Why are cookies necessary for web applications?",
+        "answers": [
+            "Because the web server is stateless",
+            "To increase internet speed",
+            "To encrypt data transmission",
+            "To run JavaScript code"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which HTTP header does the server use to assign a cookie to the client?",
+        "answers": [
+            "Cookie",
+            "Set-Cookie",
+            "Assign-Cookie",
+            "Get-Cookie"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which HTTP header does the browser use to send stored cookies back to the server?",
+        "answers": [
+            "Cookie",
+            "Set-Cookie",
+            "Return-Cookie",
+            "Send-Cookie"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Third-party cookies are mainly used for:",
+        "answers": [
+            "Session management",
+            "Advertisement and information collection (tracking)",
+            "Improving website speed",
+            "Encrying passwords"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a 'Session Cookie' primarily used to store?",
+        "answers": [
+            "The user's password in plain text",
+            "A Session ID",
+            "The user's browsing history",
+            "The website's HTML layout"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Where is the actual session data (e.g., shopping cart items) typically maintained?",
+        "answers": [
+            "On the client's browser",
+            "In the URL",
+            "On the server",
+            "In the DNS cache"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following is a method to prevent tracking via cookies?",
+        "answers": [
+            "Blocking first-party cookies",
+            "Using anonymous/incognito mode",
+            "Enabling JavaScript",
+            "Using HTTP instead of HTTPS"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does DOM stand for?",
+        "answers": [
+            "Data Object Model",
+            "Document Object Model",
+            "Digital Object Mechanism",
+            "Document Oriented Method"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which JavaScript method is used to access an HTML element by its ID?",
+        "answers": [
+            "document.getElement(id)",
+            "document.getElementById()",
+            "window.selectId()",
+            "document.queryId()"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Can JavaScript in a browser directly access the local file system freely?",
+        "answers": [
+            "Yes, always",
+            "No, users need to grant permission via file selection",
+            "Yes, but only in read-only mode",
+            "No, it is impossible even with user permission"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does Ajax stand for?",
+        "answers": [
+            "Asynchronous Java and XML",
+            "Asynchronous JavaScript and XML",
+            "Advanced JavaScript and XML",
+            "Automated Java and XHTML"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which JavaScript object is traditionally used for Ajax requests?",
+        "answers": [
+            "XMLRequest",
+            "HttpSender",
+            "XMLHttpRequest",
+            "AjaxRequest"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What prevents a script from www.bank32.com from accessing data on www.bank99.com via Ajax?",
+        "answers": [
+            "The Firewall",
+            "The Same Origin Policy",
+            "The DNS Server",
+            "The ISP"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "When the Same Origin Policy blocks a cross-origin Ajax request, what typically happens?",
+        "answers": [
+            "The request is never sent",
+            "The request is sent, but the browser blocks the code from accessing the response",
+            "The server sends back a 404 error",
+            "The browser crashes"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does CORS stand for?",
+        "answers": [
+            "Cross-Origin Resource Sharing",
+            "Cross-Origin Request Security",
+            "Common Origin Resource Standard",
+            "Central Origin Request System"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which header does a server use to grant permission for CORS?",
+        "answers": [
+            "Allow-Cross-Origin",
+            "Access-Control-Allow-Origin",
+            "CORS-Allow-Domain",
+            "Permit-Origin"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Ajax communication is described as:",
+        "answers": [
+            "Full-duplex",
+            "Half-duplex",
+            "Simplex",
+            "Multiplex"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "WebSocket communication is described as:",
+        "answers": [
+            "Half-duplex",
+            "Full-duplex",
+            "One-way only",
+            "Stateless"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between Ajax and WebSocket?",
+        "answers": [
+            "Ajax is faster than WebSocket",
+            "WebSocket allows the server to 'push' data to the client without a request",
+            "Ajax uses UDP, WebSocket uses TCP",
+            "WebSocket does not use JavaScript"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Where is access control for WebSocket connections typically conducted?",
+        "answers": [
+            "On the client side (Browser)",
+            "On the server side (checking the Origin header)",
+            "By the ISP",
+            "By the DNS server"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which real-world attack mentioned in the slides exploited a WebSocket vulnerability in cable modems?",
+        "answers": [
+            "Heartbleed",
+            "Cable Haunt",
+            "Spectre",
+            "WannaCry"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "The Cable Haunt attack allowed attackers to exploit what kind of vulnerability on the server?",
+        "answers": [
+            "SQL Injection",
+            "Buffer Overflow",
+            "Cross-Site Scripting (XSS)",
+            "Path Traversal"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the Web Architecture, where does the Browser sit?",
+        "answers": [
+            "On the Server side",
+            "On the Client side",
+            "Inside the Database",
+            "On the Network Router"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which tag is used to define a paragraph in HTML?",
+        "answers": [
+            "<para>",
+            "<text>",
+            "<p>",
+            "<pg>"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the function of the 'Host' header in an HTTP request?",
+        "answers": [
+            "It specifies the domain name of the server",
+            "It specifies the IP address of the client",
+            "It specifies the browser version",
+            "It specifies the document type"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What does the 'Accept-Encoding' header tell the server?",
+        "answers": [
+            "Which language the user speaks",
+            "Which compression algorithms the client supports (e.g., gzip)",
+            "Which image formats are allowed",
+            "Which character set to use"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "If a server response contains 'Content-Encoding: gzip', what must the browser do?",
+        "answers": [
+            "Encrypt the content",
+            "Decompress the content before displaying it",
+            "Delete the content",
+            "Send it back to the server"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a Session ID typically composed of?",
+        "answers": [
+            "The user's name",
+            "A sequential number",
+            "A random number/string",
+            "The current timestamp only"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which property allows JavaScript to read the content inside an HTML element?",
+        "answers": [
+            ".content",
+            ".innerHTML",
+            ".value",
+            ".textData"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Why is the Same Origin Policy considered 'too restrictive' in some cases?",
+        "answers": [
+            "It slows down the internet",
+            "It prevents legitimate cross-site interactions (like using APIs from other domains)",
+            "It makes it hard to use CSS",
+            "It blocks all cookies"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the Cable Haunt attack, the modems were running a server program based on:",
+        "answers": [
+            "FTP",
+            "Telnet",
+            "WebSocket",
+            "SSH"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which PHP function is used to set a cookie in the example provided?",
+        "answers": [
+            "makecookie()",
+            "createCookie()",
+            "setcookie()",
+            "add_cookie()"
+        ],
+        "correct_answer": 2
+    }
+]

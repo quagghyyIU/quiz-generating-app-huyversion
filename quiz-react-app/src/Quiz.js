@@ -29,8 +29,8 @@ function Quiz() {
   // Update document title based on selected quiz or shuffle mode
   useEffect(() => {
     if (shuffleFolder && folderName) {
-      const modeIcon = shuffleModeName === "Quick Refresh" ? "🚀" :
-        shuffleModeName === "Lock-in Mode" ? "🔥" : "📚";
+      const modeIcon = shuffleModeName === "Random 20" ? "🎲" :
+        shuffleModeName === "Sample Test" ? "📝" : "📚";
       document.title = `${modeIcon} ${shuffleModeName}`;
     } else if (selectedQuiz) {
       const quizName = selectedQuiz.replace(".json", "");
@@ -374,11 +374,12 @@ function Quiz() {
 
   // Display name for the quiz
   const getModeIcon = (modeName) => {
-    if (modeName === "Quick Refresh") return "🚀";
-    if (modeName === "Lock-in Mode") return "🔥";
+    if (modeName === "Random 20") return "🎲";
+    if (modeName === "Sample Test") return "📝";
+    if (modeName === "Full Quiz") return "📚";
+    if (modeName === "Quick Refresh") return "🚀"; // Keep legacy support just in case
     if (modeName === "Fast Pace") return "⚡";
-    if (modeName === "Quiz Oriented") return "🎯";
-    return "📚";
+    return "📝";
   };
 
   const displayName = shuffleFolder

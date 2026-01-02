@@ -1,0 +1,502 @@
+[
+    {
+        "question": "Which of the following best describes the 'Best Effort Delivery' property of the IP protocol?",
+        "answers": [
+            "The protocol guarantees that packets will arrive in the correct order.",
+            "The protocol guarantees delivery but not the order of packets.",
+            "The protocol does not guarantee that packets will be delivered, nor does it guarantee the order.",
+            "The protocol retransmits lost packets automatically."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the primary purpose of the 'Time to Live' (TTL) field in the IP header?",
+        "answers": [
+            "To limit the time a packet waits in the sending buffer.",
+            "To prevent packets from circulating endlessly in routing loops.",
+            "To calculate the round-trip time for ping requests.",
+            "To determine the bandwidth of the network link."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the function of the Internet Control Message Protocol (ICMP)?",
+        "answers": [
+            "It is used to transfer files between computers.",
+            "It provides error detection and diagnostic capabilities for the IP layer.",
+            "It is responsible for resolving IP addresses to MAC addresses.",
+            "It encrypts the payload of IP packets."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of IP Fragmentation?",
+        "answers": [
+            "To increase the speed of packet transmission.",
+            "To encrypt the packet by breaking it into smaller secrets.",
+            "To allow packets to pass through networks with a smaller Maximum Transmission Unit (MTU).",
+            "To allow multiple users to share the same IP address."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following represents the maximum size of an IP packet (including header)?",
+        "answers": [
+            "1,500 bytes",
+            "65,535 bytes",
+            "4,096 bytes",
+            "Unlimited"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the 'Fragment Offset' field in the IP header?",
+        "answers": [
+            "To identify which packet group the fragment belongs to.",
+            "To indicate the position of the fragment's data relative to the beginning of the original packet.",
+            "To indicate the length of the IP header.",
+            "To tell the router whether more fragments are coming."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the 'Ping of Death' attack?",
+        "answers": [
+            "Flooding a target with ICMP Echo Requests from a broadcast address.",
+            "Creating an IP packet larger than 65,535 bytes to cause a buffer overflow.",
+            "Sending fragments with overlapping offsets to crash the OS.",
+            "Redirecting the victim's traffic to a malicious router."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the fundamental cause of the 'Teardrop' attack?",
+        "answers": [
+            "The victim machine cannot handle an IP packet larger than 65,535 bytes.",
+            "The victim machine fails to handle fragments with overlapping offsets correctly during reassembly.",
+            "The network bandwidth is exhausted by broadcast packets.",
+            "The router forwards the packet to the wrong interface."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is an example of a 'Smurf Attack'?",
+        "answers": [
+            "Sending a malformed packet with a negative offset.",
+            "Sending an ICMP Echo Request to a broadcast address with a spoofed source IP of the victim.",
+            "Sending an ICMP Redirect message to change the victim's routing table.",
+            "Sending packets with the MF flag set to 1 endlessly."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the 'Identification' (ID) field in the IP header?",
+        "answers": [
+            "To determine the priority of the packet.",
+            "To uniquely identify a group of fragments belonging to the same original packet.",
+            "To identify the protocol used in the payload (e.g., TCP or UDP).",
+            "To count how many routers the packet has passed through."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which flag in the IP header, when set to 1, indicates that there are more fragments to follow?",
+        "answers": [
+            "DF (Do not Fragment)",
+            "MF (More Fragments)",
+            "SYN (Synchronize)",
+            "RST (Reset)"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of the ICMP Redirect message?",
+        "answers": [
+            "To tell the sender that the destination is unreachable.",
+            "To inform a host that there is a better route (gateway) for a specific destination.",
+            "To test if a host is alive (ping).",
+            "To report that the Time to Live (TTL) has expired."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes 'Longest Prefix Match' in routing?",
+        "answers": [
+            "The router selects the route with the highest metric.",
+            "The router selects the route entry where the destination IP matches the largest number of leading bits in the network mask.",
+            "The router selects the default gateway for all packets.",
+            "The router selects the route with the shortest path."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between the DF (Do not Fragment) and MF (More Fragments) flags?",
+        "answers": [
+            "DF tells the router to drop the packet if it exceeds MTU; MF indicates the packet is part of a series.",
+            "DF indicates the last fragment; MF indicates the first fragment.",
+            "DF is used for IPv4; MF is used for IPv6.",
+            "DF is 1 bit long; MF is 2 bits long."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which of the following represents a valid ICMP Error message type?",
+        "answers": [
+            "Echo Reply (Type 0)",
+            "Echo Request (Type 8)",
+            "Destination Unreachable (Type 3)",
+            "Router Solicitation (Type 10)"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the fundamental cause of the 'ICMP Redirect' attack?",
+        "answers": [
+            "Routers do not verify the source IP of the packet.",
+            "Hosts accept ICMP Redirect messages to update their routing table without strong authentication.",
+            "The MTU size is too small for the redirect packet.",
+            "The Time to Live field is not decremented."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which countermeasure effectively prevents a Smurf Attack on a network router?",
+        "answers": [
+            "Disabling IP fragmentation reassembly.",
+            "Configuring the router to ignore or drop directed broadcast packets.",
+            "Setting the default TTL to 255.",
+            "Using static routing tables only."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the risk of allowing ICMP Redirect messages on a host?",
+        "answers": [
+            "The host might crash due to buffer overflow.",
+            "An attacker can act as a Man-in-the-Middle (MITM) by modifying the host's routing table.",
+            "The host's IP address will be exposed to the public internet.",
+            "The host will not be able to fragment packets."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes 'Reverse Path Filtering'?",
+        "answers": [
+            "A mechanism to encrypt packets going in the reverse direction.",
+            "A security feature where a router drops a packet if the source IP is not reachable via the interface the packet arrived on.",
+            "A method to filter packets based on the destination port number.",
+            "A routing protocol that finds the reverse path to the sender."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which tool utilizes the TTL field and ICMP Time Exceeded messages to map the path to a destination?",
+        "answers": [
+            "ping",
+            "netstat",
+            "traceroute",
+            "ifconfig"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "In the IP header, the Fragment Offset value is measured in units of:",
+        "answers": [
+            "1 byte",
+            "4 bytes",
+            "8 bytes",
+            "16 bytes"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What happens when a router receives a packet with TTL = 1?",
+        "answers": [
+            "It forwards the packet and sets TTL to 0.",
+            "It discards the packet immediately without notification.",
+            "It decrements TTL to 0, discards the packet, and sends an ICMP Time Exceeded message.",
+            "It resets the TTL to 255 and forwards the packet."
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following is an example of a direct broadcast address for the network 192.168.60.0/24?",
+        "answers": [
+            "192.168.60.0",
+            "192.168.60.1",
+            "192.168.60.255",
+            "255.255.255.255"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is a key difference between Static Routing and Dynamic Routing?",
+        "answers": [
+            "Static routing is configured manually; dynamic routing uses protocols (like OSPF) to update tables automatically.",
+            "Static routing is less secure than dynamic routing.",
+            "Static routing uses IP addresses; dynamic routing uses MAC addresses.",
+            "Static routing is used for hosts; dynamic routing is used only for firewalls."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which field in the IP Header is used to identify the upper-layer protocol (e.g., TCP vs UDP)?",
+        "answers": [
+            "Version",
+            "Type of Service",
+            "Protocol",
+            "Identification"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which command is used to display the routing table on a Linux system?",
+        "answers": [
+            "ip route",
+            "ip addr",
+            "ifconfig",
+            "ping"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the 'Default Gateway'?",
+        "answers": [
+            "To filter malicious traffic entering the network.",
+            "To serve as the destination for packets that do not match any specific route in the routing table.",
+            "To assign IP addresses to new devices.",
+            "To resolve domain names to IP addresses."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following represents the ICMP Type and Code for 'Destination Host Unreachable'?",
+        "answers": [
+            "Type 3, Code 0",
+            "Type 3, Code 1",
+            "Type 11, Code 0",
+            "Type 8, Code 0"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the relationship between MTU and Fragmentation?",
+        "answers": [
+            "If packet size < MTU, fragmentation occurs.",
+            "If packet size > MTU, fragmentation occurs (unless DF is set).",
+            "MTU determines the maximum number of fragments allowed.",
+            "Fragmentation increases the MTU of the network."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following Scapy commands is used to send a packet at Layer 3 (IP)?",
+        "answers": [
+            "sendp()",
+            "send()",
+            "sniff()",
+            "recv()"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary purpose of Network Address Translation (NAT)?",
+        "answers": [
+            "To increase the speed of the internet connection.",
+            "To map private IP addresses within a local network to a public IP address for internet access.",
+            "To block all incoming traffic from the internet.",
+            "To assign static IP addresses to all devices."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following is an example of a Private IP address range?",
+        "answers": [
+            "8.8.8.0/24",
+            "10.0.0.0/8",
+            "128.0.0.0/16",
+            "1.1.1.0/24"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the risk of IP Spoofing?",
+        "answers": [
+            "It allows the attacker to decrypt SSL traffic.",
+            "It allows the attacker to hide their identity or impersonate another trusted system.",
+            "It causes the attacker's own network interface to shut down.",
+            "It forces the victim to reboot."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the 'Protocol' field value for ICMP in the IP header?",
+        "answers": [
+            "1",
+            "6",
+            "17",
+            "80"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "If a packet is fragmented into 3 pieces, what is the value of the MF flag for the second fragment?",
+        "answers": [
+            "0",
+            "1",
+            "It depends on the offset.",
+            "It is undefined."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the first task performed by the OS when it receives fragments of an IP packet?",
+        "answers": [
+            "It forwards them immediately to the application.",
+            "It stores them in a buffer to reassemble them based on ID and Offset.",
+            "It sends an ICMP Redirect message.",
+            "It decrypts each fragment individually."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which routing entry allows a host to communicate with itself?",
+        "answers": [
+            "0.0.0.0/0",
+            "127.0.0.0/8 (Loopback)",
+            "192.168.0.0/16",
+            "255.255.255.255"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is a key difference between ICMP Echo Request and Echo Reply?",
+        "answers": [
+            "Echo Request is Type 8; Echo Reply is Type 0.",
+            "Echo Request is Type 0; Echo Reply is Type 8.",
+            "Echo Request carries data; Echo Reply does not.",
+            "Echo Request is sent by the server; Echo Reply is sent by the client."
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "Which attack specifically exploits the 'reassembly' process of IP fragmentation?",
+        "answers": [
+            "Smurf Attack",
+            "Teardrop Attack",
+            "MITM Attack",
+            "ARP Poisoning"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What does the command `sysctl net.ipv4.conf.all.rp_filter=1` enable?",
+        "answers": [
+            "IP Forwarding",
+            "ICMP Redirects",
+            "Reverse Path Filtering",
+            "Promiscuous Mode"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "Which of the following represents the header length of a standard IPv4 header without options?",
+        "answers": [
+            "14 bytes",
+            "20 bytes",
+            "32 bytes",
+            "60 bytes"
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "What is the primary function of the 'Header Checksum' in the IP header?",
+        "answers": [
+            "To detect errors in the payload (data).",
+            "To detect errors in the IP header only.",
+            "To encrypt the IP header.",
+            "To verify the authenticity of the sender."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "In the context of the Smurf Attack, why is the 'broadcast address' significant?",
+        "answers": [
+            "It hides the attacker's IP.",
+            "It amplifies the attack by causing all hosts on the network to reply to the victim.",
+            "It prevents the firewall from blocking the packets.",
+            "It allows the packet to bypass the router."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following routing entries would be the 'Default Route'?",
+        "answers": [
+            "192.168.1.1",
+            "10.0.0.0/8",
+            "0.0.0.0/0",
+            "255.255.255.0"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What is the risk of using `frag=0` (offset 0) and `MF=1` in a Scapy packet construction without sending subsequent fragments?",
+        "answers": [
+            "The receiver will process the packet immediately.",
+            "The receiver will hold the fragment in memory waiting for the rest, potentially consuming resources.",
+            "The packet will be rejected by the switch.",
+            "The receiver will send an ICMP Redirect."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which IP header field acts as a counter to limit the packet's lifespan?",
+        "answers": [
+            "Fragment Offset",
+            "Identification",
+            "Time to Live (TTL)",
+            "Header Checksum"
+        ],
+        "correct_answer": 2
+    },
+    {
+        "question": "What allows a router to know that an IP packet encapsulates a TCP segment?",
+        "answers": [
+            "The Version field is 4.",
+            "The Protocol field is set to 6.",
+            "The Total Length is greater than 20.",
+            "The DF flag is set to 1."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which of the following best describes the routing decision process?",
+        "answers": [
+            "The router forwards the packet to all interfaces.",
+            "The router looks up the destination IP in the routing table and applies the Longest Prefix Match.",
+            "The router sends an ARP request for the destination IP immediately.",
+            "The router modifies the Source IP address."
+        ],
+        "correct_answer": 1
+    },
+    {
+        "question": "Which command allows you to change the default gateway on a host?",
+        "answers": [
+            "ip route add default via <IP>",
+            "ip addr add default <IP>",
+            "ifconfig default <IP>",
+            "ping default <IP>"
+        ],
+        "correct_answer": 0
+    },
+    {
+        "question": "What is the primary purpose of the 'Version' field in the IP header?",
+        "answers": [
+            "To indicate the software version of the OS.",
+            "To indicate whether the packet is IPv4 or IPv6.",
+            "To indicate the version of the routing protocol.",
+            "To indicate the revision number of the NIC driver."
+        ],
+        "correct_answer": 1
+    }
+]

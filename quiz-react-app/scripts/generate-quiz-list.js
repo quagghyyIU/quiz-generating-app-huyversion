@@ -22,7 +22,7 @@ fs.readdir(dataDir, { withFileTypes: true }, (err, entries) => {
 
     // Get all subdirectories
     const subdirs = entries.filter(entry => entry.isDirectory());
-    
+
     if (subdirs.length === 0) {
         // No subdirectories, wrap files in an uncategorized folder
         const jsonFiles = entries
@@ -30,14 +30,14 @@ fs.readdir(dataDir, { withFileTypes: true }, (err, entries) => {
             .filter(entry => entry.name !== 'index.json')
             .filter(entry => path.extname(entry.name).toLowerCase() === '.json')
             .map(entry => entry.name);
-        
+
         // Create proper folder structure with uncategorized folder
         const fallbackFolders = jsonFiles.length > 0 ? [{
             id: 'uncategorized',
             name: folderDisplayNames['uncategorized'] || 'Uncategorized',
             files: jsonFiles.sort()
         }] : [];
-        
+
         writeIndex({ folders: fallbackFolders });
         return;
     }
@@ -46,7 +46,7 @@ fs.readdir(dataDir, { withFileTypes: true }, (err, entries) => {
 
     subdirs.forEach(subdir => {
         const subdirPath = path.join(dataDir, subdir.name);
-        
+
         fs.readdir(subdirPath, (err, files) => {
             if (err) {
                 console.error(`Could not read directory ${subdir.name}`, err);
@@ -63,7 +63,7 @@ fs.readdir(dataDir, { withFileTypes: true }, (err, entries) => {
                 folders.push({
                     id: subdir.name,
                     name: folderDisplayNames[subdir.name] || subdir.name,
-                    files: jsonFiles.sort()
+                    files: jsonFiles.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
                 });
             }
 
